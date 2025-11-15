@@ -83,7 +83,7 @@ df.to_csv(
     "weather.csv",
     sep=";",        # Use semicolon instead of comma
     encoding="utf-8",  # Set encoding
-    date_format="%Y-%m-%d",  # Format datetime columns
+    date_format="%Y-%m-%dT%H:%M:%SZ",  # Format datetime columns
     header=True,     # Include column names
     index=False      # Skip DataFrame index
 )
