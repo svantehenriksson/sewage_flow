@@ -3,3 +3,7 @@ numpy
 pandas
 requests
 openpyxl
+xarray
+scipy
+shapely
+netcdf4
