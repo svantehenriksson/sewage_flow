@@ -240,11 +240,25 @@ def print_statistics(results):
     
     pump_hours = {}
     pump_names = ['1.1', '1.2', '1.3', '1.4', '2.1', '2.2', '2.3', '2.4']
+    
+    # Check if pump_total_minutes or pump_total_hours exists in results (backward compatibility)
+    has_total_minutes = 'pump_total_minutes' in results
+    has_total_hours = 'pump_total_hours' in results
+    
     for pump in pump_names:
         hours = sum(1 for item in schedule if pump in item['active_pumps']) * 0.25
         pump_hours[pump] = hours
         pct = (hours / 48) * 100
-        print(f"Pump {pump}: {hours:6.2f} hours ({pct:5.1f}%)")
+        
+        if has_total_minutes:
+            total_minutes = results['pump_total_minutes'].get(pump, 0)
+            total_hours = total_minutes / 60.0
+            print(f"Pump {pump}: {hours:6.2f} hours ({pct:5.1f}%) | Total: {total_hours:.2f}h")
+        elif has_total_hours:
+            total_hours = results['pump_total_hours'].get(pump, 0)
+            print(f"Pump {pump}: {hours:6.2f} hours ({pct:5.1f}%) | Total: {total_hours:.2f}h")
+        else:
+            print(f"Pump {pump}: {hours:6.2f} hours ({pct:5.1f}%)")
     
     print("\n" + "="*70)
 

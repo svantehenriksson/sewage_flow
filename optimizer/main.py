@@ -32,7 +32,8 @@ def height_from_volume_approx(volume: float) -> float:
 
 
 class PumpOptimizer:
-    def __init__(self, data_file: str, time_horizon_hours: int = 48, pump_switch_penalty_eur: float = 0.1):
+    def __init__(self, data_file: str, time_horizon_hours: int = 48, pump_switch_penalty_eur: float = 0.1,
+                 load_balancing_weight: float = 0.01667):
         """Initialize the optimizer with data and parameters.
         
         Args:
@@ -41,6 +42,10 @@ class PumpOptimizer:
             pump_switch_penalty_eur: Penalty per pump state change in € (default: 0.1)
                                      Used for optimization only, NOT included in final cost.
                                      Set higher to reduce switching, lower for more aggressive optimization.
+            load_balancing_weight: Weight for load balancing in €/hour difference (default: 0.01667)
+                                   Calibrated: 6h usage difference = 1 switch cost (€0.10).
+                                   Penalizes runtime excess relative to the least-used pump (including history).
+                                   Increase to prioritize load balancing, decrease for pure cost optimization.
         """
         self.time_horizon_hours = time_horizon_hours
         self.intervals_per_hour = 4  # 15-minute intervals
@@ -86,13 +91,15 @@ class PumpOptimizer:
                 locked_intervals = int((locked_minutes + 14) // 15)  # Round up to nearest interval
                 self.pump_initial_status[pump_key] = {
                     'on': status.get('on', False),
-                    'locked_intervals': locked_intervals
+                    'locked_intervals': locked_intervals,
+                    'totalMinutes': status.get('totalMinutes', 0)
                 }
             else:
                 # Default: pump is off and not locked
                 self.pump_initial_status[pump_key] = {
                     'on': False,
-                    'locked_intervals': 0
+                    'locked_intervals': 0,
+                    'totalMinutes': 0
                 }
         
         # Pump specifications: pump type ('small' or 'big')
@@ -124,6 +131,13 @@ class PumpOptimizer:
         # NOTE: Used for optimization only, NOT included in final reported cost
         # Typical value: €0.10 per switch
         self.pump_switch_penalty_eur = pump_switch_penalty_eur
+        
+        # Load balancing weight: preference for less-used pumps
+        # Helps equalize wear across pumps within each category
+        # Default: €0.01667/h - calibrated so 6h difference = €0.10 (1 switch)
+        # Used to penalize runtime excess relative to the least-used pump (including history)
+        # Note: totalMinutes from input is converted to hours for penalty calculation
+        self.load_balancing_weight = load_balancing_weight
         
         # Tank volume bounds (for scaling)
         self.min_volume = tunnel_volume(self.min_water_level)
@@ -218,6 +232,29 @@ class PumpOptimizer:
         # Constraint 1: At least one pump must always be running
         for t in range(self.num_intervals):
             model.Add(sum(pump_on[p][t] for p in range(self.num_pumps)) >= 1)
+        
+        # Track total runtime (number of intervals) for each pump and include historical usage
+        runtime_intervals = {}
+        adjusted_runtime = {}
+        initial_runtime_intervals = {}
+        interval_minutes = int(round(self.interval_hours * 60))
+        initial_intervals_values = []
+        for p in range(self.num_pumps):
+            pump_name = self.pump_names[p]
+            runtime_intervals[p] = model.NewIntVar(0, self.num_intervals, f'runtime_{pump_name}')
+            model.Add(runtime_intervals[p] == sum(pump_on[p][t] for t in range(self.num_intervals)))
+            
+            initial_minutes = self.pump_initial_status[pump_name]['totalMinutes']
+            initial_intervals = int(round(initial_minutes / interval_minutes))
+            initial_runtime_intervals[pump_name] = initial_intervals
+            initial_intervals_values.append(initial_intervals)
+            
+            adjusted_runtime[p] = model.NewIntVar(
+                initial_intervals,
+                initial_intervals + self.num_intervals,
+                f'adjusted_runtime_{pump_name}'
+            )
+            model.Add(adjusted_runtime[p] == runtime_intervals[p] + initial_intervals)
         
         # Constraint 2: Volume dynamics
         # Use average pump performance (at mid-range water level) for volume dynamics
@@ -347,7 +384,7 @@ class PumpOptimizer:
                 model.Add(sum(low_level_reached) >= 1)
                 print(f"  Added low-level constraint for period {period} (intervals {start_interval}-{end_interval})")
         
-        # Objective: Minimize total electricity cost + switching penalty
+        # Objective: Minimize total electricity cost + switching penalty + load balancing
         # Use average water level for cost calculation to avoid complexity
         # The actual cost will be calculated post-hoc with real water levels
         cost_terms = []
@@ -365,6 +402,39 @@ class PumpOptimizer:
                 
                 cost_terms.append(pump_on[p][t] * cost)
         
+        # Add load balancing factor: penalize pumps that run significantly more than others
+        # Strategy: compare each pump's runtime to the least-used pump IN ITS CATEGORY and penalize the excess
+        # If a pump runs 6 hours (24 intervals) more than the least-used pump in its category, penalty equals one switch (€0.10)
+        load_balancing_terms = []
+        penalty_per_interval = int(self.interval_hours * self.load_balancing_weight * 1000)  # ~4.17 units
+        
+        # Separate pumps by category
+        small_pump_indices = [i for i in range(self.num_pumps) if self.pump_types[self.pump_names[i]] == 'small']
+        big_pump_indices = [i for i in range(self.num_pumps) if self.pump_types[self.pump_names[i]] == 'big']
+        
+        # Process each category separately
+        for category_name, category_indices in [('Small', small_pump_indices), ('Big', big_pump_indices)]:
+            if len(category_indices) == 0:
+                continue
+            
+            # Find min/max initial intervals for this category
+            category_initial_intervals = [initial_runtime_intervals[self.pump_names[i]] for i in category_indices]
+            min_cat_initial = min(category_initial_intervals)
+            max_cat_initial = max(category_initial_intervals)
+            
+            # Create minimum runtime variable for this category
+            runtime_min = model.NewIntVar(min_cat_initial,
+                                          max_cat_initial + self.num_intervals,
+                                          f'runtime_min_{category_name}')
+            model.AddMinEquality(runtime_min, [adjusted_runtime[p] for p in category_indices])
+            
+            # Penalize excess runtime for each pump in this category
+            for p in category_indices:
+                max_excess = (max_cat_initial - min_cat_initial) + self.num_intervals
+                excess_runtime = model.NewIntVar(0, max_excess, f'excess_runtime_{self.pump_names[p]}')
+                model.Add(excess_runtime == adjusted_runtime[p] - runtime_min)
+                load_balancing_terms.append(excess_runtime * penalty_per_interval)
+        
         # Add switching penalty to discourage unnecessary state changes
         switching_penalty_terms = []
         penalty_scaled = int(self.pump_switch_penalty_eur * 1000)  # Scale to match electricity cost
@@ -372,10 +442,20 @@ class PumpOptimizer:
             for p in range(self.num_pumps):
                 switching_penalty_terms.append(pump_switch[p][t] * penalty_scaled)
         
-        total_cost = sum(cost_terms) + sum(switching_penalty_terms)
+        total_cost = sum(cost_terms) + sum(switching_penalty_terms) + sum(load_balancing_terms)
         model.Minimize(total_cost)
         
         print(f"\nSwitching penalty: €{self.pump_switch_penalty_eur:.2f} per pump state change")
+        
+        # Print load balancing configuration details
+        if load_balancing_terms:
+            print("\nLoad Balancing (runtime-based, per category):")
+            print("  • Penalty weight: "
+                  f"{self.load_balancing_weight:.5f} €/hour "
+                  "(6h excess = cost of one switch)")
+            print("  • Small pumps compared against small pumps")
+            print("  • Big pumps compared against big pumps")
+            print("  • Reference: least-used pump in each category (historical + planned runtime)\n")
         
         # Provide a simple heuristic solution hint to speed up solving
         # Strategy: Run pumps during cheapest hours while respecting constraints
@@ -432,12 +512,22 @@ class PumpOptimizer:
             print(f"\nTotal Electricity Cost: €{actual_electricity_cost:.2f}")
             print(f"(Objective value with penalty: €{objective_value:.2f})")
             
+            # Calculate updated total minutes for each pump
+            pump_updated_minutes = {}
+            for p in range(self.num_pumps):
+                pump_name = self.pump_names[p]
+                hours_on = sum(solver.Value(pump_on[p][t]) for t in range(self.num_intervals)) * self.interval_hours
+                initial_minutes = self.pump_initial_status[pump_name]['totalMinutes']
+                # Convert hours to minutes and add to initial total
+                pump_updated_minutes[pump_name] = initial_minutes + (hours_on * 60)
+            
             # Extract solution
             solution = {
                 'status': 'optimal' if status == cp_model.OPTIMAL else 'feasible',
                 'total_cost_eur': actual_electricity_cost,  # Only electricity, not penalty
                 'initial_water_level_m': self.initial_water_level,
                 'initial_volume_m3': self.initial_volume,
+                'pump_total_minutes': pump_updated_minutes,
                 'schedule': []
             }
             
@@ -511,9 +601,13 @@ class PumpOptimizer:
             print("PUMP USAGE STATISTICS")
             print(f"{'='*60}")
             for p in range(self.num_pumps):
+                pump_name = self.pump_names[p]
                 hours_on = sum(solver.Value(pump_on[p][t]) for t in range(self.num_intervals)) * self.interval_hours
                 pct = (hours_on / self.time_horizon_hours) * 100
-                print(f"Pump {self.pump_names[p]}: {hours_on:6.2f} hours ({pct:5.1f}%)")
+                initial_minutes = self.pump_initial_status[pump_name]['totalMinutes']
+                updated_minutes = pump_updated_minutes[pump_name]
+                # Display in hours for readability
+                print(f"Pump {pump_name}: {hours_on:6.2f} hours ({pct:5.1f}%) | Total: {updated_minutes/60:.2f}h (was {initial_minutes/60:.2f}h)")
             
             # Switching statistics
             print(f"\n{'='*60}")
@@ -543,8 +637,21 @@ def main():
     #   - Higher (e.g., 1.0-2.0): Fewer switches, smoother operation
     #   - Lower (e.g., 0.1-0.3): More aggressive cost optimization
     #   - Zero (0.0): No penalty, maximum cost optimization (may cause frequent switching)
-    # Note: Penalty is used for optimization only, NOT included in final reported cost
-    optimizer = PumpOptimizer('input.json', time_horizon_hours=48, pump_switch_penalty_eur=0.1)
+    # 
+    # Adjust load_balancing_weight to control pump wear equalization:
+    #   - Calibrated: 6h usage difference = 1 switch cost (€0.10)
+    #   - Default (0.01667): Mathematically calibrated (€0.10 / 6h)
+    #   - Higher (0.05-0.1): Stronger preference for equal runtimes
+    #   - Lower (0.005-0.01): Weaker preference, balanced with cost optimization
+    #   - Zero (0.0): No load balancing, pure cost optimization
+    # 
+    # Runtime excess is measured relative to the least-used pump in each category (history + plan)
+    # Small pumps (1.1, 2.1) compared only against each other
+    # Big pumps (1.2-1.4, 2.2-2.4) compared only against each other
+    # Note: Penalties are used for optimization only, NOT included in final reported cost
+    optimizer = PumpOptimizer('input.json', time_horizon_hours=48, 
+                             pump_switch_penalty_eur=0.1,
+                             load_balancing_weight=0.01667)
     
     # Optional: Add fixed pump schedules
     # Example: Force pump 1.1 to run for first 3 intervals (45 minutes)

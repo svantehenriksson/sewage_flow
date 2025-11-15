@@ -16,6 +16,7 @@ python visualize.py
 - Example data can be found in input.json. Use the inflow rates from there and starting water level and electricity price
 - Use or-tools and the existing virtual environment
 - The pumps are more effective when the water level is high so use the methods `pumps.py` to understand how much energy they use, and how much they pump at different levels
+- We want to use the pumps about the same amount of time, so make it slightly more likely to use the least used pump
 
 ## Test data
 
@@ -29,6 +30,8 @@ From input.json get
     - If a pump is ON and locked for 90 minutes, it must stay ON for those 90 minutes
     - If a pump is OFF and locked for 120 minutes, it cannot be turned ON for those 120 minutes
     - A locked value of 0 means the pump can be controlled immediately
+    - totalMinutes: the amount of minutes the pump has been in use. Also return an updated value in the output
+      - Used for load balancing - pumps with fewer hours are preferred (within their category)
 - items (intervals):
   - date: ISO timestamp for the interval
   - waterInflow: how much water flows into the system during that 15min interval (in m³)
@@ -38,17 +41,17 @@ From input.json get
 
 ### Pumps
 
-#### Pump 1.1
+There are 8 pumps
 
-1.1 Flow: 1500m3/h, Electricity: 185kWh/h
-1.2 Flow: 3000m3/h, Electricity: 350kWh/h
-1.3 Flow: 3000m3/h, Electricity: 350kWh/h
-1.4 Flow: 3000m3/h, Electricity: 350kWh/h
+1.1 small pump
+1.2 big pump
+1.3 big pump
+1.4 big pump
 
-2.1 Flow: 1500m3/h, Electricity: 185kWh/h
-2.2 Flow: 3000m3/h, Electricity: 350kWh/h
-2.3 Flow: 3000m3/h, Electricity: 350kWh/h
-2.4 Flow: 3000m3/h, Electricity: 350kWh/h
+2.1 small pump
+2.2 big pump
+2.3 big pump
+2.4 big pump
 
 ### Input for model
 
@@ -69,6 +72,4 @@ From input.json get
 
 ## Future Enhancements
 
-- I wanting to equalize load, can track how much each pump have been used and tweak its multiplier
-- Give a small penalty for switching on/off
 - Optimize beginning with 15min intervals, but 24-48h with 3h intervals

@@ -3,35 +3,43 @@
   "underThresholdWithinMinutes": 720,
   "pump1-1": {
     "on": true,
-    "locked": 90
+    "locked": 90,
+    "totalMinutes": 837000
   },
   "pump1-2": {
     "on": false,
-    "locked": 0
+    "locked": 0,
+    "totalMinutes": 837000
   },
   "pump1-3": {
     "on": false,
-    "locked": 120
+    "locked": 120,
+    "totalMinutes": 837000
   },
   "pump1-4": {
     "on": true,
-    "locked": 75
+    "locked": 75,
+    "totalMinutes": 837000
   },
   "pump2-1": {
     "on": false,
-    "locked": 0
+    "locked": 0,
+    "totalMinutes": 837015
   },
   "pump2-2": {
     "on": false,
-    "locked": 0
+    "locked": 0,
+    "totalMinutes": 837000
   },
   "pump2-3": {
     "on": false,
-    "locked": 0
+    "locked": 0,
+    "totalMinutes": 837000
   },
   "pump2-4": {
     "on": false,
-    "locked": 0
+    "locked": 0,
+    "totalMinutes": 837000
   },
   "items": [
     {
