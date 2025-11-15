@@ -8,6 +8,7 @@ import json
 from ortools.sat.python import cp_model
 from tunnel_volume import tunnel_volume
 from pumping_score import pumping_score
+from pumps import small_pump, big_pump
 import sys
 
 
@@ -81,19 +82,20 @@ class PumpOptimizer:
                     'locked_intervals': 0
                 }
         
-        # Pump specifications: (flow_m3_per_hour, power_kw)
-        self.pumps = {
-            '1.1': (1500, 185),
-            '1.2': (3000, 350),
-            '1.3': (3000, 350),
-            '1.4': (3000, 350),
-            '2.1': (1500, 185),
-            '2.2': (3000, 350),
-            '2.3': (3000, 350),
-            '2.4': (3000, 350),
+        # Pump specifications: pump type ('small' or 'big')
+        # Performance varies with water level - use small_pump() and big_pump() functions
+        self.pump_types = {
+            '1.1': 'small',
+            '1.2': 'big',
+            '1.3': 'big',
+            '1.4': 'big',
+            '2.1': 'small',
+            '2.2': 'big',
+            '2.3': 'big',
+            '2.4': 'big',
         }
         
-        self.pump_names = list(self.pumps.keys())
+        self.pump_names = list(self.pump_types.keys())
         self.num_pumps = len(self.pump_names)
         
         # Constraints parameters
@@ -113,6 +115,14 @@ class PumpOptimizer:
         
         # Placeholder for fixed pump schedules (can be customized)
         self.fixed_schedules = {}  # pump_name -> [True/False for each interval]
+        
+    def get_pump_specs(self, pump_name: str, water_level: float):
+        """Get pump power and flow rate at a given water level."""
+        if self.pump_types[pump_name] == 'small':
+            power_kw, flow_m3h = small_pump(water_level)
+        else:
+            power_kw, flow_m3h = big_pump(water_level)
+        return power_kw, flow_m3h
         
     def solve(self):
         """Build and solve the optimization model."""
@@ -166,11 +176,19 @@ class PumpOptimizer:
             model.Add(sum(pump_on[p][t] for p in range(self.num_pumps)) >= 1)
         
         # Constraint 2: Volume dynamics
+        # Use average pump performance (at mid-range water level) for volume dynamics
+        avg_water_level = (self.min_water_level + self.max_water_level) / 2
+        pump_avg_specs = {}
+        for p in range(self.num_pumps):
+            pump_name = self.pump_names[p]
+            power_kw, flow_m3h = self.get_pump_specs(pump_name, avg_water_level)
+            pump_avg_specs[p] = (power_kw, flow_m3h)
+        
         for t in range(self.num_intervals):
             # Outflow from all pumps in this interval (m3)
             outflow_terms = []
             for p in range(self.num_pumps):
-                flow_rate, _ = self.pumps[self.pump_names[p]]
+                _, flow_rate = pump_avg_specs[p]
                 outflow_per_interval = int(flow_rate * self.interval_hours)
                 outflow_terms.append(pump_on[p][t] * outflow_per_interval)
             
@@ -185,10 +203,13 @@ class PumpOptimizer:
             model.Add(volume[t] <= int(tunnel_volume(self.max_water_level)))
         
         # Constraint 4: Max flow constraint (16000 m3/h = 4000 m3/15min)
+        # Use maximum possible flow (at highest water level) to ensure constraint is respected
+        max_water_level_for_flow = self.max_water_level
         for t in range(self.num_intervals):
             total_flow = []
             for p in range(self.num_pumps):
-                flow_rate, _ = self.pumps[self.pump_names[p]]
+                pump_name = self.pump_names[p]
+                _, flow_rate = self.get_pump_specs(pump_name, max_water_level_for_flow)
                 flow_per_interval = int(flow_rate * self.interval_hours)
                 total_flow.append(pump_on[p][t] * flow_per_interval)
             model.Add(sum(total_flow) <= self.max_flow_per_interval)
@@ -289,12 +310,15 @@ class PumpOptimizer:
         cost_terms = []
         for t in range(self.num_intervals):
             for p in range(self.num_pumps):
-                _, power_kw = self.pumps[self.pump_names[p]]
+                pump_name = self.pump_names[p]
                 
-                # For each water level bin, calculate adjusted cost
+                # For each water level bin, calculate adjusted cost based on actual pump performance
                 for b in range(num_bins):
                     # Use midpoint of bin for score calculation
                     bin_mid_level = (water_level_bins[b] + water_level_bins[b + 1]) / 2
+                    
+                    # Get actual pump power at this water level
+                    power_kw, flow_m3h = self.get_pump_specs(pump_name, bin_mid_level)
                     
                     # Get pumping score based on electricity price and pump efficiency at this level
                     pumping_score_value = pumping_score(bin_mid_level, self.electricity_price[t])
@@ -361,7 +385,8 @@ class PumpOptimizer:
                 for p in range(self.num_pumps):
                     if solver.Value(pump_on[p][t]) == 1:
                         pump_name = self.pump_names[p]
-                        flow_rate, power_kw = self.pumps[pump_name]
+                        # Get actual pump specs at the current water level
+                        power_kw, flow_rate = self.get_pump_specs(pump_name, water_level)
                         active_pumps.append(pump_name)
                         total_flow += flow_rate * self.interval_hours
                         # Use pumping score that accounts for pump efficiency at this water level

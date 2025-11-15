@@ -15,7 +15,7 @@ python visualize.py
 - The tank has a cylindrical form. The formula for height to volume is defined in `tunnel_volume.py`
 - Example data can be found in input.json. Use the inflow rates from there and starting water level and electricity price
 - Use or-tools and the existing virtual environment
-- The pumps are more effective when the water level is high so use `pumping_score.py` to get a score based on electricy price and water level.
+- The pumps are more effective when the water level is high so use the methods `pumps.py` to understand how much energy they use, and how much they pump at different levels
 
 ## Test data
 
