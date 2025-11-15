@@ -14,15 +14,15 @@ def daily_timestamps(start, end):
         yield current
         current += dt.timedelta(days=1)
 
-def fmi_query(fmisid, parameter, start, end):
+def fmi_query(place, parameter, start, end):
     """Download one FMI timevaluepair series and return a DataFrame."""
     url = "https://opendata.fmi.fi/wfs"
     params = {
         "service": "WFS",
         "version": "2.0.0",
         "request": "getFeature",
-        "storedquery_id": "fmi::observations::weather::timevaluepair",
-        "fmisid": fmisid,
+        "storedquery_id": "fmi::forecast::harmonie::surface::point::timevaluepair",
+        "place": place,
         "parameters": parameter,
         "starttime": start,
         "endtime": end,
@@ -45,8 +45,8 @@ def fmi_query(fmisid, parameter, start, end):
     return pd.DataFrame({
         "time": pd.to_datetime(times),
         "value": values,
-        "fmisid": fmisid,
-        "parameter": parameter
+        "place": place,
+        "parameter" : parameter
     })
 
 
@@ -54,13 +54,13 @@ def fmi_query(fmisid, parameter, start, end):
 # LOOP OVER QUERIES
 # ---------------------------------------------------------
 
-stations = [874863, 852678]        # example FMISID list
-parameters = ["r_1h","ri_10min"]    # precipitation
+stations = ["Espoo"]        # example FMISID list
+parameters = ["PrecipitationAmount"]    # precipitation
 
 df_all = []   # collect partial dataframes
 
-start = dt.datetime(2024, 11, 14)
-end   = dt.datetime(2024, 12, 1)
+start = dt.datetime(2025, 11, 15)
+end   = dt.datetime(2025, 11, 17)
 
 request_start = None
 for t in daily_timestamps(start, end):
