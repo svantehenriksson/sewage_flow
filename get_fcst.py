@@ -60,7 +60,7 @@ parameters = ["PrecipitationAmount"]    # precipitation
 df_all = []   # collect partial dataframes
 
 start = dt.datetime(2025, 11, 15)
-end   = dt.datetime(2025, 11, 17)
+end   = dt.datetime(2025, 11, 19)
 
 request_start = None
 for t in daily_timestamps(start, end):

@@ -49,6 +49,7 @@ def fmi_query(fmisid, parameter, start, end):
         "parameter": parameter
     })
 
+import pandas as pd
 
 # ---------------------------------------------------------
 # LOOP OVER QUERIES
