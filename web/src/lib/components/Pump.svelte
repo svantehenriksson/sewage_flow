@@ -16,6 +16,7 @@
 		? 'border-green-500 bg-green-50'
 		: 'border-gray-300 bg-gray-50'}"
 	class:shadow-lg={isActive}
+	style="min-width: 140px; width: 140px;"
 >
 	<div class="mb-1 text-xs font-bold text-gray-700">
 		{label}
@@ -42,23 +43,25 @@
 		/>
 	</svg>
 
-	{#if isActive}
-		<div class="mt-2 w-full space-y-1 text-xs">
-			<div class="flex justify-between">
-				<span class="text-gray-600">Flow:</span>
-				<span class="font-semibold text-blue-600">{flow.toFixed(1)} m³/h</span>
+	<div class="mt-2 w-full text-xs" style="height: 60px;">
+		{#if isActive}
+			<div class="space-y-1">
+				<div class="flex justify-between">
+					<span class="text-gray-600">Flow:</span>
+					<span class="font-semibold text-blue-600">{flow.toFixed(1)} m³/h</span>
+				</div>
+				<div class="flex justify-between">
+					<span class="text-gray-600">Power:</span>
+					<span class="font-semibold text-orange-600">{power.toFixed(1)} kW</span>
+				</div>
+				<div class="flex justify-between">
+					<span class="text-gray-600">Freq:</span>
+					<span class="font-semibold text-purple-600">{frequency.toFixed(1)} Hz</span>
+				</div>
 			</div>
-			<div class="flex justify-between">
-				<span class="text-gray-600">Power:</span>
-				<span class="font-semibold text-orange-600">{power.toFixed(1)} kW</span>
-			</div>
-			<div class="flex justify-between">
-				<span class="text-gray-600">Freq:</span>
-				<span class="font-semibold text-purple-600">{frequency.toFixed(1)} Hz</span>
-			</div>
-		</div>
-	{:else}
-		<div class="mt-2 text-xs font-semibold text-gray-500">OFF</div>
-	{/if}
+		{:else}
+			<div class="flex h-full items-center justify-center font-semibold text-gray-500">OFF</div>
+		{/if}
+	</div>
 </div>
 

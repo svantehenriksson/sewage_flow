@@ -97,7 +97,7 @@
 					// Loop back to start
 					currentIndex = 0;
 				}
-			}, 100); // Update every second
+			}, 250); // Update every second
 		} else {
 			if (intervalId !== null) {
 				clearInterval(intervalId);
@@ -128,8 +128,16 @@
 	/>
 
 	<div class="mx-auto max-w-7xl space-y-6">
-		<!-- Title -->
-		<h1 class="text-center text-4xl font-bold text-gray-800">Pumping Station Flow Diagram</h1>
+		<!-- Title and Navigation -->
+		<div class="flex items-center justify-between">
+			<h1 class="text-4xl font-bold text-gray-800">Pumping Station Flow Diagram</h1>
+			<a
+				href="/charts"
+				class="rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+			>
+				View Analysis Charts →
+			</a>
+		</div>
 
 		<!-- Timeline -->
 		<Timeline
