@@ -1,6 +1,6 @@
 {
   "status": "feasible",
-  "total_cost_eur": 237.451,
+  "total_cost_eur": 226.962,
   "initial_water_level_m": 2.371505022,
   "initial_volume_m3": 10067.080129428052,
   "schedule": [
@@ -88,129 +88,131 @@
       "interval": 5,
       "date": "2024-11-14T23:15:00.000Z",
       "active_pumps": [
-        "1.1"
+        "1.1",
+        "2.4"
       ],
       "water_level_start_m": 2.309408569335938,
-      "water_level_end_m": 2.391165161132812,
+      "water_level_end_m": 2.286172485351563,
       "volume_start_m3": 9463,
-      "volume_end_m3": 10262,
+      "volume_end_m3": 9248,
       "inflow_m3": 1328.802246,
-      "outflow_m3": 498.0782050323486,
+      "outflow_m3": 1456.2886878204345,
       "electricity_price_cents_per_kwh": 0.321,
-      "interval_cost_eur": 0.15093431320667267
+      "interval_cost_eur": 0.42981935762043
     },
     {
       "interval": 6,
       "date": "2024-11-14T23:30:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.2",
+        "2.4"
       ],
-      "water_level_start_m": 2.391165161132812,
-      "water_level_end_m": 2.462594604492187,
-      "volume_start_m3": 10262,
-      "volume_end_m3": 10984,
+      "water_level_start_m": 2.286172485351563,
+      "water_level_end_m": 2.2026947021484373,
+      "volume_start_m3": 9248,
+      "volume_end_m3": 8471,
       "inflow_m3": 1251.878052,
-      "outflow_m3": 499.60500938415527,
+      "outflow_m3": 1914.8873840332033,
       "electricity_price_cents_per_kwh": 0.321,
-      "interval_cost_eur": 0.15105733132839202
+      "interval_cost_eur": 0.5576631796051026
     },
     {
       "interval": 7,
       "date": "2024-11-14T23:45:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.2",
+        "2.4"
       ],
-      "water_level_start_m": 2.462594604492187,
-      "water_level_end_m": 2.531442260742187,
-      "volume_start_m3": 10984,
-      "volume_end_m3": 11708,
+      "water_level_start_m": 2.2026947021484373,
+      "water_level_end_m": 2.114053344726562,
+      "volume_start_m3": 8471,
+      "volume_end_m3": 7696,
       "inflow_m3": 1253.901978,
-      "outflow_m3": 500.93895423889165,
+      "outflow_m3": 1909.3778503417968,
       "electricity_price_cents_per_kwh": 0.321,
-      "interval_cost_eur": 0.15116481031894685
+      "interval_cost_eur": 0.557279098324585
     },
     {
       "interval": 8,
       "date": "2024-11-15T00:00:00.000Z",
       "active_pumps": [
-        "1.1",
         "2.2",
-        "2.3"
+        "2.4"
       ],
-      "water_level_start_m": 2.531442260742187,
-      "water_level_end_m": 2.402352905273437,
-      "volume_start_m3": 11708,
-      "volume_end_m3": 10372,
+      "water_level_start_m": 2.114053344726562,
+      "water_level_end_m": 2.017666625976563,
+      "volume_start_m3": 7696,
+      "volume_end_m3": 6889,
       "inflow_m3": 1221.687256,
-      "outflow_m3": 2433.299873428345,
+      "outflow_m3": 1903.5275207519533,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.6569714669763564
+      "interval_cost_eur": 0.515236025088501
     },
     {
       "interval": 9,
       "date": "2024-11-15T00:15:00.000Z",
       "active_pumps": [
-        "1.1",
         "2.2",
-        "2.3"
+        "2.4"
       ],
-      "water_level_start_m": 2.402352905273437,
-      "water_level_end_m": 2.257772827148438,
-      "volume_start_m3": 10372,
-      "volume_end_m3": 8977,
+      "water_level_start_m": 2.017666625976563,
+      "water_level_end_m": 1.9066497802734375,
+      "volume_start_m3": 6889,
+      "volume_end_m3": 6023,
       "inflow_m3": 1162.617798,
-      "outflow_m3": 2422.3692322540287,
+      "outflow_m3": 1897.165997314453,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.6562422170030594
+      "interval_cost_eur": 0.5148257068267822
     },
     {
       "interval": 10,
       "date": "2024-11-15T00:30:00.000Z",
       "active_pumps": [
-        "1.1",
         "2.2",
-        "2.3"
+        "2.4"
       ],
-      "water_level_start_m": 2.257772827148438,
-      "water_level_end_m": 2.0908172607421873,
-      "volume_start_m3": 8977,
-      "volume_end_m3": 7498,
+      "water_level_start_m": 1.9066497802734375,
+      "water_level_end_m": 1.7741180419921876,
+      "volume_start_m3": 6023,
+      "volume_end_m3": 5073,
       "inflow_m3": 1078.724365,
-      "outflow_m3": 2410.126914138794,
+      "outflow_m3": 1889.838885498047,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.6554254570329665
+      "interval_cost_eur": 0.514353108114624
     },
     {
       "interval": 11,
       "date": "2024-11-15T00:45:00.000Z",
       "active_pumps": [
+        "2.1",
         "2.2",
-        "2.3"
+        "2.4"
       ],
-      "water_level_start_m": 2.0908172607421873,
-      "water_level_end_m": 1.9686126708984377,
-      "volume_start_m3": 7498,
-      "volume_end_m3": 6504,
+      "water_level_start_m": 1.7741180419921876,
+      "water_level_end_m": 1.5314300537109375,
+      "volume_start_m3": 5073,
+      "volume_end_m3": 3550,
       "inflow_m3": 1034.515991,
-      "outflow_m3": 1901.9939392089843,
+      "outflow_m3": 2369.173445205689,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.5151371090789795
+      "interval_cost_eur": 0.6526932004663466
     },
     {
       "interval": 12,
       "date": "2024-11-15T01:00:00.000Z",
       "active_pumps": [
+        "2.1",
         "2.2",
-        "2.3"
+        "2.4"
       ],
-      "water_level_start_m": 1.9686126708984377,
-      "water_level_end_m": 1.8300567626953121,
-      "volume_start_m3": 6504,
-      "volume_end_m3": 5465,
+      "water_level_start_m": 1.5314300537109375,
+      "water_level_end_m": 1.2078460693359376,
+      "volume_start_m3": 3550,
+      "volume_end_m3": 1982,
       "inflow_m3": 989.7000732,
-      "outflow_m3": 1893.9284362792969,
+      "outflow_m3": 2348.6238397979737,
       "electricity_price_cents_per_kwh": 0.295,
-      "interval_cost_eur": 0.5111514505767821
+      "interval_cost_eur": 0.6469362023649214
     },
     {
       "interval": 13,
@@ -218,50 +220,46 @@
       "active_pumps": [
         "2.1",
         "2.2",
-        "2.3"
+        "2.4"
       ],
-      "water_level_start_m": 1.8300567626953121,
-      "water_level_end_m": 1.5839263916015625,
-      "volume_start_m3": 5465,
-      "volume_end_m3": 3852,
+      "water_level_start_m": 1.2078460693359376,
+      "water_level_end_m": 0.48752746582031253,
+      "volume_start_m3": 1982,
+      "volume_end_m3": 369,
       "inflow_m3": 944.1064453,
-      "outflow_m3": 2373.9100563812262,
+      "outflow_m3": 2321.2243659210208,
       "electricity_price_cents_per_kwh": 0.295,
-      "interval_cost_eur": 0.6486118403787613
+      "interval_cost_eur": 0.6451205254392623
     },
     {
       "interval": 14,
       "date": "2024-11-15T01:30:00.000Z",
       "active_pumps": [
-        "2.1",
-        "2.2",
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 1.5839263916015625,
-      "water_level_end_m": 1.2577606201171874,
-      "volume_start_m3": 3852,
-      "volume_end_m3": 2191,
+      "water_level_start_m": 0.48752746582031253,
+      "water_level_end_m": 0.7930389404296876,
+      "volume_start_m3": 369,
+      "volume_end_m3": 736,
       "inflow_m3": 896.5089111,
-      "outflow_m3": 2353.0689672088624,
+      "outflow_m3": 464.0545754241944,
       "electricity_price_cents_per_kwh": 0.295,
-      "interval_cost_eur": 0.6472307669725418
+      "interval_cost_eur": 0.13618978407382965
     },
     {
       "interval": 15,
       "date": "2024-11-15T01:45:00.000Z",
       "active_pumps": [
-        "2.1",
-        "2.2",
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 1.2577606201171874,
-      "water_level_end_m": 0.6364105224609373,
-      "volume_start_m3": 2191,
-      "volume_end_m3": 490,
+      "water_level_start_m": 0.7930389404296876,
+      "water_level_end_m": 0.9341766357421875,
+      "volume_start_m3": 736,
+      "volume_end_m3": 1063,
       "inflow_m3": 856.9686279,
-      "outflow_m3": 2325.4508805084233,
+      "outflow_m3": 469.76000221252445,
       "electricity_price_cents_per_kwh": 0.295,
-      "interval_cost_eur": 0.6454006032629014
+      "interval_cost_eur": 0.13661224915981293
     },
     {
       "interval": 16,
@@ -269,14 +267,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.6364105224609373,
-      "water_level_end_m": 0.8085296630859375,
-      "volume_start_m3": 490,
-      "volume_end_m3": 768,
+      "water_level_start_m": 0.9341766357421875,
+      "water_level_end_m": 1.0297027587890624,
+      "volume_start_m3": 1063,
+      "volume_end_m3": 1341,
       "inflow_m3": 807.506958,
-      "outflow_m3": 466.83496650695804,
+      "outflow_m3": 472.39574867248535,
       "electricity_price_cents_per_kwh": 0.344,
-      "interval_cost_eur": 0.15905121196746827
+      "interval_cost_eur": 0.15953135982513428
     },
     {
       "interval": 17,
@@ -284,14 +282,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.8085296630859375,
-      "water_level_end_m": 0.9083587646484375,
-      "volume_start_m3": 768,
-      "volume_end_m3": 997,
+      "water_level_start_m": 1.0297027587890624,
+      "water_level_end_m": 1.0985504150390624,
+      "volume_start_m3": 1341,
+      "volume_end_m3": 1570,
       "inflow_m3": 758.9506836,
-      "outflow_m3": 470.0492914581299,
+      "outflow_m3": 474.1796990203858,
       "electricity_price_cents_per_kwh": 0.344,
-      "interval_cost_eur": 0.15932875408172606
+      "interval_cost_eur": 0.15968539569854737
     },
     {
       "interval": 18,
@@ -299,149 +297,150 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.9083587646484375,
-      "water_level_end_m": 0.9746246337890625,
-      "volume_start_m3": 997,
-      "volume_end_m3": 1176,
+      "water_level_start_m": 1.0985504150390624,
+      "water_level_end_m": 1.1484649658203125,
+      "volume_start_m3": 1570,
+      "volume_end_m3": 1749,
       "inflow_m3": 708.1954346,
-      "outflow_m3": 471.91359992980955,
+      "outflow_m3": 475.46542900085456,
       "electricity_price_cents_per_kwh": 0.344,
-      "interval_cost_eur": 0.15948972850799562
+      "interval_cost_eur": 0.15979641254425048
     },
     {
       "interval": 19,
       "date": "2024-11-15T02:45:00.000Z",
       "active_pumps": [
+        "1.1",
         "2.1"
       ],
-      "water_level_start_m": 0.9746246337890625,
-      "water_level_end_m": 1.0142120361328126,
-      "volume_start_m3": 1176,
-      "volume_end_m3": 1294,
+      "water_level_start_m": 1.1484649658203125,
+      "water_level_end_m": 1.0288421630859375,
+      "volume_start_m3": 1749,
+      "volume_end_m3": 1338,
       "inflow_m3": 647.3001709,
-      "outflow_m3": 473.15111503601076,
+      "outflow_m3": 952.7951664733887,
       "electricity_price_cents_per_kwh": 0.344,
-      "interval_cost_eur": 0.15959658222198486
+      "interval_cost_eur": 0.3197537995147705
     },
     {
       "interval": 20,
       "date": "2024-11-15T03:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0142120361328126,
-      "water_level_end_m": 1.0434722900390623,
-      "volume_start_m3": 1294,
-      "volume_end_m3": 1384,
+      "water_level_start_m": 1.0288421630859375,
+      "water_level_end_m": 1.0563812255859373,
+      "volume_start_m3": 1338,
+      "volume_end_m3": 1428,
       "inflow_m3": 619.8824463,
-      "outflow_m3": 473.89040977478027,
+      "outflow_m3": 474.1636273956299,
       "electricity_price_cents_per_kwh": 0.365,
-      "interval_cost_eur": 0.16940712840557098
+      "interval_cost_eur": 0.16943215963840486
     },
     {
       "interval": 21,
       "date": "2024-11-15T03:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0434722900390623,
-      "water_level_end_m": 1.0555206298828124,
-      "volume_start_m3": 1384,
-      "volume_end_m3": 1424,
+      "water_level_start_m": 1.0563812255859373,
+      "water_level_end_m": 1.0684295654296876,
+      "volume_start_m3": 1428,
+      "volume_end_m3": 1468,
       "inflow_m3": 569.3083496,
-      "outflow_m3": 474.4368450164795,
+      "outflow_m3": 474.6779193878174,
       "electricity_price_cents_per_kwh": 0.365,
-      "interval_cost_eur": 0.1694571908712387
+      "interval_cost_eur": 0.16947927725315093
     },
     {
       "interval": 22,
       "date": "2024-11-15T03:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0555206298828124,
-      "water_level_end_m": 1.0581024169921873,
-      "volume_start_m3": 1424,
-      "volume_end_m3": 1432,
+      "water_level_start_m": 1.0684295654296876,
+      "water_level_end_m": 1.0710113525390625,
+      "volume_start_m3": 1468,
+      "volume_end_m3": 1476,
       "inflow_m3": 537.8248291,
-      "outflow_m3": 474.6618477630616,
+      "outflow_m3": 474.9029221343995,
       "electricity_price_cents_per_kwh": 0.365,
-      "interval_cost_eur": 0.16947780482769012
+      "interval_cost_eur": 0.16949989120960235
     },
     {
       "interval": 23,
       "date": "2024-11-15T03:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0581024169921873,
-      "water_level_end_m": 1.0520782470703123,
-      "volume_start_m3": 1432,
-      "volume_end_m3": 1412,
+      "water_level_start_m": 1.0710113525390625,
+      "water_level_end_m": 1.0649871826171875,
+      "volume_start_m3": 1476,
+      "volume_end_m3": 1456,
       "inflow_m3": 509.1192627,
-      "outflow_m3": 474.71006263732914,
+      "outflow_m3": 474.95113700866705,
       "electricity_price_cents_per_kwh": 0.365,
-      "interval_cost_eur": 0.16948222210407257
+      "interval_cost_eur": 0.1695043084859848
     },
     {
       "interval": 24,
       "date": "2024-11-15T04:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0520782470703123,
-      "water_level_end_m": 1.0529388427734374,
-      "volume_start_m3": 1412,
-      "volume_end_m3": 1415,
+      "water_level_start_m": 1.0649871826171875,
+      "water_level_end_m": 1.0658477783203124,
+      "volume_start_m3": 1456,
+      "volume_end_m3": 1459,
       "inflow_m3": 532.1975098,
-      "outflow_m3": 474.5975612640381,
+      "outflow_m3": 474.83863563537597,
       "electricity_price_cents_per_kwh": 0.851,
-      "interval_cost_eur": 0.39512493088245393
+      "interval_cost_eur": 0.3951764254331589
     },
     {
       "interval": 25,
       "date": "2024-11-15T04:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0529388427734374,
-      "water_level_end_m": 1.0365875244140625,
-      "volume_start_m3": 1415,
-      "volume_end_m3": 1363,
+      "water_level_start_m": 1.0658477783203124,
+      "water_level_end_m": 1.0503570556640625,
+      "volume_start_m3": 1459,
+      "volume_end_m3": 1407,
       "inflow_m3": 477.0587158,
-      "outflow_m3": 474.6136328887939,
+      "outflow_m3": 474.8547072601318,
       "electricity_price_cents_per_kwh": 0.851,
-      "interval_cost_eur": 0.39512836385250094
+      "interval_cost_eur": 0.3951798584032059
     },
     {
       "interval": 26,
       "date": "2024-11-15T04:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0365875244140625,
-      "water_level_end_m": 0.9935577392578125,
-      "volume_start_m3": 1363,
-      "volume_end_m3": 1230,
+      "water_level_start_m": 1.0503570556640625,
+      "water_level_end_m": 1.0081878662109378,
+      "volume_start_m3": 1407,
+      "volume_end_m3": 1274,
       "inflow_m3": 396.8426514,
-      "outflow_m3": 474.30827201843266,
+      "outflow_m3": 474.56541801452636,
       "electricity_price_cents_per_kwh": 0.851,
-      "interval_cost_eur": 0.395063137421608
+      "interval_cost_eur": 0.39511806494235996
     },
     {
       "interval": 27,
       "date": "2024-11-15T04:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.9935577392578125,
-      "water_level_end_m": 0.9384796142578125,
-      "volume_start_m3": 1230,
-      "volume_end_m3": 1075,
+      "water_level_start_m": 1.0081878662109378,
+      "water_level_end_m": 0.9548309326171875,
+      "volume_start_m3": 1274,
+      "volume_end_m3": 1119,
       "inflow_m3": 374.4924927,
-      "outflow_m3": 473.5046907806397,
+      "outflow_m3": 473.7779084014893,
       "electricity_price_cents_per_kwh": 0.851,
-      "interval_cost_eur": 0.3948914889192581
+      "interval_cost_eur": 0.39494984941005706
     },
     {
       "interval": 28,
@@ -449,14 +448,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.9384796142578125,
-      "water_level_end_m": 0.8601654052734375,
-      "volume_start_m3": 1075,
-      "volume_end_m3": 879,
+      "water_level_start_m": 0.9548309326171875,
+      "water_level_end_m": 0.8790985107421876,
+      "volume_start_m3": 1119,
+      "volume_end_m3": 923,
       "inflow_m3": 333.0608521,
-      "outflow_m3": 472.4761067962646,
+      "outflow_m3": 472.781467666626,
       "electricity_price_cents_per_kwh": 3.766,
-      "interval_cost_eur": 1.7465733479404448
+      "interval_cost_eur": 1.7468619998073578
     },
     {
       "interval": 29,
@@ -464,14 +463,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.8601654052734375,
-      "water_level_end_m": 0.7999237060546875,
-      "volume_start_m3": 879,
-      "volume_end_m3": 749,
+      "water_level_start_m": 0.8790985107421876,
+      "water_level_end_m": 0.8205780029296876,
+      "volume_start_m3": 923,
+      "volume_end_m3": 793,
       "inflow_m3": 399.9891968,
-      "outflow_m3": 471.01358894348147,
+      "outflow_m3": 471.3671646881104,
       "electricity_price_cents_per_kwh": 3.766,
-      "interval_cost_eur": 1.7451908574199677
+      "interval_cost_eur": 1.7455250858974456
     },
     {
       "interval": 30,
@@ -479,198 +478,194 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.7999237060546875,
-      "water_level_end_m": 0.7026763916015624,
-      "volume_start_m3": 749,
-      "volume_end_m3": 579,
+      "water_level_start_m": 0.8205780029296876,
+      "water_level_end_m": 0.7302154541015624,
+      "volume_start_m3": 793,
+      "volume_end_m3": 623,
       "inflow_m3": 359.7515869,
-      "outflow_m3": 469.88857521057133,
+      "outflow_m3": 470.2742942047119,
       "electricity_price_cents_per_kwh": 3.766,
-      "interval_cost_eur": 1.7441274031734466
+      "interval_cost_eur": 1.744492016057968
     },
     {
       "interval": 31,
       "date": "2024-11-15T05:45:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.7026763916015624,
-      "water_level_end_m": 0.5735870361328126,
-      "volume_start_m3": 579,
-      "volume_end_m3": 425,
+      "water_level_start_m": 0.7302154541015624,
+      "water_level_end_m": 0.6183380126953124,
+      "volume_start_m3": 623,
+      "volume_end_m3": 469,
       "inflow_m3": 375.8916321,
-      "outflow_m3": 468.07248161315925,
+      "outflow_m3": 468.58677360534665,
       "electricity_price_cents_per_kwh": 3.766,
-      "interval_cost_eur": 1.7424106841754914
+      "interval_cost_eur": 1.7428968346881866
     },
     {
       "interval": 32,
       "date": "2024-11-15T06:00:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.5735870361328126,
-      "water_level_end_m": 0.6226409912109374,
-      "volume_start_m3": 425,
-      "volume_end_m3": 474,
+      "water_level_start_m": 0.6183380126953124,
+      "water_level_end_m": 0.6596466064453124,
+      "volume_start_m3": 469,
+      "volume_end_m3": 518,
       "inflow_m3": 578.8219604,
-      "outflow_m3": 465.66173789978035,
+      "outflow_m3": 466.4974623870849,
       "electricity_price_cents_per_kwh": 5.434,
-      "interval_cost_eur": 2.5108540872859955
+      "interval_cost_eur": 2.5119939785671233
     },
     {
       "interval": 33,
       "date": "2024-11-15T06:15:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.6226409912109374,
-      "water_level_end_m": 0.6613677978515624,
-      "volume_start_m3": 474,
-      "volume_end_m3": 521,
+      "water_level_start_m": 0.6596466064453124,
+      "water_level_end_m": 0.6932098388671875,
+      "volume_start_m3": 518,
+      "volume_end_m3": 565,
       "inflow_m3": 576.0136414,
-      "outflow_m3": 466.5778205108642,
+      "outflow_m3": 467.2689003753663,
       "electricity_price_cents_per_kwh": 5.434,
-      "interval_cost_eur": 2.5121035834980012
+      "interval_cost_eur": 2.513046185903549
     },
     {
       "interval": 34,
       "date": "2024-11-15T06:30:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.6613677978515624,
-      "water_level_end_m": 0.6157562255859375,
-      "volume_start_m3": 521,
-      "volume_end_m3": 466,
+      "water_level_start_m": 0.6932098388671875,
+      "water_level_end_m": 0.6527618408203124,
+      "volume_start_m3": 565,
+      "volume_end_m3": 510,
       "inflow_m3": 474.3029785,
-      "outflow_m3": 467.3010436248779,
+      "outflow_m3": 467.8956937408447,
       "electricity_price_cents_per_kwh": 5.434,
-      "interval_cost_eur": 2.5130900278759003
+      "interval_cost_eur": 2.513901104364395
     },
     {
       "interval": 35,
       "date": "2024-11-15T06:45:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.6157562255859375,
-      "water_level_end_m": 0.5968231201171874,
-      "volume_start_m3": 466,
-      "volume_end_m3": 447,
+      "water_level_start_m": 0.6527618408203124,
+      "water_level_end_m": 0.6372711181640625,
+      "volume_start_m3": 510,
+      "volume_end_m3": 491,
       "inflow_m3": 510.267334,
-      "outflow_m3": 466.44924751281735,
+      "outflow_m3": 467.1403273773193,
       "electricity_price_cents_per_kwh": 5.434,
-      "interval_cost_eur": 2.511928215608597
+      "interval_cost_eur": 2.512870818014145
     },
     {
       "interval": 36,
       "date": "2024-11-15T07:00:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.5968231201171874,
-      "water_level_end_m": 0.7250518798828125,
-      "volume_start_m3": 447,
-      "volume_end_m3": 614,
+      "water_level_start_m": 0.6372711181640625,
+      "water_level_end_m": 0.7508697509765623,
+      "volume_start_m3": 491,
+      "volume_end_m3": 658,
       "inflow_m3": 696.9837646,
-      "outflow_m3": 466.0956717681884,
+      "outflow_m3": 466.85103813171384,
       "electricity_price_cents_per_kwh": 4.147,
-      "interval_cost_eur": 1.916629806933403
+      "interval_cost_eur": 1.9174160780954361
     },
     {
       "interval": 37,
       "date": "2024-11-15T07:15:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.7250518798828125,
-      "water_level_end_m": 0.8352081298828125,
-      "volume_start_m3": 614,
-      "volume_end_m3": 824,
+      "water_level_start_m": 0.7508697509765623,
+      "water_level_end_m": 0.8550018310546876,
+      "volume_start_m3": 658,
+      "volume_end_m3": 868,
       "inflow_m3": 739.5823975,
-      "outflow_m3": 468.49034385681153,
+      "outflow_m3": 468.97249259948734,
       "electricity_price_cents_per_kwh": 4.147,
-      "interval_cost_eur": 1.9191224538087845
+      "interval_cost_eur": 1.9196243290185928
     },
     {
       "interval": 38,
       "date": "2024-11-15T07:30:00.000Z",
       "active_pumps": [
-        "1.1"
+        "2.1"
       ],
-      "water_level_start_m": 0.8352081298828125,
-      "water_level_end_m": 0.9272918701171875,
-      "volume_start_m3": 824,
-      "volume_end_m3": 1046,
+      "water_level_start_m": 0.8550018310546876,
+      "water_level_end_m": 0.9436431884765624,
+      "volume_start_m3": 868,
+      "volume_end_m3": 1090,
       "inflow_m3": 751.4499512,
-      "outflow_m3": 470.5475118255615,
+      "outflow_m3": 470.91715919494624,
       "electricity_price_cents_per_kwh": 4.147,
-      "interval_cost_eur": 1.9212637880373
+      "interval_cost_eur": 1.9216485590314865
     },
     {
       "interval": 39,
       "date": "2024-11-15T07:45:00.000Z",
       "active_pumps": [
-        "1.1",
         "2.1"
       ],
-      "water_level_start_m": 0.9272918701171875,
-      "water_level_end_m": 0.8197174072265625,
-      "volume_start_m3": 1046,
-      "volume_end_m3": 790,
+      "water_level_start_m": 0.9436431884765624,
+      "water_level_end_m": 1.0365875244140625,
+      "volume_start_m3": 1090,
+      "volume_end_m3": 1363,
       "inflow_m3": 802.270813,
-      "outflow_m3": 944.534351348877,
+      "outflow_m3": 472.57253654479985,
       "electricity_price_cents_per_kwh": 4.147,
-      "interval_cost_eur": 3.8461076192378996
+      "interval_cost_eur": 1.9233716639184952
     },
     {
       "interval": 40,
       "date": "2024-11-15T08:00:00.000Z",
       "active_pumps": [
-        "1.1",
         "2.1"
       ],
-      "water_level_start_m": 0.8197174072265625,
-      "water_level_end_m": 0.7336578369140625,
-      "volume_start_m3": 790,
-      "volume_end_m3": 628,
+      "water_level_start_m": 1.0365875244140625,
+      "water_level_end_m": 1.1433013916015626,
+      "volume_start_m3": 1363,
+      "volume_end_m3": 1730,
       "inflow_m3": 896.1231689,
-      "outflow_m3": 940.5164451599121,
+      "outflow_m3": 474.30827201843266,
       "electricity_price_cents_per_kwh": 1.127,
-      "interval_cost_eur": 1.0440920767307282
+      "interval_cost_eur": 0.5231917225313187
     },
     {
       "interval": 41,
       "date": "2024-11-15T08:15:00.000Z",
       "active_pumps": [
-        "1.1",
         "2.1"
       ],
-      "water_level_start_m": 0.7336578369140625,
-      "water_level_end_m": 0.6467376708984374,
-      "volume_start_m3": 628,
-      "volume_end_m3": 502,
+      "water_level_start_m": 1.1433013916015626,
+      "water_level_end_m": 1.2448516845703124,
+      "volume_start_m3": 1730,
+      "volume_end_m3": 2133,
       "inflow_m3": 932.9987183,
-      "outflow_m3": 937.3021202087402,
+      "outflow_m3": 476.3011534881592,
       "electricity_price_cents_per_kwh": 1.127,
-      "interval_cost_eur": 1.0431828035831452
+      "interval_cost_eur": 0.5237554718828201
     },
     {
       "interval": 42,
       "date": "2024-11-15T08:30:00.000Z",
       "active_pumps": [
-        "1.1",
         "2.1"
       ],
-      "water_level_start_m": 0.6467376708984374,
-      "water_level_end_m": 0.4935516357421875,
-      "volume_start_m3": 502,
-      "volume_end_m3": 372,
+      "water_level_start_m": 1.2448516845703124,
+      "water_level_end_m": 1.3343536376953122,
+      "volume_start_m3": 2133,
+      "volume_end_m3": 2532,
       "inflow_m3": 928.5632935,
-      "outflow_m3": 934.0556520080568,
+      "outflow_m3": 478.1976052093506,
       "electricity_price_cents_per_kwh": 1.127,
-      "interval_cost_eur": 1.0422644377040864
+      "interval_cost_eur": 0.5242919430398941
     },
     {
       "interval": 43,
@@ -678,14 +673,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.4935516357421875,
-      "water_level_end_m": 0.7990631103515624,
-      "volume_start_m3": 372,
-      "volume_end_m3": 748,
+      "water_level_start_m": 1.3343536376953122,
+      "water_level_end_m": 1.4118072509765622,
+      "volume_start_m3": 2532,
+      "volume_end_m3": 2908,
       "inflow_m3": 905.6112061,
-      "outflow_m3": 464.1670767974853,
+      "outflow_m3": 479.86905418396,
       "electricity_price_cents_per_kwh": 1.127,
-      "interval_cost_eur": 0.5203229657506943
+      "interval_cost_eur": 0.5247647650766373
     },
     {
       "interval": 44,
@@ -693,14 +688,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.7990631103515624,
-      "water_level_end_m": 0.9763458251953125,
-      "volume_start_m3": 748,
-      "volume_end_m3": 1180,
+      "water_level_start_m": 1.4118072509765622,
+      "water_level_end_m": 1.4935638427734372,
+      "volume_start_m3": 2908,
+      "volume_end_m3": 3340,
       "inflow_m3": 961.814209,
-      "outflow_m3": 469.8725035858154,
+      "outflow_m3": 481.3155004119873,
       "electricity_price_cents_per_kwh": 1.298,
-      "interval_cost_eur": 0.6011305496120453
+      "interval_cost_eur": 0.6048587147426605
     },
     {
       "interval": 45,
@@ -708,14 +703,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.9763458251953125,
-      "water_level_end_m": 1.1527679443359375,
-      "volume_start_m3": 1180,
-      "volume_end_m3": 1768,
+      "water_level_start_m": 1.4935638427734372,
+      "water_level_end_m": 1.5959747314453123,
+      "volume_start_m3": 3340,
+      "volume_end_m3": 3928,
       "inflow_m3": 1117.824463,
-      "outflow_m3": 473.18325828552247,
+      "outflow_m3": 482.84230476379395,
       "electricity_price_cents_per_kwh": 1.298,
-      "interval_cost_eur": 0.6022092041301728
+      "interval_cost_eur": 0.6053561525058746
     },
     {
       "interval": 46,
@@ -723,14 +718,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.1527679443359375,
-      "water_level_end_m": 1.2741119384765622,
-      "volume_start_m3": 1768,
-      "volume_end_m3": 2260,
+      "water_level_start_m": 1.5959747314453123,
+      "water_level_end_m": 1.6760101318359377,
+      "volume_start_m3": 3928,
+      "volume_end_m3": 4420,
       "inflow_m3": 1021.392761,
-      "outflow_m3": 476.47794136047366,
+      "outflow_m3": 484.75482810974125,
       "electricity_price_cents_per_kwh": 1.298,
-      "interval_cost_eur": 0.603282622461319
+      "interval_cost_eur": 0.6059792587566376
     },
     {
       "interval": 47,
@@ -738,14 +733,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.2741119384765622,
-      "water_level_end_m": 1.3988983154296875,
-      "volume_start_m3": 2260,
-      "volume_end_m3": 2846,
+      "water_level_start_m": 1.6760101318359377,
+      "water_level_end_m": 1.7646514892578125,
+      "volume_start_m3": 4420,
+      "volume_end_m3": 5006,
       "inflow_m3": 1115.496216,
-      "outflow_m3": 478.7440404510498,
+      "outflow_m3": 486.24948921203617,
       "electricity_price_cents_per_kwh": 1.298,
-      "interval_cost_eur": 0.6040209248256684
+      "interval_cost_eur": 0.6064662241458892
     },
     {
       "interval": 48,
@@ -753,14 +748,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.3988983154296875,
-      "water_level_end_m": 1.5150787353515622,
-      "volume_start_m3": 2846,
-      "volume_end_m3": 3460,
+      "water_level_start_m": 1.7646514892578125,
+      "water_level_end_m": 1.8515716552734374,
+      "volume_start_m3": 5006,
+      "volume_end_m3": 5620,
       "inflow_m3": 1143.809082,
-      "outflow_m3": 481.0744260406494,
+      "outflow_m3": 487.90486656188966,
       "electricity_price_cents_per_kwh": 0.627,
-      "interval_cost_eur": 0.2921395745801926
+      "interval_cost_eur": 0.2932145460176468
     },
     {
       "interval": 49,
@@ -768,14 +763,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.5150787353515622,
-      "water_level_end_m": 1.6303985595703123,
-      "volume_start_m3": 3460,
-      "volume_end_m3": 4133,
+      "water_level_start_m": 1.8515716552734374,
+      "water_level_end_m": 1.9419342041015624,
+      "volume_start_m3": 5620,
+      "volume_end_m3": 6293,
       "inflow_m3": 1202.428223,
-      "outflow_m3": 483.24409538269043,
+      "outflow_m3": 489.5281006622315,
       "electricity_price_cents_per_kwh": 0.627,
-      "interval_cost_eur": 0.2924810360956192
+      "interval_cost_eur": 0.2934700098180771
     },
     {
       "interval": 50,
@@ -783,14 +778,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.6303985595703123,
-      "water_level_end_m": 1.7388336181640625,
-      "volume_start_m3": 4133,
-      "volume_end_m3": 4831,
+      "water_level_start_m": 1.9419342041015624,
+      "water_level_end_m": 2.029714965820313,
+      "volume_start_m3": 6293,
+      "volume_end_m3": 6991,
       "inflow_m3": 1227.925537,
-      "outflow_m3": 485.39769309997564,
+      "outflow_m3": 491.2156212615967,
       "electricity_price_cents_per_kwh": 0.627,
-      "interval_cost_eur": 0.29281996826648715
+      "interval_cost_eur": 0.2937355909967423
     },
     {
       "interval": 51,
@@ -798,275 +793,276 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.7388336181640625,
-      "water_level_end_m": 1.8429656982421874,
-      "volume_start_m3": 4831,
-      "volume_end_m3": 5555,
+      "water_level_start_m": 2.029714965820313,
+      "water_level_end_m": 2.1166351318359373,
+      "volume_start_m3": 6991,
+      "volume_end_m3": 7715,
       "inflow_m3": 1253.703247,
-      "outflow_m3": 487.42271781921386,
+      "outflow_m3": 492.8549269866943,
       "electricity_price_cents_per_kwh": 0.627,
-      "interval_cost_eur": 0.2931386656808853
+      "interval_cost_eur": 0.29399358414173127
     },
     {
       "interval": 52,
       "date": "2024-11-15T11:00:00.000Z",
       "active_pumps": [
+        "2.1",
         "2.4"
       ],
-      "water_level_start_m": 1.8429656982421874,
-      "water_level_end_m": 1.8756683349609375,
-      "volume_start_m3": 5555,
-      "volume_end_m3": 5793,
+      "water_level_start_m": 2.1166351318359373,
+      "water_level_end_m": 2.0822113037109373,
+      "volume_start_m3": 7715,
+      "volume_end_m3": 7424,
       "inflow_m3": 1252.558899,
-      "outflow_m3": 942.8178680419924,
+      "outflow_m3": 1446.327120437622,
       "electricity_price_cents_per_kwh": 0.369,
-      "interval_cost_eur": 0.31935397278900146
+      "interval_cost_eur": 0.4932481839357376
     },
     {
       "interval": 53,
       "date": "2024-11-15T11:15:00.000Z",
       "active_pumps": [
+        "2.1",
         "2.4"
       ],
-      "water_level_start_m": 1.8756683349609375,
-      "water_level_end_m": 1.9040679931640623,
-      "volume_start_m3": 5793,
-      "volume_end_m3": 6005,
+      "water_level_start_m": 2.0822113037109373,
+      "water_level_end_m": 2.0443450927734377,
+      "volume_start_m3": 7424,
+      "volume_end_m3": 7107,
       "inflow_m3": 1226.36731,
-      "outflow_m3": 943.8970550537109,
+      "outflow_m3": 1444.5482691192628,
       "electricity_price_cents_per_kwh": 0.369,
-      "interval_cost_eur": 0.31944045491180423
+      "interval_cost_eur": 0.4930976076570511
     },
     {
       "interval": 54,
       "date": "2024-11-15T11:30:00.000Z",
       "active_pumps": [
-        "1.4",
+        "2.1",
         "2.4"
       ],
-      "water_level_start_m": 1.9040679931640623,
-      "water_level_end_m": 1.7878875732421875,
-      "volume_start_m3": 6005,
-      "volume_end_m3": 5167,
+      "water_level_start_m": 2.0443450927734377,
+      "water_level_end_m": 2.0004547119140623,
+      "volume_start_m3": 7107,
+      "volume_end_m3": 6754,
       "inflow_m3": 1190.183716,
-      "outflow_m3": 1889.6684875488281,
+      "outflow_m3": 1442.5915326690674,
       "electricity_price_cents_per_kwh": 0.369,
-      "interval_cost_eur": 0.6390311156158447
+      "interval_cost_eur": 0.4929319737504959
     },
     {
       "interval": 55,
       "date": "2024-11-15T11:45:00.000Z",
       "active_pumps": [
-        "1.4",
+        "2.1",
         "2.4"
       ],
-      "water_level_start_m": 1.7878875732421875,
-      "water_level_end_m": 1.6613800048828125,
-      "volume_start_m3": 5167,
-      "volume_end_m3": 4330,
+      "water_level_start_m": 2.0004547119140623,
+      "water_level_end_m": 1.9557037353515625,
+      "volume_start_m3": 6754,
+      "volume_end_m3": 6402,
       "inflow_m3": 1191.711426,
-      "outflow_m3": 1882.0005798339844,
+      "outflow_m3": 1440.3234972381592,
       "electricity_price_cents_per_kwh": 0.369,
-      "interval_cost_eur": 0.6384166373748779
+      "interval_cost_eur": 0.4927399889951706
     },
     {
       "interval": 56,
       "date": "2024-11-15T12:00:00.000Z",
       "active_pumps": [
-        "1.4",
+        "2.1",
         "2.4"
       ],
-      "water_level_start_m": 1.6613800048828125,
-      "water_level_end_m": 1.5193817138671872,
-      "volume_start_m3": 4330,
-      "volume_end_m3": 3483,
+      "water_level_start_m": 1.9557037353515625,
+      "water_level_end_m": 1.9083709716796875,
+      "volume_start_m3": 6402,
+      "volume_end_m3": 6040,
       "inflow_m3": 1181.040527,
-      "outflow_m3": 1873.6510803222657,
+      "outflow_m3": 1438.010990524292,
       "electricity_price_cents_per_kwh": 0.394,
-      "interval_cost_eur": 0.6809553666809082
+      "interval_cost_eur": 0.5259144457836151
     },
     {
       "interval": 57,
       "date": "2024-11-15T12:15:00.000Z",
       "active_pumps": [
-        "1.4",
+        "2.1",
         "2.4"
       ],
-      "water_level_start_m": 1.5193817138671872,
-      "water_level_end_m": 1.3472625732421875,
-      "volume_start_m3": 3483,
-      "volume_end_m3": 2593,
+      "water_level_start_m": 1.9083709716796875,
+      "water_level_end_m": 1.8541534423828123,
+      "volume_start_m3": 6040,
+      "volume_end_m3": 5635,
       "inflow_m3": 1138.482544,
-      "outflow_m3": 1864.2791931152344,
+      "outflow_m3": 1435.5650699615478,
       "electricity_price_cents_per_kwh": 0.394,
-      "interval_cost_eur": 0.6801534549987792
+      "interval_cost_eur": 0.525693376138687
     },
     {
       "interval": 58,
       "date": "2024-11-15T12:30:00.000Z",
       "active_pumps": [
-        "1.4",
+        "2.1",
         "2.4"
       ],
-      "water_level_start_m": 1.3472625732421875,
-      "water_level_end_m": 1.1329742431640624,
-      "volume_start_m3": 2593,
-      "volume_end_m3": 1694,
+      "water_level_start_m": 1.8541534423828123,
+      "water_level_end_m": 1.7956329345703124,
+      "volume_start_m3": 5635,
+      "volume_end_m3": 5221,
       "inflow_m3": 1129.16748,
-      "outflow_m3": 1852.9193298339844,
+      "outflow_m3": 1432.7633791351318,
       "electricity_price_cents_per_kwh": 0.394,
-      "interval_cost_eur": 0.679181440838623
+      "interval_cost_eur": 0.5254401509090423
     },
     {
       "interval": 59,
       "date": "2024-11-15T12:45:00.000Z",
       "active_pumps": [
-        "1.4",
         "2.4"
       ],
-      "water_level_start_m": 1.1329742431640624,
-      "water_level_end_m": 0.8274627685546876,
-      "volume_start_m3": 1694,
-      "volume_end_m3": 807,
+      "water_level_start_m": 1.7956329345703124,
+      "water_level_end_m": 1.8137054443359373,
+      "volume_start_m3": 5221,
+      "volume_end_m3": 5348,
       "inflow_m3": 1141.781494,
-      "outflow_m3": 1838.7763000488285,
+      "outflow_m3": 941.2558868408205,
       "electricity_price_cents_per_kwh": 0.394,
-      "interval_cost_eur": 0.6779712832092284
+      "interval_cost_eur": 0.340856768862915
     },
     {
       "interval": 60,
       "date": "2024-11-15T13:00:00.000Z",
       "active_pumps": [
-        "1.4"
+        "1.1"
       ],
-      "water_level_start_m": 0.8274627685546876,
-      "water_level_end_m": 0.8980316162109374,
-      "volume_start_m3": 807,
-      "volume_end_m3": 970,
+      "water_level_start_m": 1.8137054443359373,
+      "water_level_end_m": 1.9032073974609374,
+      "volume_start_m3": 5348,
+      "volume_end_m3": 5996,
       "inflow_m3": 1177.411011,
-      "outflow_m3": 909.3062713623049,
+      "outflow_m3": 488.82094917297366,
       "electricity_price_cents_per_kwh": 0.507,
-      "interval_cost_eur": 0.4350973359695434
+      "interval_cost_eur": 0.2372135093450546
     },
     {
       "interval": 61,
       "date": "2024-11-15T13:15:00.000Z",
       "active_pumps": [
-        "1.4"
+        "1.1"
       ],
-      "water_level_start_m": 0.8980316162109374,
-      "water_level_end_m": 0.9290130615234375,
-      "volume_start_m3": 970,
-      "volume_end_m3": 1049,
+      "water_level_start_m": 1.9032073974609374,
+      "water_level_end_m": 1.9763580322265626,
+      "volume_start_m3": 5996,
+      "volume_end_m3": 6560,
       "inflow_m3": 1093.662354,
-      "outflow_m3": 911.635043334961,
+      "outflow_m3": 490.49239814758306,
       "electricity_price_cents_per_kwh": 0.507,
-      "interval_cost_eur": 0.43535374787750236
+      "interval_cost_eur": 0.23742621633052824
     },
     {
       "interval": 62,
       "date": "2024-11-15T13:30:00.000Z",
       "active_pumps": [
-        "1.4"
+        "1.1"
       ],
-      "water_level_start_m": 0.9290130615234375,
-      "water_level_end_m": 0.8532806396484376,
-      "volume_start_m3": 1049,
-      "volume_end_m3": 863,
+      "water_level_start_m": 1.9763580322265626,
+      "water_level_end_m": 2.013363647460938,
+      "volume_start_m3": 6560,
+      "volume_end_m3": 6859,
       "inflow_m3": 828.3009644,
-      "outflow_m3": 912.6574310302734,
+      "outflow_m3": 491.8584862518311,
       "electricity_price_cents_per_kwh": 0.507,
-      "interval_cost_eur": 0.4354663189590454
+      "interval_cost_eur": 0.23760006338596343
     },
     {
       "interval": 63,
       "date": "2024-11-15T13:45:00.000Z",
       "active_pumps": [
-        "1.4"
+        "1.1"
       ],
-      "water_level_start_m": 0.8532806396484376,
-      "water_level_end_m": 0.9935577392578125,
-      "volume_start_m3": 863,
-      "volume_end_m3": 1232,
+      "water_level_start_m": 2.013363647460938,
+      "water_level_end_m": 2.115774536132812,
+      "volume_start_m3": 6859,
+      "volume_end_m3": 7713,
       "inflow_m3": 1383.582397,
-      "outflow_m3": 910.1582611083986,
+      "outflow_m3": 492.54956611633304,
       "electricity_price_cents_per_kwh": 0.507,
-      "interval_cost_eur": 0.4351911452041625
+      "interval_cost_eur": 0.23768800954341887
     },
     {
       "interval": 64,
       "date": "2024-11-15T14:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.9935577392578125,
-      "water_level_end_m": 1.2035430908203124,
-      "volume_start_m3": 1232,
-      "volume_end_m3": 1963,
+      "water_level_start_m": 2.115774536132812,
+      "water_level_end_m": 2.1992523193359377,
+      "volume_start_m3": 7713,
+      "volume_end_m3": 8444,
       "inflow_m3": 1260.978638,
-      "outflow_m3": 473.5046907806397,
+      "outflow_m3": 494.46208946228023,
       "electricity_price_cents_per_kwh": 0.838,
-      "interval_cost_eur": 0.3888590689945221
+      "interval_cost_eur": 0.3932672768497467
     },
     {
       "interval": 65,
       "date": "2024-11-15T14:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.2035430908203124,
-      "water_level_end_m": 1.3438201904296876,
-      "volume_start_m3": 1963,
-      "volume_end_m3": 2578,
+      "water_level_start_m": 2.1992523193359377,
+      "water_level_end_m": 2.266378784179687,
+      "volume_start_m3": 8444,
+      "volume_end_m3": 9059,
       "inflow_m3": 1144.957275,
-      "outflow_m3": 477.4261672210693,
+      "outflow_m3": 496.0210370635986,
       "electricity_price_cents_per_kwh": 0.838,
-      "interval_cost_eur": 0.38968391770362854
+      "interval_cost_eur": 0.3935951880168915
     },
     {
       "interval": 66,
       "date": "2024-11-15T14:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.3438201904296876,
-      "water_level_end_m": 1.4651641845703123,
-      "volume_start_m3": 2578,
-      "volume_end_m3": 3185,
+      "water_level_start_m": 2.266378784179687,
+      "water_level_end_m": 2.3300628662109375,
+      "volume_start_m3": 9059,
+      "volume_end_m3": 9666,
       "inflow_m3": 1136.862427,
-      "outflow_m3": 480.04584205627447,
+      "outflow_m3": 497.2746237945556,
       "electricity_price_cents_per_kwh": 0.838,
-      "interval_cost_eur": 0.39023494368553163
+      "interval_cost_eur": 0.39385886916160584
     },
     {
       "interval": 67,
       "date": "2024-11-15T14:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.4651641845703123,
-      "water_level_end_m": 1.5692962646484374,
-      "volume_start_m3": 3185,
-      "volume_end_m3": 3768,
+      "water_level_start_m": 2.3300628662109375,
+      "water_level_end_m": 2.3903045654296866,
+      "volume_start_m3": 9666,
+      "volume_end_m3": 10249,
       "inflow_m3": 1112.432251,
-      "outflow_m3": 482.3119411468506,
+      "outflow_m3": 498.4639240264893,
       "electricity_price_cents_per_kwh": 0.838,
-      "interval_cost_eur": 0.39071159806251526
+      "interval_cost_eur": 0.39410902819633487
     },
     {
       "interval": 68,
       "date": "2024-11-15T15:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.5692962646484374,
-      "water_level_end_m": 1.6622406005859374,
-      "volume_start_m3": 3768,
-      "volume_end_m3": 4335,
+      "water_level_start_m": 2.3903045654296866,
+      "water_level_end_m": 2.4462432861328125,
+      "volume_start_m3": 10249,
+      "volume_end_m3": 10816,
       "inflow_m3": 1096.901367,
-      "outflow_m3": 484.25660774230954,
+      "outflow_m3": 499.5889377593994,
       "electricity_price_cents_per_kwh": 0.906,
-      "interval_cost_eur": 0.4228583550739288
+      "interval_cost_eur": 0.4263450747013092
     },
     {
       "interval": 69,
@@ -1074,14 +1070,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.6622406005859374,
-      "water_level_end_m": 1.7483001708984374,
-      "volume_start_m3": 4335,
-      "volume_end_m3": 4897,
+      "water_level_start_m": 2.4462432861328125,
+      "water_level_end_m": 2.500460815429687,
+      "volume_start_m3": 10816,
+      "volume_end_m3": 11378,
       "inflow_m3": 1091.756226,
-      "outflow_m3": 485.9923432159424,
+      "outflow_m3": 500.6335933685303,
       "electricity_price_cents_per_kwh": 0.906,
-      "interval_cost_eur": 0.4232530780506134
+      "interval_cost_eur": 0.42658263945579533
     },
     {
       "interval": 70,
@@ -1089,14 +1085,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.7483001708984374,
-      "water_level_end_m": 1.8291961669921872,
-      "volume_start_m3": 4897,
-      "volume_end_m3": 5459,
+      "water_level_start_m": 2.500460815429687,
+      "water_level_end_m": 2.552957153320312,
+      "volume_start_m3": 11378,
+      "volume_end_m3": 11940,
       "inflow_m3": 1091.516113,
-      "outflow_m3": 487.59950569152835,
+      "outflow_m3": 501.6461057281494,
       "electricity_price_cents_per_kwh": 0.906,
-      "interval_cost_eur": 0.4236185622882843
+      "interval_cost_eur": 0.42681289452552795
     },
     {
       "interval": 71,
@@ -1104,14 +1100,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.8291961669921872,
-      "water_level_end_m": 1.9057891845703123,
-      "volume_start_m3": 5459,
-      "volume_end_m3": 6021,
+      "water_level_start_m": 2.552957153320312,
+      "water_level_end_m": 2.604592895507812,
+      "volume_start_m3": 11940,
+      "volume_end_m3": 12502,
       "inflow_m3": 1091.375122,
-      "outflow_m3": 489.1102384185791,
+      "outflow_m3": 502.6264748382569,
       "electricity_price_cents_per_kwh": 0.906,
-      "interval_cost_eur": 0.423962117471695
+      "interval_cost_eur": 0.4270358399105072
     },
     {
       "interval": 72,
@@ -1119,14 +1115,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.9057891845703123,
-      "water_level_end_m": 1.9823822021484376,
-      "volume_start_m3": 6021,
-      "volume_end_m3": 6610,
+      "water_level_start_m": 2.604592895507812,
+      "water_level_end_m": 2.657949829101562,
+      "volume_start_m3": 12502,
+      "volume_end_m3": 13091,
       "inflow_m3": 1118.475342,
-      "outflow_m3": 490.5406130218506,
+      "outflow_m3": 503.59077232360846,
       "electricity_price_cents_per_kwh": 4.719,
-      "interval_cost_eur": 2.209947277321816
+      "interval_cost_eur": 2.225405033783913
     },
     {
       "interval": 73,
@@ -1134,14 +1130,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.9823822021484376,
-      "water_level_end_m": 2.0563934326171873,
-      "volume_start_m3": 6610,
-      "volume_end_m3": 7206,
+      "water_level_start_m": 2.657949829101562,
+      "water_level_end_m": 2.709585571289062,
+      "volume_start_m3": 13091,
+      "volume_end_m3": 13687,
       "inflow_m3": 1125.649414,
-      "outflow_m3": 491.97098762512206,
+      "outflow_m3": 504.58721305847166,
       "electricity_price_cents_per_kwh": 4.719,
-      "interval_cost_eur": 2.211641538805962
+      "interval_cost_eur": 2.2265853058290483
     },
     {
       "interval": 74,
@@ -1149,14 +1145,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.0563934326171873,
-      "water_level_end_m": 2.1261016845703127,
-      "volume_start_m3": 7206,
-      "volume_end_m3": 7797,
+      "water_level_start_m": 2.709585571289062,
+      "water_level_end_m": 2.7603607177734375,
+      "volume_start_m3": 13687,
+      "volume_end_m3": 14278,
       "inflow_m3": 1120.058594,
-      "outflow_m3": 493.353147354126,
+      "outflow_m3": 505.5515105438232,
       "electricity_price_cents_per_kwh": 4.719,
-      "interval_cost_eur": 2.21327869035244
+      "interval_cost_eur": 2.2277275045824054
     },
     {
       "interval": 75,
@@ -1164,14 +1160,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.1261016845703127,
-      "water_level_end_m": 2.1923675537109375,
-      "volume_start_m3": 7797,
-      "volume_end_m3": 8385,
+      "water_level_start_m": 2.7603607177734375,
+      "water_level_end_m": 2.8094146728515623,
+      "volume_start_m3": 14278,
+      "volume_end_m3": 14866,
       "inflow_m3": 1117.544067,
-      "outflow_m3": 494.6549489593506,
+      "outflow_m3": 506.49973640441897,
       "electricity_price_cents_per_kwh": 4.719,
-      "interval_cost_eur": 2.214820658669472
+      "interval_cost_eur": 2.228850666689873
     },
     {
       "interval": 76,
@@ -1179,14 +1175,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.1923675537109375,
-      "water_level_end_m": 2.2594940185546877,
-      "volume_start_m3": 8385,
-      "volume_end_m3": 8996,
+      "water_level_start_m": 2.8094146728515623,
+      "water_level_end_m": 2.860189819335937,
+      "volume_start_m3": 14866,
+      "volume_end_m3": 15477,
       "inflow_m3": 1140.681641,
-      "outflow_m3": 495.8924640655518,
+      "outflow_m3": 507.41581901550296,
       "electricity_price_cents_per_kwh": 13.573,
-      "interval_cost_eur": 6.374582835030557
+      "interval_cost_eur": 6.413841493849755
     },
     {
       "interval": 77,
@@ -1194,14 +1190,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.2594940185546877,
-      "water_level_end_m": 2.324899291992187,
-      "volume_start_m3": 8996,
-      "volume_end_m3": 9616,
+      "water_level_start_m": 2.860189819335937,
+      "water_level_end_m": 2.910104370117187,
+      "volume_start_m3": 15477,
+      "volume_end_m3": 16097,
       "inflow_m3": 1149.093384,
-      "outflow_m3": 497.1460507965088,
+      "outflow_m3": 508.3640448760986,
       "electricity_price_cents_per_kwh": 13.573,
-      "interval_cost_eur": 6.378853651471139
+      "interval_cost_eur": 6.417071983208658
     },
     {
       "interval": 78,
@@ -1209,14 +1205,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.324899291992187,
-      "water_level_end_m": 2.3877227783203123,
-      "volume_start_m3": 9616,
-      "volume_end_m3": 10231,
+      "water_level_start_m": 2.910104370117187,
+      "water_level_end_m": 2.9582977294921866,
+      "volume_start_m3": 16097,
+      "volume_end_m3": 16712,
       "inflow_m3": 1144.483276,
-      "outflow_m3": 498.36749427795417,
+      "outflow_m3": 509.2961991119385,
       "electricity_price_cents_per_kwh": 13.573,
-      "interval_cost_eur": 6.38301495979786
+      "interval_cost_eur": 6.420247718510629
     },
     {
       "interval": 79,
@@ -1224,14 +1220,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.3877227783203123,
-      "water_level_end_m": 2.4479644775390623,
-      "volume_start_m3": 10231,
-      "volume_end_m3": 10838,
+      "water_level_start_m": 2.9582977294921866,
+      "water_level_end_m": 3.0056304931640616,
+      "volume_start_m3": 16712,
+      "volume_end_m3": 17319,
       "inflow_m3": 1136.647705,
-      "outflow_m3": 499.54072288513186,
+      "outflow_m3": 510.1962100982666,
       "electricity_price_cents_per_kwh": 13.573,
-      "interval_cost_eur": 6.38701200595379
+      "interval_cost_eur": 6.423313945698739
     },
     {
       "interval": 80,
@@ -1239,14 +1235,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.4479644775390623,
-      "water_level_end_m": 2.5090667724609377,
-      "volume_start_m3": 10838,
-      "volume_end_m3": 11470,
+      "water_level_start_m": 3.0056304931640616,
+      "water_level_end_m": 3.0529632568359375,
+      "volume_start_m3": 17319,
+      "volume_end_m3": 17951,
       "inflow_m3": 1161.056274,
-      "outflow_m3": 500.66573661804205,
+      "outflow_m3": 511.0801494598389,
       "electricity_price_cents_per_kwh": 17.324,
-      "interval_cost_eur": 8.157002515354156
+      "interval_cost_eur": 8.202288481235504
     },
     {
       "interval": 81,
@@ -1254,14 +1250,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.5090667724609377,
-      "water_level_end_m": 2.5684478759765623,
-      "volume_start_m3": 11470,
-      "volume_end_m3": 12103,
+      "water_level_start_m": 3.0529632568359375,
+      "water_level_end_m": 3.1002960205078125,
+      "volume_start_m3": 17951,
+      "volume_end_m3": 18584,
       "inflow_m3": 1162.371582,
-      "outflow_m3": 501.806821975708,
+      "outflow_m3": 511.96408882141117,
       "electricity_price_cents_per_kwh": 17.324,
-      "interval_cost_eur": 8.161964403591156
+      "interval_cost_eur": 8.206132197475434
     },
     {
       "interval": 82,
@@ -1269,14 +1265,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.5684478759765623,
-      "water_level_end_m": 2.6252471923828127,
-      "volume_start_m3": 12103,
-      "volume_end_m3": 12731,
+      "water_level_start_m": 3.1002960205078125,
+      "water_level_end_m": 3.146768188476562,
+      "volume_start_m3": 18584,
+      "volume_end_m3": 19212,
       "inflow_m3": 1157.39917,
-      "outflow_m3": 502.9157640838623,
+      "outflow_m3": 512.8480281829834,
       "electricity_price_cents_per_kwh": 17.324,
-      "interval_cost_eur": 8.166786520328522
+      "interval_cost_eur": 8.209975913715363
     },
     {
       "interval": 83,
@@ -1284,14 +1280,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.6252471923828127,
-      "water_level_end_m": 2.6811859130859377,
-      "volume_start_m3": 12731,
-      "volume_end_m3": 13356,
+      "water_level_start_m": 3.146768188476562,
+      "water_level_end_m": 3.191519165039062,
+      "volume_start_m3": 19212,
+      "volume_end_m3": 19837,
       "inflow_m3": 1154.643066,
-      "outflow_m3": 503.97649131774904,
+      "outflow_m3": 513.7158959197999,
       "electricity_price_cents_per_kwh": 17.324,
-      "interval_cost_eur": 8.171398979816438
+      "interval_cost_eur": 8.213749744205476
     },
     {
       "interval": 84,
@@ -1299,14 +1295,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.6811859130859377,
-      "water_level_end_m": 2.737985229492187,
-      "volume_start_m3": 13356,
-      "volume_end_m3": 14017,
+      "water_level_start_m": 3.191519165039062,
+      "water_level_end_m": 3.238851928710938,
+      "volume_start_m3": 19837,
+      "volume_end_m3": 20498,
       "inflow_m3": 1190.730713,
-      "outflow_m3": 505.02114692687985,
+      "outflow_m3": 514.5516204071045,
       "electricity_price_cents_per_kwh": 8.68,
-      "interval_cost_eur": 4.096465751838684
+      "interval_cost_eur": 4.117229936027527
     },
     {
       "interval": 85,
@@ -1314,14 +1310,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.737985229492187,
-      "water_level_end_m": 2.7947845458984375,
-      "volume_start_m3": 14017,
-      "volume_end_m3": 14689,
+      "water_level_start_m": 3.238851928710938,
+      "water_level_end_m": 3.286184692382813,
+      "volume_start_m3": 20498,
+      "volume_end_m3": 21170,
       "inflow_m3": 1201.16687,
-      "outflow_m3": 506.08187416076663,
+      "outflow_m3": 515.4355597686767,
       "electricity_price_cents_per_kwh": 8.68,
-      "interval_cost_eur": 4.098776774024963
+      "interval_cost_eur": 4.119155787849427
     },
     {
       "interval": 86,
@@ -1329,14 +1325,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.7947845458984375,
-      "water_level_end_m": 2.851583862304687,
-      "volume_start_m3": 14689,
-      "volume_end_m3": 15376,
+      "water_level_start_m": 3.286184692382813,
+      "water_level_end_m": 3.3326568603515625,
+      "volume_start_m3": 21170,
+      "volume_end_m3": 21857,
       "inflow_m3": 1216.380127,
-      "outflow_m3": 507.14260139465335,
+      "outflow_m3": 516.319499130249,
       "electricity_price_cents_per_kwh": 8.68,
-      "interval_cost_eur": 4.101087796211242
+      "interval_cost_eur": 4.121081639671326
     },
     {
       "interval": 87,
@@ -1344,14 +1340,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.851583862304687,
-      "water_level_end_m": 2.9083831787109373,
-      "volume_start_m3": 15376,
-      "volume_end_m3": 16083,
+      "water_level_start_m": 3.3326568603515625,
+      "water_level_end_m": 3.380850219726563,
+      "volume_start_m3": 21857,
+      "volume_end_m3": 22564,
       "inflow_m3": 1236.63916,
-      "outflow_m3": 508.20332862854,
+      "outflow_m3": 517.1873668670654,
       "electricity_price_cents_per_kwh": 8.68,
-      "interval_cost_eur": 4.1033988183975225
+      "interval_cost_eur": 4.122972476005554
     },
     {
       "interval": 88,
@@ -1359,14 +1355,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.9083831787109373,
-      "water_level_end_m": 2.966043090820312,
-      "volume_start_m3": 16083,
-      "volume_end_m3": 16811,
+      "water_level_start_m": 3.380850219726563,
+      "water_level_end_m": 3.4290435791015623,
+      "volume_start_m3": 22564,
+      "volume_end_m3": 23292,
       "inflow_m3": 1257.552979,
-      "outflow_m3": 509.2640558624268,
+      "outflow_m3": 518.0873778533935,
       "electricity_price_cents_per_kwh": 3.148,
-      "interval_cost_eur": 1.4890293292808534
+      "interval_cost_eur": 1.4960011710548402
     },
     {
       "interval": 89,
@@ -1374,14 +1370,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.966043090820312,
-      "water_level_end_m": 3.023703002929687,
-      "volume_start_m3": 16811,
-      "volume_end_m3": 17557,
+      "water_level_start_m": 3.4290435791015623,
+      "water_level_end_m": 3.478097534179687,
+      "volume_start_m3": 23292,
+      "volume_end_m3": 24038,
       "inflow_m3": 1275.307007,
-      "outflow_m3": 510.3408547210694,
+      "outflow_m3": 518.9873888397217,
       "electricity_price_cents_per_kwh": 3.148,
-      "interval_cost_eur": 1.4898801733589173
+      "interval_cost_eur": 1.4967123243141174
     },
     {
       "interval": 90,
@@ -1389,14 +1385,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.023703002929687,
-      "water_level_end_m": 3.0805023193359373,
-      "volume_start_m3": 17557,
-      "volume_end_m3": 18317,
+      "water_level_start_m": 3.478097534179687,
+      "water_level_end_m": 3.527151489257813,
+      "volume_start_m3": 24038,
+      "volume_end_m3": 24798,
       "inflow_m3": 1289.367798,
-      "outflow_m3": 511.4176535797119,
+      "outflow_m3": 519.9034714508057,
       "electricity_price_cents_per_kwh": 3.148,
-      "interval_cost_eur": 1.4907310174369812
+      "interval_cost_eur": 1.497436176738739
     },
     {
       "interval": 91,
@@ -1404,14 +1400,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.0805023193359373,
-      "water_level_end_m": 3.137301635742187,
-      "volume_start_m3": 18317,
-      "volume_end_m3": 19082,
+      "water_level_start_m": 3.527151489257813,
+      "water_level_end_m": 3.5753448486328123,
+      "volume_start_m3": 24798,
+      "volume_end_m3": 25563,
       "inflow_m3": 1294.533447,
-      "outflow_m3": 512.4783808135986,
+      "outflow_m3": 520.8195540618897,
       "electricity_price_cents_per_kwh": 3.148,
-      "interval_cost_eur": 1.491569162349701
+      "interval_cost_eur": 1.4981600291633606
     },
     {
       "interval": 92,
@@ -1419,14 +1415,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.137301635742187,
-      "water_level_end_m": 3.1932403564453127,
-      "volume_start_m3": 19082,
-      "volume_end_m3": 19860,
+      "water_level_start_m": 3.5753448486328123,
+      "water_level_end_m": 3.624398803710937,
+      "volume_start_m3": 25563,
+      "volume_end_m3": 26341,
       "inflow_m3": 1307.493774,
-      "outflow_m3": 513.5391080474853,
+      "outflow_m3": 521.7195650482178,
       "electricity_price_cents_per_kwh": 0.956,
-      "interval_cost_eur": 0.45322153295516965
+      "interval_cost_eur": 0.45518451410293576
     },
     {
       "interval": 93,
@@ -1434,14 +1430,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.1932403564453127,
-      "water_level_end_m": 3.247457885742187,
-      "volume_start_m3": 19860,
-      "volume_end_m3": 20624,
+      "water_level_start_m": 3.624398803710937,
+      "water_level_end_m": 3.671731567382812,
+      "volume_start_m3": 26341,
+      "volume_end_m3": 27105,
       "inflow_m3": 1293.055786,
-      "outflow_m3": 514.5837636566162,
+      "outflow_m3": 522.6356476593019,
       "electricity_price_cents_per_kwh": 0.956,
-      "interval_cost_eur": 0.4534722083473205
+      "interval_cost_eur": 0.4554043371391296
     },
     {
       "interval": 94,
@@ -1449,14 +1445,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.247457885742187,
-      "water_level_end_m": 3.3008148193359377,
-      "volume_start_m3": 20624,
-      "volume_end_m3": 21383,
+      "water_level_start_m": 3.671731567382812,
+      "water_level_end_m": 3.7173431396484373,
+      "volume_start_m3": 27105,
+      "volume_end_m3": 27864,
       "inflow_m3": 1288.882324,
-      "outflow_m3": 515.5962760162354,
+      "outflow_m3": 523.519587020874,
       "electricity_price_cents_per_kwh": 0.956,
-      "interval_cost_eur": 0.4537151706504821
+      "interval_cost_eur": 0.4556164470863342
     },
     {
       "interval": 95,
@@ -1464,705 +1460,726 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.3008148193359377,
-      "water_level_end_m": 3.353311157226563,
-      "volume_start_m3": 21383,
-      "volume_end_m3": 22155,
+      "water_level_start_m": 3.7173431396484373,
+      "water_level_end_m": 3.763815307617187,
+      "volume_start_m3": 27864,
+      "volume_end_m3": 28636,
       "inflow_m3": 1301.915527,
-      "outflow_m3": 516.5927167510986,
+      "outflow_m3": 524.3713831329346,
       "electricity_price_cents_per_kwh": 0.956,
-      "interval_cost_eur": 0.45395427640914915
+      "interval_cost_eur": 0.4558208439445495
     },
     {
       "interval": 96,
       "date": "2024-11-15T22:00:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1"
       ],
-      "water_level_start_m": 3.353311157226563,
-      "water_level_end_m": 3.372244262695313,
-      "volume_start_m3": 22155,
-      "volume_end_m3": 22435,
+      "water_level_start_m": 3.763815307617187,
+      "water_level_end_m": 3.7775848388671873,
+      "volume_start_m3": 28636,
+      "volume_end_m3": 28872,
       "inflow_m3": 1294.727905,
-      "outflow_m3": 992.6592681884766,
+      "outflow_m3": 1050.478501739502,
       "electricity_price_cents_per_kwh": 0.373,
-      "interval_cost_eur": 0.3268532096084594
+      "interval_cost_eur": 0.3558553416538238
     },
     {
       "interval": 97,
       "date": "2024-11-15T22:15:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1"
       ],
-      "water_level_start_m": 3.372244262695313,
-      "water_level_end_m": 3.390316772460938,
-      "volume_start_m3": 22435,
-      "volume_end_m3": 22710,
+      "water_level_start_m": 3.7775848388671873,
+      "water_level_end_m": 3.7913543701171877,
+      "volume_start_m3": 28872,
+      "volume_end_m3": 29103,
       "inflow_m3": 1289.905151,
-      "outflow_m3": 993.2840606689454,
+      "outflow_m3": 1050.9927937316895,
       "electricity_price_cents_per_kwh": 0.373,
-      "interval_cost_eur": 0.32690382095489495
+      "interval_cost_eur": 0.3559034919834137
     },
     {
       "interval": 98,
       "date": "2024-11-15T22:30:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1"
       ],
-      "water_level_start_m": 3.390316772460938,
-      "water_level_end_m": 3.4083892822265627,
-      "volume_start_m3": 22710,
-      "volume_end_m3": 22973,
+      "water_level_start_m": 3.7913543701171877,
+      "water_level_end_m": 3.8042633056640627,
+      "volume_start_m3": 29103,
+      "volume_end_m3": 29322,
       "inflow_m3": 1277.254028,
-      "outflow_m3": 993.8804534912109,
+      "outflow_m3": 1051.507085723877,
       "electricity_price_cents_per_kwh": 0.373,
-      "interval_cost_eur": 0.32695213178558347
+      "interval_cost_eur": 0.3559516423130035
     },
     {
       "interval": 99,
       "date": "2024-11-15T22:45:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1",
+        "2.4"
       ],
-      "water_level_start_m": 3.4083892822265627,
-      "water_level_end_m": 3.422158813476563,
-      "volume_start_m3": 22973,
-      "volume_end_m3": 23185,
+      "water_level_start_m": 3.8042633056640627,
+      "water_level_end_m": 3.7543487548828125,
+      "volume_start_m3": 29322,
+      "volume_end_m3": 28476,
       "inflow_m3": 1226.858643,
-      "outflow_m3": 994.4768463134766,
+      "outflow_m3": 2059.5299235534667,
       "electricity_price_cents_per_kwh": 0.373,
-      "interval_cost_eur": 0.3270004426162719
+      "interval_cost_eur": 0.6840554631069182
     },
     {
       "interval": 100,
       "date": "2024-11-15T23:00:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.422158813476563,
-      "water_level_end_m": 3.435067749023437,
-      "volume_start_m3": 23185,
-      "volume_end_m3": 23382,
+      "water_level_start_m": 3.7543487548828125,
+      "water_level_end_m": 3.6407501220703127,
+      "volume_start_m3": 28476,
+      "volume_end_m3": 26601,
       "inflow_m3": 1211.737305,
-      "outflow_m3": 994.9312408447266,
+      "outflow_m3": 3061.9119438171388,
       "electricity_price_cents_per_kwh": 0.343,
-      "interval_cost_eur": 0.30073398672332763
+      "interval_cost_eur": 0.930304957643509
     },
     {
       "interval": 101,
       "date": "2024-11-15T23:15:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.435067749023437,
-      "water_level_end_m": 3.447976684570313,
-      "volume_start_m3": 23382,
-      "volume_end_m3": 23580,
+      "water_level_start_m": 3.6407501220703127,
+      "water_level_end_m": 3.522848510742187,
+      "volume_start_m3": 26601,
+      "volume_end_m3": 24727,
       "inflow_m3": 1212.380371,
-      "outflow_m3": 995.3572357177735,
+      "outflow_m3": 3050.1715251159667,
       "electricity_price_cents_per_kwh": 0.343,
-      "interval_cost_eur": 0.3007657190383911
+      "interval_cost_eur": 0.9293811782947541
     },
     {
       "interval": 102,
       "date": "2024-11-15T23:30:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.447976684570313,
-      "water_level_end_m": 3.4600250244140627,
-      "volume_start_m3": 23580,
-      "volume_end_m3": 23758,
+      "water_level_start_m": 3.522848510742187,
+      "water_level_end_m": 3.3989227294921873,
+      "volume_start_m3": 24727,
+      "volume_end_m3": 22833,
       "inflow_m3": 1192.425781,
-      "outflow_m3": 995.7832305908204,
+      "outflow_m3": 3037.9863935852054,
       "electricity_price_cents_per_kwh": 0.343,
-      "interval_cost_eur": 0.30079745135345465
+      "interval_cost_eur": 0.9284224073040008
     },
     {
       "interval": 103,
       "date": "2024-11-15T23:45:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1",
+        "2.1",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.4600250244140627,
-      "water_level_end_m": 3.466909790039062,
-      "volume_start_m3": 23758,
-      "volume_end_m3": 23862,
+      "water_level_start_m": 3.3989227294921873,
+      "water_level_end_m": 3.264669799804687,
+      "volume_start_m3": 22833,
+      "volume_end_m3": 20865,
       "inflow_m3": 1118.360596,
-      "outflow_m3": 996.1808258056641,
+      "outflow_m3": 3025.1786640930177,
       "electricity_price_cents_per_kwh": 0.343,
-      "interval_cost_eur": 0.30082706818084715
+      "interval_cost_eur": 0.9274146480144501
     },
     {
       "interval": 104,
       "date": "2024-11-16T00:00:00.000Z",
       "active_pumps": [
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.466909790039062,
-      "water_level_end_m": 3.406668090820313,
-      "volume_start_m3": 23862,
-      "volume_end_m3": 22947,
+      "water_level_start_m": 3.264669799804687,
+      "water_level_end_m": 3.126974487304687,
+      "volume_start_m3": 20865,
+      "volume_end_m3": 18936,
       "inflow_m3": 1113.413208,
-      "outflow_m3": 1992.8160461425782,
+      "outflow_m3": 2969.2023101806644,
       "electricity_price_cents_per_kwh": 0.296,
-      "interval_cost_eur": 0.519240942602539
+      "interval_cost_eur": 0.7775743586059569
     },
     {
       "interval": 105,
       "date": "2024-11-16T00:15:00.000Z",
       "active_pumps": [
-        "1.3",
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.406668090820313,
-      "water_level_end_m": 3.2749969482421877,
-      "volume_start_m3": 22947,
-      "volume_end_m3": 21018,
+      "water_level_start_m": 3.126974487304687,
+      "water_level_end_m": 2.9815338134765623,
+      "volume_start_m3": 18936,
+      "volume_end_m3": 17007,
       "inflow_m3": 1113.959351,
-      "outflow_m3": 2983.2601409912113,
+      "outflow_m3": 2955.5704742431644,
       "electricity_price_cents_per_kwh": 0.296,
-      "interval_cost_eur": 0.7784780357299804
+      "interval_cost_eur": 0.7766980656372069
     },
     {
       "interval": 106,
       "date": "2024-11-16T00:30:00.000Z",
       "active_pumps": [
-        "1.3",
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.2749969482421877,
-      "water_level_end_m": 3.135580444335937,
-      "volume_start_m3": 21018,
-      "volume_end_m3": 19063,
+      "water_level_start_m": 2.9815338134765623,
+      "water_level_end_m": 2.8249053955078125,
+      "volume_start_m3": 17007,
+      "volume_end_m3": 15052,
       "inflow_m3": 1087.480225,
-      "outflow_m3": 2970.2246978759767,
+      "outflow_m3": 2941.1718475341795,
       "electricity_price_cents_per_kwh": 0.296,
-      "interval_cost_eur": 0.7776400805786133
+      "interval_cost_eur": 0.7757724811889648
     },
     {
       "interval": 107,
       "date": "2024-11-16T00:45:00.000Z",
       "active_pumps": [
-        "1.3",
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 3.135580444335937,
-      "water_level_end_m": 2.982394409179687,
-      "volume_start_m3": 19063,
-      "volume_end_m3": 17023,
+      "water_level_start_m": 2.8249053955078125,
+      "water_level_end_m": 2.6502044677734373,
+      "volume_start_m3": 15052,
+      "volume_end_m3": 13012,
       "inflow_m3": 1002.507813,
-      "outflow_m3": 2956.422463989258,
+      "outflow_m3": 2925.6656341552734,
       "electricity_price_cents_per_kwh": 0.296,
-      "interval_cost_eur": 0.7767528339477539
+      "interval_cost_eur": 0.7747756979370117
     },
     {
       "interval": 108,
       "date": "2024-11-16T01:00:00.000Z",
       "active_pumps": [
-        "1.3",
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 2.982394409179687,
-      "water_level_end_m": 2.8180206298828123,
-      "volume_start_m3": 17023,
-      "volume_end_m3": 14963,
+      "water_level_start_m": 2.6502044677734373,
+      "water_level_end_m": 2.4591522216796875,
+      "volume_start_m3": 13012,
+      "volume_end_m3": 10952,
       "inflow_m3": 982.0656738,
-      "outflow_m3": 2941.2570465087892,
+      "outflow_m3": 2908.37024230957,
       "electricity_price_cents_per_kwh": 0.281,
-      "interval_cost_eur": 0.7364648858230591
+      "interval_cost_eur": 0.7344579602920533
     },
     {
       "interval": 109,
       "date": "2024-11-16T01:15:00.000Z",
       "active_pumps": [
-        "1.3",
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 2.8180206298828123,
-      "water_level_end_m": 2.640737915039062,
-      "volume_start_m3": 14963,
-      "volume_end_m3": 12901,
+      "water_level_start_m": 2.4591522216796875,
+      "water_level_end_m": 2.2483062744140625,
+      "volume_start_m3": 10952,
+      "volume_end_m3": 8890,
       "inflow_m3": 980.7039795,
-      "outflow_m3": 2924.9840423583983,
+      "outflow_m3": 2889.456069946289,
       "electricity_price_cents_per_kwh": 0.281,
-      "interval_cost_eur": 0.735471821635437
+      "interval_cost_eur": 0.7333037181472779
     },
     {
       "interval": 110,
       "date": "2024-11-16T01:30:00.000Z",
       "active_pumps": [
-        "1.3",
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 2.640737915039062,
-      "water_level_end_m": 2.4479644775390623,
-      "volume_start_m3": 12901,
-      "volume_end_m3": 10832,
+      "water_level_start_m": 2.2483062744140625,
+      "water_level_end_m": 2.009060668945313,
+      "volume_start_m3": 8890,
+      "volume_end_m3": 6821,
       "inflow_m3": 973.8684082,
-      "outflow_m3": 2907.4330535888676,
+      "outflow_m3": 2868.582321166992,
       "electricity_price_cents_per_kwh": 0.281,
-      "interval_cost_eur": 0.7344007681137086
+      "interval_cost_eur": 0.7320298923568727
     },
     {
       "interval": 111,
       "date": "2024-11-16T01:45:00.000Z",
       "active_pumps": [
-        "1.3",
-        "1.4",
-        "2.2"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 2.4479644775390623,
-      "water_level_end_m": 2.2310943603515625,
-      "volume_start_m3": 10832,
-      "volume_end_m3": 8734,
+      "water_level_start_m": 2.009060668945313,
+      "water_level_end_m": 1.7224822998046876,
+      "volume_start_m3": 6821,
+      "volume_end_m3": 4723,
       "inflow_m3": 944.4550781,
-      "outflow_m3": 2888.348483276367,
+      "outflow_m3": 2844.8970062255858,
       "electricity_price_cents_per_kwh": 0.281,
-      "interval_cost_eur": 0.7332361273910523
+      "interval_cost_eur": 0.7305844900314331
     },
     {
       "interval": 112,
       "date": "2024-11-16T02:00:00.000Z",
       "active_pumps": [
-        "1.3",
-        "2.3"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 2.2310943603515625,
-      "water_level_end_m": 2.102865600585937,
-      "volume_start_m3": 8734,
-      "volume_end_m3": 7601,
+      "water_level_start_m": 1.7224822998046876,
+      "water_level_end_m": 1.3438201904296876,
+      "volume_start_m3": 4723,
+      "volume_end_m3": 2576,
       "inflow_m3": 895.9033203,
-      "outflow_m3": 1911.2522277832031,
+      "outflow_m3": 2816.5257476806646,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.5157342686920166
+      "interval_cost_eur": 0.7703536607254027
     },
     {
       "interval": 113,
       "date": "2024-11-16T02:15:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.2",
+        "2.3",
+        "2.4"
       ],
-      "water_level_start_m": 2.102865600585937,
-      "water_level_end_m": 2.0822113037109373,
-      "volume_start_m3": 7601,
-      "volume_end_m3": 7426,
+      "water_level_start_m": 1.3438201904296876,
+      "water_level_end_m": 0.49613342285156253,
+      "volume_start_m3": 2576,
+      "volume_end_m3": 373,
       "inflow_m3": 839.3695068,
-      "outflow_m3": 951.394564819336,
+      "outflow_m3": 2779.0381988525396,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.2575941994308471
+      "interval_cost_eur": 0.7679357138259888
     },
     {
       "interval": 114,
       "date": "2024-11-16T02:30:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 2.0822113037109373,
-      "water_level_end_m": 2.0520904541015623,
-      "volume_start_m3": 7426,
-      "volume_end_m3": 7172,
+      "water_level_start_m": 0.49613342285156253,
+      "water_level_end_m": 0.7190277099609375,
+      "volume_start_m3": 373,
+      "volume_end_m3": 604,
       "inflow_m3": 760.4785156,
-      "outflow_m3": 950.7129730224609,
+      "outflow_m3": 464.215291671753,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.2575502367599487
+      "interval_cost_eur": 0.13712508574962615
     },
     {
       "interval": 115,
       "date": "2024-11-16T02:45:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 2.0520904541015623,
-      "water_level_end_m": 2.016806030273438,
-      "volume_start_m3": 7172,
-      "volume_end_m3": 6882,
+      "water_level_start_m": 0.7190277099609375,
+      "water_level_end_m": 0.8240203857421875,
+      "volume_start_m3": 604,
+      "volume_end_m3": 799,
       "inflow_m3": 724.604126,
-      "outflow_m3": 949.7189849853515,
+      "outflow_m3": 468.3778424835205,
       "electricity_price_cents_per_kwh": 0.297,
-      "interval_cost_eur": 0.25748612453155517
+      "interval_cost_eur": 0.13743539638996125
     },
     {
       "interval": 116,
       "date": "2024-11-16T03:00:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 2.016806030273438,
-      "water_level_end_m": 1.9754974365234377,
-      "volume_start_m3": 6882,
-      "volume_end_m3": 6554,
+      "water_level_start_m": 0.8240203857421875,
+      "water_level_end_m": 0.8920074462890626,
+      "volume_start_m3": 799,
+      "volume_end_m3": 956,
       "inflow_m3": 686.87146,
-      "outflow_m3": 948.5545989990235,
+      "outflow_m3": 470.3385807037354,
       "electricity_price_cents_per_kwh": 0.351,
-      "interval_cost_eur": 0.30421302556915275
+      "interval_cost_eur": 0.16259639604091644
     },
     {
       "interval": 117,
       "date": "2024-11-16T03:15:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 1.9754974365234377,
-      "water_level_end_m": 1.9247222900390624,
-      "volume_start_m3": 6554,
-      "volume_end_m3": 6164,
+      "water_level_start_m": 0.8920074462890626,
+      "water_level_end_m": 0.9298736572265625,
+      "volume_start_m3": 956,
+      "volume_end_m3": 1051,
       "inflow_m3": 624.286499,
-      "outflow_m3": 947.1914154052735,
+      "outflow_m3": 471.6082390594483,
       "electricity_price_cents_per_kwh": 0.351,
-      "interval_cost_eur": 0.3041091138015746
+      "interval_cost_eur": 0.16270825600147246
     },
     {
       "interval": 118,
       "date": "2024-11-16T03:30:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 1.9247222900390624,
-      "water_level_end_m": 1.8687835693359374,
-      "volume_start_m3": 6164,
-      "volume_end_m3": 5744,
+      "water_level_start_m": 0.9298736572265625,
+      "water_level_end_m": 0.9531097412109375,
+      "volume_start_m3": 1051,
+      "volume_end_m3": 1116,
       "inflow_m3": 594.7770996,
-      "outflow_m3": 945.5158355712892,
+      "outflow_m3": 472.31539054870603,
       "electricity_price_cents_per_kwh": 0.351,
-      "interval_cost_eur": 0.30398138892059323
+      "interval_cost_eur": 0.16277055775165555
     },
     {
       "interval": 119,
       "date": "2024-11-16T03:45:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 1.8687835693359374,
-      "water_level_end_m": 1.8102630615234374,
-      "volume_start_m3": 5744,
-      "volume_end_m3": 5324,
+      "water_level_start_m": 0.9531097412109375,
+      "water_level_end_m": 0.9763458251953125,
+      "volume_start_m3": 1116,
+      "volume_end_m3": 1181,
       "inflow_m3": 594.3728027,
-      "outflow_m3": 943.6698577880861,
+      "outflow_m3": 472.7493244171143,
       "electricity_price_cents_per_kwh": 0.351,
-      "interval_cost_eur": 0.3038406750686645
+      "interval_cost_eur": 0.16280878837108612
     },
     {
       "interval": 120,
       "date": "2024-11-16T04:00:00.000Z",
       "active_pumps": [
-        "2.3"
+        "2.1"
       ],
-      "water_level_start_m": 1.8102630615234374,
-      "water_level_end_m": 1.7457183837890622,
-      "volume_start_m3": 5324,
-      "volume_end_m3": 4880,
+      "water_level_start_m": 0.9763458251953125,
+      "water_level_end_m": 0.9909759521484376,
+      "volume_start_m3": 1181,
+      "volume_end_m3": 1222,
       "inflow_m3": 570.4315186,
-      "outflow_m3": 941.7386810302735,
+      "outflow_m3": 473.18325828552247,
       "electricity_price_cents_per_kwh": 0.443,
-      "interval_cost_eur": 0.3832940335098266
+      "interval_cost_eur": 0.20553056812763212
     },
     {
       "interval": 121,
       "date": "2024-11-16T04:15:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.7457183837890622,
-      "water_level_end_m": 1.6708465576171876,
-      "volume_start_m3": 4880,
-      "volume_end_m3": 4385,
+      "water_level_start_m": 0.9909759521484376,
+      "water_level_end_m": 0.9875335693359375,
+      "volume_start_m3": 1222,
+      "volume_end_m3": 1212,
       "inflow_m3": 519.3320313,
-      "outflow_m3": 939.6087066650391,
+      "outflow_m3": 473.45647590637213,
       "electricity_price_cents_per_kwh": 0.443,
-      "interval_cost_eur": 0.38308911491546627
+      "interval_cost_eur": 0.20556094850063322
     },
     {
       "interval": 122,
       "date": "2024-11-16T04:30:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.6708465576171876,
-      "water_level_end_m": 1.5873687744140625,
-      "volume_start_m3": 4385,
-      "volume_end_m3": 3876,
+      "water_level_start_m": 0.9875335693359375,
+      "water_level_end_m": 0.9789276123046875,
+      "volume_start_m3": 1212,
+      "volume_end_m3": 1188,
       "inflow_m3": 505.7312012,
-      "outflow_m3": 937.1379364013674,
+      "outflow_m3": 473.39218940734867,
       "electricity_price_cents_per_kwh": 0.443,
-      "interval_cost_eur": 0.38285140934600825
+      "interval_cost_eur": 0.20555380017757416
     },
     {
       "interval": 123,
       "date": "2024-11-16T04:45:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.5873687744140625,
-      "water_level_end_m": 1.5090545654296874,
-      "volume_start_m3": 3876,
-      "volume_end_m3": 3426,
+      "water_level_start_m": 0.9789276123046875,
+      "water_level_end_m": 0.9909759521484376,
+      "volume_start_m3": 1188,
+      "volume_end_m3": 1223,
       "inflow_m3": 564.7518921,
-      "outflow_m3": 934.383169555664,
+      "outflow_m3": 473.23147315979,
       "electricity_price_cents_per_kwh": 0.443,
-      "interval_cost_eur": 0.38258638129730216
+      "interval_cost_eur": 0.20553592936992646
     },
     {
       "interval": 124,
       "date": "2024-11-16T05:00:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.5090545654296874,
-      "water_level_end_m": 1.4195526123046873,
-      "volume_start_m3": 3426,
-      "volume_end_m3": 2950,
+      "water_level_start_m": 0.9909759521484376,
+      "water_level_end_m": 0.9935577392578125,
+      "volume_start_m3": 1223,
+      "volume_end_m3": 1232,
       "inflow_m3": 538.4326782,
-      "outflow_m3": 931.7988006591797,
+      "outflow_m3": 473.45647590637213,
       "electricity_price_cents_per_kwh": 0.614,
-      "interval_cost_eur": 0.529921843106079
+      "interval_cost_eur": 0.2849084026622772
     },
     {
       "interval": 125,
       "date": "2024-11-16T05:15:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.4195526123046873,
-      "water_level_end_m": 1.3188629150390623,
-      "volume_start_m3": 2950,
-      "volume_end_m3": 2459,
+      "water_level_start_m": 0.9935577392578125,
+      "water_level_end_m": 0.9918365478515625,
+      "volume_start_m3": 1232,
+      "volume_end_m3": 1226,
       "inflow_m3": 523.692688,
-      "outflow_m3": 928.8452362060547,
+      "outflow_m3": 473.5046907806397,
       "electricity_price_cents_per_kwh": 0.614,
-      "interval_cost_eur": 0.5295280046783447
+      "interval_cost_eur": 0.2849158333683014
     },
     {
       "interval": 126,
       "date": "2024-11-16T05:30:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.3188629150390623,
-      "water_level_end_m": 1.2078460693359376,
-      "volume_start_m3": 2459,
-      "volume_end_m3": 1981,
+      "water_level_start_m": 0.9918365478515625,
+      "water_level_end_m": 0.9944183349609377,
+      "volume_start_m3": 1226,
+      "volume_end_m3": 1233,
       "inflow_m3": 536.9863281,
-      "outflow_m3": 925.5224761962891,
+      "outflow_m3": 473.47254753112793,
       "electricity_price_cents_per_kwh": 0.614,
-      "interval_cost_eur": 0.5290849364471435
+      "interval_cost_eur": 0.28491087956428524
     },
     {
       "interval": 127,
       "date": "2024-11-16T05:45:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.2078460693359376,
-      "water_level_end_m": 1.0778961181640623,
-      "volume_start_m3": 1981,
-      "volume_end_m3": 1500,
+      "water_level_start_m": 0.9944183349609377,
+      "water_level_end_m": 0.9952789306640626,
+      "volume_start_m3": 1233,
+      "volume_end_m3": 1237,
       "inflow_m3": 533.4013062,
-      "outflow_m3": 921.858920288086,
+      "outflow_m3": 473.5207624053955,
       "electricity_price_cents_per_kwh": 0.614,
-      "interval_cost_eur": 0.5285964253204345
+      "interval_cost_eur": 0.28491831027030945
     },
     {
       "interval": 128,
       "date": "2024-11-16T06:00:00.000Z",
       "active_pumps": [
-        "1.4"
+        "1.1"
       ],
-      "water_level_start_m": 1.0778961181640623,
-      "water_level_end_m": 0.8154144287109375,
-      "volume_start_m3": 1500,
-      "volume_end_m3": 782,
+      "water_level_start_m": 0.9952789306640626,
+      "water_level_end_m": 0.9118011474609373,
+      "volume_start_m3": 1237,
+      "volume_end_m3": 1004,
       "inflow_m3": 296.4225159,
-      "outflow_m3": 917.5705718994141,
+      "outflow_m3": 473.5368340301514,
       "electricity_price_cents_per_kwh": 0.748,
-      "interval_cost_eur": 0.6432612417907714
+      "interval_cost_eur": 0.34710219675064086
     },
     {
       "interval": 129,
       "date": "2024-11-16T06:15:00.000Z",
       "active_pumps": [
-        "1.4"
+        "1.1"
       ],
-      "water_level_start_m": 0.8154144287109375,
-      "water_level_end_m": 0.5055999755859375,
-      "volume_start_m3": 782,
-      "volume_end_m3": 378,
+      "water_level_start_m": 0.9118011474609373,
+      "water_level_end_m": 0.9419219970703123,
+      "volume_start_m3": 1004,
+      "volume_end_m3": 1085,
       "inflow_m3": 610.3428955,
-      "outflow_m3": 908.9086761474609,
+      "outflow_m3": 471.977886428833,
       "electricity_price_cents_per_kwh": 0.748,
-      "interval_cost_eur": 0.6418541649475097
+      "interval_cost_eur": 0.3468095027732849
     },
     {
       "interval": 130,
       "date": "2024-11-16T06:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.5055999755859375,
-      "water_level_end_m": 0.6871856689453124,
-      "volume_start_m3": 378,
-      "volume_end_m3": 556,
+      "water_level_start_m": 0.9419219970703123,
+      "water_level_end_m": 1.0047454833984377,
+      "volume_start_m3": 1085,
+      "volume_end_m3": 1263,
       "inflow_m3": 707.4779968,
-      "outflow_m3": 464.39207954406737,
+      "outflow_m3": 472.54039329528814,
       "electricity_price_cents_per_kwh": 0.748,
-      "interval_cost_eur": 0.34538525991439817
+      "interval_cost_eur": 0.34691511400222774
     },
     {
       "interval": 131,
       "date": "2024-11-16T06:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.6871856689453124,
-      "water_level_end_m": 0.7930389404296876,
-      "volume_start_m3": 556,
-      "volume_end_m3": 737,
+      "water_level_start_m": 1.0047454833984377,
+      "water_level_end_m": 1.0615447998046874,
+      "volume_start_m3": 1263,
+      "volume_end_m3": 1444,
       "inflow_m3": 710.6928711,
-      "outflow_m3": 467.7831923675537,
+      "outflow_m3": 473.71362190246583,
       "electricity_price_cents_per_kwh": 0.748,
-      "interval_cost_eur": 0.3460219447517395
+      "interval_cost_eur": 0.34713538885116574
     },
     {
       "interval": 132,
       "date": "2024-11-16T07:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.7930389404296876,
-      "water_level_end_m": 0.8773773193359375,
-      "volume_start_m3": 737,
-      "volume_end_m3": 920,
+      "water_level_start_m": 1.0615447998046874,
+      "water_level_end_m": 1.1149017333984375,
+      "volume_start_m3": 1444,
+      "volume_end_m3": 1627,
       "inflow_m3": 712.4129333,
-      "outflow_m3": 469.76000221252445,
+      "outflow_m3": 474.7743491363525,
       "electricity_price_cents_per_kwh": 0.954,
-      "interval_cost_eur": 0.441790121011734
+      "interval_cost_eur": 0.4429908456516266
     },
     {
       "interval": 133,
       "date": "2024-11-16T07:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.8773773193359375,
-      "water_level_end_m": 0.9186859130859375,
-      "volume_start_m3": 920,
-      "volume_end_m3": 1023,
+      "water_level_start_m": 1.1149017333984375,
+      "water_level_end_m": 1.1433013916015626,
+      "volume_start_m3": 1627,
+      "volume_end_m3": 1730,
       "inflow_m3": 632.4810791,
-      "outflow_m3": 471.3350214385987,
+      "outflow_m3": 475.7707898712158,
       "electricity_price_cents_per_kwh": 0.954,
-      "interval_cost_eur": 0.4421672716999054
+      "interval_cost_eur": 0.4432294511890411
     },
     {
       "interval": 134,
       "date": "2024-11-16T07:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.9186859130859375,
-      "water_level_end_m": 0.9402008056640625,
-      "volume_start_m3": 1023,
-      "volume_end_m3": 1079,
+      "water_level_start_m": 1.1433013916015626,
+      "water_level_end_m": 1.1579315185546877,
+      "volume_start_m3": 1730,
+      "volume_end_m3": 1786,
       "inflow_m3": 585.1639099,
-      "outflow_m3": 472.1064594268799,
+      "outflow_m3": 476.3011534881592,
       "electricity_price_cents_per_kwh": 0.954,
-      "interval_cost_eur": 0.4423519985675812
+      "interval_cost_eur": 0.44335645091056824
     },
     {
       "interval": 135,
       "date": "2024-11-16T07:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.9402008056640625,
-      "water_level_end_m": 1.0167938232421876,
-      "volume_start_m3": 1079,
-      "volume_end_m3": 1301,
+      "water_level_start_m": 1.1579315185546877,
+      "water_level_end_m": 1.2147308349609374,
+      "volume_start_m3": 1786,
+      "volume_end_m3": 2008,
       "inflow_m3": 751.9802856,
-      "outflow_m3": 472.5082500457764,
+      "outflow_m3": 476.5743711090088,
       "electricity_price_cents_per_kwh": 0.954,
-      "interval_cost_eur": 0.44244821047782895
+      "interval_cost_eur": 0.4434218750095367
     },
     {
       "interval": 136,
       "date": "2024-11-16T08:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.0167938232421876,
-      "water_level_end_m": 0.9952789306640626,
-      "volume_start_m3": 1301,
-      "volume_end_m3": 1236,
+      "water_level_start_m": 1.2147308349609374,
+      "water_level_end_m": 1.1983795166015623,
+      "volume_start_m3": 2008,
+      "volume_end_m3": 1943,
       "inflow_m3": 464.7457886,
-      "outflow_m3": 473.9386246490479,
+      "outflow_m3": 477.63509834289556,
       "electricity_price_cents_per_kwh": 5.497,
-      "interval_cost_eur": 2.5513842920923233
+      "interval_cost_eur": 2.55648457218647
     },
     {
       "interval": 137,
       "date": "2024-11-16T08:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.9952789306640626,
-      "water_level_end_m": 0.9324554443359374,
-      "volume_start_m3": 1236,
-      "volume_end_m3": 1059,
+      "water_level_start_m": 1.1983795166015623,
+      "water_level_end_m": 1.1527679443359375,
+      "volume_start_m3": 1943,
+      "volume_end_m3": 1766,
       "inflow_m3": 352.194519,
-      "outflow_m3": 473.5368340301514,
+      "outflow_m3": 477.3297374725342,
       "electricity_price_cents_per_kwh": 5.497,
-      "interval_cost_eur": 2.5508299138212203
+      "interval_cost_eur": 2.556063244700432
     },
     {
       "interval": 138,
       "date": "2024-11-16T08:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.9324554443359374,
-      "water_level_end_m": 0.8395111083984375,
-      "volume_start_m3": 1059,
-      "volume_end_m3": 832,
+      "water_level_start_m": 1.1527679443359375,
+      "water_level_end_m": 1.0899444580078126,
+      "volume_start_m3": 1766,
+      "volume_end_m3": 1539,
       "inflow_m3": 302.5779419,
-      "outflow_m3": 472.3636054229736,
+      "outflow_m3": 476.47794136047366,
       "electricity_price_cents_per_kwh": 5.497,
-      "interval_cost_eur": 2.5492111292696
+      "interval_cost_eur": 2.5548879627656937
     },
     {
       "interval": 139,
       "date": "2024-11-16T08:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.8395111083984375,
-      "water_level_end_m": 0.7913177490234375,
-      "volume_start_m3": 832,
-      "volume_end_m3": 733,
+      "water_level_start_m": 1.0899444580078126,
+      "water_level_end_m": 1.0606842041015623,
+      "volume_start_m3": 1539,
+      "volume_end_m3": 1440,
       "inflow_m3": 430.5953369,
-      "outflow_m3": 470.62786994934083,
+      "outflow_m3": 475.304712753296,
       "electricity_price_cents_per_kwh": 5.497,
-      "interval_cost_eur": 2.5468162151384353
+      "interval_cost_eur": 2.553269178214073
     },
     {
       "interval": 140,
       "date": "2024-11-16T09:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.7913177490234375,
-      "water_level_end_m": 0.8188568115234376,
-      "volume_start_m3": 733,
-      "volume_end_m3": 789,
+      "water_level_start_m": 1.0606842041015623,
+      "water_level_end_m": 1.0770355224609374,
+      "volume_start_m3": 1440,
+      "volume_end_m3": 1496,
       "inflow_m3": 585.2695923,
-      "outflow_m3": 469.72785896301275,
+      "outflow_m3": 474.7582775115967,
       "electricity_price_cents_per_kwh": 2.668,
-      "interval_cost_eur": 1.2355089175987244
+      "interval_cost_eur": 1.2388776818275453
     },
     {
       "interval": 141,
@@ -2170,14 +2187,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.8188568115234376,
-      "water_level_end_m": 0.8739349365234375,
-      "volume_start_m3": 789,
-      "volume_end_m3": 911,
+      "water_level_start_m": 1.0770355224609374,
+      "water_level_end_m": 1.1123199462890623,
+      "volume_start_m3": 1496,
+      "volume_end_m3": 1618,
       "inflow_m3": 651.023407,
-      "outflow_m3": 470.24215095520026,
+      "outflow_m3": 475.06363838195807,
       "electricity_price_cents_per_kwh": 2.668,
-      "interval_cost_eur": 1.235853327999115
+      "interval_cost_eur": 1.2390821755027772
     },
     {
       "interval": 142,
@@ -2185,14 +2202,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 0.8739349365234375,
-      "water_level_end_m": 1.0159332275390625,
-      "volume_start_m3": 911,
-      "volume_end_m3": 1298,
+      "water_level_start_m": 1.1123199462890623,
+      "water_level_end_m": 1.2138702392578125,
+      "volume_start_m3": 1618,
+      "volume_end_m3": 2005,
       "inflow_m3": 916.3562317,
-      "outflow_m3": 471.27073493957516,
+      "outflow_m3": 475.72257499694825,
       "electricity_price_cents_per_kwh": 2.668,
-      "interval_cost_eur": 1.2365421487998964
+      "interval_cost_eur": 1.2395234513282778
     },
     {
       "interval": 143,
@@ -2200,14 +2217,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.0159332275390625,
-      "water_level_end_m": 1.2138702392578125,
-      "volume_start_m3": 1298,
-      "volume_end_m3": 2005,
+      "water_level_start_m": 1.2138702392578125,
+      "water_level_end_m": 1.3722198486328125,
+      "volume_start_m3": 2005,
+      "volume_end_m3": 2712,
       "inflow_m3": 1236.137451,
-      "outflow_m3": 473.922553024292,
+      "outflow_m3": 477.61902671813965,
       "electricity_price_cents_per_kwh": 2.668,
-      "interval_cost_eur": 1.2383180149269104
+      "interval_cost_eur": 1.240793464679718
     },
     {
       "interval": 144,
@@ -2215,335 +2232,329 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.2138702392578125,
-      "water_level_end_m": 1.3593109130859375,
-      "volume_start_m3": 2005,
-      "volume_end_m3": 2652,
+      "water_level_start_m": 1.3722198486328125,
+      "water_level_end_m": 1.497006225585937,
+      "volume_start_m3": 2712,
+      "volume_end_m3": 3359,
       "inflow_m3": 1176.556458,
-      "outflow_m3": 477.61902671813965,
+      "outflow_m3": 480.5762056732178,
       "electricity_price_cents_per_kwh": 1.194,
-      "interval_cost_eur": 0.5552876299953461
+      "interval_cost_eur": 0.5561738929653167
     },
     {
       "interval": 145,
       "date": "2024-11-16T10:15:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.3593109130859375,
-      "water_level_end_m": 1.3799652099609376,
-      "volume_start_m3": 2652,
-      "volume_end_m3": 2752,
+      "water_level_start_m": 1.497006225585937,
+      "water_level_end_m": 1.5994171142578124,
+      "volume_start_m3": 3359,
+      "volume_end_m3": 3944,
       "inflow_m3": 1114.617126,
-      "outflow_m3": 926.8572601318359,
+      "outflow_m3": 482.9065912628174,
       "electricity_price_cents_per_kwh": 1.194,
-      "interval_cost_eur": 1.0292181234832762
+      "interval_cost_eur": 0.5568723067188263
     },
     {
       "interval": 146,
       "date": "2024-11-16T10:30:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.3799652099609376,
-      "water_level_end_m": 1.4040618896484374,
-      "volume_start_m3": 2752,
-      "volume_end_m3": 2869,
+      "water_level_start_m": 1.5994171142578124,
+      "water_level_end_m": 1.6958038330078127,
+      "volume_start_m3": 3944,
+      "volume_end_m3": 4546,
       "inflow_m3": 1131.259949,
-      "outflow_m3": 927.538851928711,
+      "outflow_m3": 484.8191146087646,
       "electricity_price_cents_per_kwh": 1.194,
-      "interval_cost_eur": 1.0293948623016356
+      "interval_cost_eur": 0.5574454876613617
     },
     {
       "interval": 147,
       "date": "2024-11-16T10:45:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.4040618896484374,
-      "water_level_end_m": 1.4178314208984373,
-      "volume_start_m3": 2869,
-      "volume_end_m3": 2939,
+      "water_level_start_m": 1.6958038330078127,
+      "water_level_end_m": 1.7784210205078126,
+      "volume_start_m3": 4546,
+      "volume_end_m3": 5101,
       "inflow_m3": 1084.931091,
-      "outflow_m3": 928.3340423583986,
+      "outflow_m3": 486.6191365814209,
       "electricity_price_cents_per_kwh": 1.194,
-      "interval_cost_eur": 1.0296010575897216
+      "interval_cost_eur": 0.5579849520778656
     },
     {
       "interval": 148,
       "date": "2024-11-16T11:00:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.4178314208984373,
-      "water_level_end_m": 1.4367645263671873,
-      "volume_start_m3": 2939,
-      "volume_end_m3": 3039,
+      "water_level_start_m": 1.7784210205078126,
+      "water_level_end_m": 1.8610382080078125,
+      "volume_start_m3": 5101,
+      "volume_end_m3": 5686,
       "inflow_m3": 1114.168823,
-      "outflow_m3": 928.7884368896484,
+      "outflow_m3": 488.1620125579835,
       "electricity_price_cents_per_kwh": 1.058,
-      "interval_cost_eur": 0.9124309704437257
+      "interval_cost_eur": 0.494838606748581
     },
     {
       "interval": 149,
       "date": "2024-11-16T11:15:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.4367645263671873,
-      "water_level_end_m": 1.4668853759765623,
-      "volume_start_m3": 3039,
-      "volume_end_m3": 3197,
+      "water_level_start_m": 1.8610382080078125,
+      "water_level_end_m": 1.9462371826171876,
+      "volume_start_m3": 5686,
+      "volume_end_m3": 6329,
       "inflow_m3": 1172.968811,
-      "outflow_m3": 929.4132293701172,
+      "outflow_m3": 489.7048885345459,
       "electricity_price_cents_per_kwh": 1.058,
-      "interval_cost_eur": 0.9125745275604248
+      "interval_cost_eur": 0.49524833636283877
     },
     {
       "interval": 150,
       "date": "2024-11-16T11:30:00.000Z",
       "active_pumps": [
-        "1.4"
+        "2.1"
       ],
-      "water_level_start_m": 1.4668853759765623,
-      "water_level_end_m": 1.5038909912109373,
-      "volume_start_m3": 3197,
-      "volume_end_m3": 3397,
+      "water_level_start_m": 1.9462371826171876,
+      "water_level_end_m": 2.032296752929687,
+      "volume_start_m3": 6329,
+      "volume_end_m3": 7014,
       "inflow_m3": 1214.148254,
-      "outflow_m3": 930.4072174072265,
+      "outflow_m3": 491.29597938537603,
       "electricity_price_cents_per_kwh": 1.058,
-      "interval_cost_eur": 0.9128029138824464
+      "interval_cost_eur": 0.4956708700275422
     },
     {
       "interval": 151,
       "date": "2024-11-16T11:45:00.000Z",
       "active_pumps": [
-        "1.4",
-        "2.2"
+        "2.1"
       ],
-      "water_level_start_m": 1.5038909912109373,
-      "water_level_end_m": 1.3515655517578125,
-      "volume_start_m3": 3397,
-      "volume_end_m3": 2612,
+      "water_level_start_m": 2.032296752929687,
+      "water_level_end_m": 2.117495727539062,
+      "volume_start_m3": 7014,
+      "volume_end_m3": 7728,
       "inflow_m3": 1243.070068,
-      "outflow_m3": 1863.2568054199219,
+      "outflow_m3": 492.90314186096197,
       "electricity_price_cents_per_kwh": 1.058,
-      "interval_cost_eur": 1.8261670055847168
+      "interval_cost_eur": 0.4960976717090607
     },
     {
       "interval": 152,
       "date": "2024-11-16T12:00:00.000Z",
       "active_pumps": [
-        "1.4",
-        "2.2"
+        "2.1"
       ],
-      "water_level_start_m": 1.3515655517578125,
-      "water_level_end_m": 1.1871917724609375,
-      "volume_start_m3": 2612,
-      "volume_end_m3": 1898,
+      "water_level_start_m": 2.117495727539062,
+      "water_level_end_m": 2.2069976806640623,
+      "volume_start_m3": 7728,
+      "volume_end_m3": 8513,
       "inflow_m3": 1314.640381,
-      "outflow_m3": 1853.2033264160157,
+      "outflow_m3": 494.494232711792,
       "electricity_price_cents_per_kwh": 1.034,
-      "interval_cost_eur": 1.7824841025207516
+      "interval_cost_eur": 0.4852569871044159
     },
     {
       "interval": 153,
       "date": "2024-11-16T12:15:00.000Z",
       "active_pumps": [
-        "1.4",
-        "2.2"
+        "2.1"
       ],
-      "water_level_start_m": 1.1871917724609375,
-      "water_level_end_m": 1.0210968017578126,
-      "volume_start_m3": 1898,
-      "volume_end_m3": 1315,
+      "water_level_start_m": 2.2069976806640623,
+      "water_level_end_m": 2.3059661865234373,
+      "volume_start_m3": 8513,
+      "volume_end_m3": 9429,
       "inflow_m3": 1445.126221,
-      "outflow_m3": 1842.3546569824218,
+      "outflow_m3": 496.1656816864014,
       "electricity_price_cents_per_kwh": 1.034,
-      "interval_cost_eur": 1.7800479735290529
+      "interval_cost_eur": 0.48569079188346864
     },
     {
       "interval": 154,
       "date": "2024-11-16T12:30:00.000Z",
       "active_pumps": [
-        "1.4",
-        "2.2"
+        "2.1"
       ],
-      "water_level_start_m": 1.0210968017578126,
-      "water_level_end_m": 0.6605072021484375,
-      "volume_start_m3": 1315,
-      "volume_end_m3": 520,
+      "water_level_start_m": 2.3059661865234373,
+      "water_level_end_m": 2.378256225585937,
+      "volume_start_m3": 9429,
+      "volume_end_m3": 10133,
       "inflow_m3": 1233.832031,
-      "outflow_m3": 1831.392388916016,
+      "outflow_m3": 498.01391853332524,
       "electricity_price_cents_per_kwh": 1.034,
-      "interval_cost_eur": 1.777586335333252
+      "interval_cost_eur": 0.4861704798603058
     },
     {
       "interval": 155,
       "date": "2024-11-16T12:45:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1"
       ],
-      "water_level_start_m": 0.6605072021484375,
-      "water_level_end_m": 0.7835723876953125,
-      "volume_start_m3": 520,
-      "volume_end_m3": 718,
+      "water_level_start_m": 2.378256225585937,
+      "water_level_end_m": 2.4462432861328125,
+      "volume_start_m3": 10133,
+      "volume_end_m3": 10816,
       "inflow_m3": 1212.368652,
-      "outflow_m3": 903.7967376708984,
+      "outflow_m3": 499.36393501281736,
       "electricity_price_cents_per_kwh": 1.034,
-      "interval_cost_eur": 0.8861210785369872
+      "interval_cost_eur": 0.48652086064338684
     },
     {
       "interval": 156,
       "date": "2024-11-16T13:00:00.000Z",
       "active_pumps": [
-        "2.2"
+        "1.1"
       ],
-      "water_level_start_m": 0.7835723876953125,
-      "water_level_end_m": 0.7947601318359374,
-      "volume_start_m3": 718,
-      "volume_end_m3": 739,
+      "water_level_start_m": 2.4462432861328125,
+      "water_level_end_m": 2.4952972412109373,
+      "volume_start_m3": 10816,
+      "volume_end_m3": 11322,
       "inflow_m3": 1035.839233,
-      "outflow_m3": 907.8578887939453,
+      "outflow_m3": 500.6335933685303,
       "electricity_price_cents_per_kwh": 1.254,
-      "interval_cost_eur": 1.0757634650482177
+      "interval_cost_eur": 0.5904355738162995
     },
     {
       "interval": 157,
       "date": "2024-11-16T13:15:00.000Z",
       "active_pumps": [
-        "2.1",
-        "2.2"
+        "1.1"
       ],
-      "water_level_start_m": 0.7947601318359374,
-      "water_level_end_m": 0.7310760498046875,
-      "volume_start_m3": 739,
-      "volume_end_m3": 624,
+      "water_level_start_m": 2.4952972412109373,
+      "water_level_end_m": 2.578775024414062,
+      "volume_start_m3": 11322,
+      "volume_end_m3": 12221,
       "inflow_m3": 1428.697388,
-      "outflow_m3": 1378.0192298126221,
+      "outflow_m3": 501.5496759796143,
       "electricity_price_cents_per_kwh": 1.254,
-      "interval_cost_eur": 1.6565919587047577
+      "interval_cost_eur": 0.5907239190959931
     },
     {
       "interval": 158,
       "date": "2024-11-16T13:30:00.000Z",
       "active_pumps": [
-        "2.1",
-        "2.2"
+        "1.1"
       ],
-      "water_level_start_m": 0.7310760498046875,
-      "water_level_end_m": 0.49183044433593753,
-      "volume_start_m3": 624,
-      "volume_end_m3": 371,
+      "water_level_start_m": 2.578775024414062,
+      "water_level_end_m": 2.647622680664062,
+      "volume_start_m3": 12221,
+      "volume_end_m3": 12982,
       "inflow_m3": 1290.917725,
-      "outflow_m3": 1374.7283548736573,
+      "outflow_m3": 503.10862358093266,
       "electricity_price_cents_per_kwh": 1.254,
-      "interval_cost_eur": 1.655645286864853
+      "interval_cost_eur": 0.5912146119403839
     },
     {
       "interval": 159,
       "date": "2024-11-16T13:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.49183044433593753,
-      "water_level_end_m": 0.9049163818359374,
-      "volume_start_m3": 371,
-      "volume_end_m3": 988,
+      "water_level_start_m": 2.647622680664062,
+      "water_level_end_m": 2.7018402099609373,
+      "volume_start_m3": 12982,
+      "volume_end_m3": 13599,
       "inflow_m3": 1146.86792,
-      "outflow_m3": 464.1349335479737,
+      "outflow_m3": 504.39435356140143,
       "electricity_price_cents_per_kwh": 1.254,
-      "interval_cost_eur": 0.5789472908306122
+      "interval_cost_eur": 0.5916193070697785
     },
     {
       "interval": 160,
       "date": "2024-11-16T14:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 0.9049163818359374,
-      "water_level_end_m": 1.1897735595703123,
-      "volume_start_m3": 988,
-      "volume_end_m3": 1910,
+      "water_level_start_m": 2.7018402099609373,
+      "water_level_end_m": 2.781015014648437,
+      "volume_start_m3": 13599,
+      "volume_end_m3": 14521,
       "inflow_m3": 1451.944702,
-      "outflow_m3": 471.8493134307862,
+      "outflow_m3": 505.40686592102054,
       "electricity_price_cents_per_kwh": 3.104,
-      "interval_cost_eur": 1.4390665333557129
+      "interval_cost_eur": 1.4652117750549316
     },
     {
       "interval": 161,
       "date": "2024-11-16T14:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.1897735595703123,
-      "water_level_end_m": 1.3911529541015624,
-      "volume_start_m3": 1910,
-      "volume_end_m3": 2806,
+      "water_level_start_m": 2.781015014648437,
+      "water_level_end_m": 2.8550262451171875,
+      "volume_start_m3": 14521,
+      "volume_end_m3": 15417,
       "inflow_m3": 1425.355469,
-      "outflow_m3": 477.1690212249756,
+      "outflow_m3": 506.8854553985596,
       "electricity_price_cents_per_kwh": 3.104,
-      "interval_cost_eur": 1.443211205291748
+      "interval_cost_eur": 1.4663637684631348
     },
     {
       "interval": 162,
       "date": "2024-11-16T14:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.3911529541015624,
-      "water_level_end_m": 1.5520843505859372,
-      "volume_start_m3": 2806,
-      "volume_end_m3": 3667,
+      "water_level_start_m": 2.8550262451171875,
+      "water_level_end_m": 2.9238739013671875,
+      "volume_start_m3": 15417,
+      "volume_end_m3": 16278,
       "inflow_m3": 1390.860107,
-      "outflow_m3": 480.92978141784675,
+      "outflow_m3": 508.2676151275635,
       "electricity_price_cents_per_kwh": 3.104,
-      "interval_cost_eur": 1.4461412754821779
+      "interval_cost_eur": 1.4674406318664552
     },
     {
       "interval": 163,
       "date": "2024-11-16T14:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.5520843505859372,
-      "water_level_end_m": 1.6897796630859376,
-      "volume_start_m3": 3667,
-      "volume_end_m3": 4508,
+      "water_level_start_m": 2.9238739013671875,
+      "water_level_end_m": 2.9901397705078123,
+      "volume_start_m3": 16278,
+      "volume_end_m3": 17119,
       "inflow_m3": 1370.290283,
-      "outflow_m3": 483.9351752471924,
+      "outflow_m3": 509.55334510803226,
       "electricity_price_cents_per_kwh": 3.104,
-      "interval_cost_eur": 1.4484828273010255
+      "interval_cost_eur": 1.4684423652648926
     },
     {
       "interval": 164,
       "date": "2024-11-16T15:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.6897796630859376,
-      "water_level_end_m": 1.8111236572265623,
-      "volume_start_m3": 4508,
-      "volume_end_m3": 5326,
+      "water_level_start_m": 2.9901397705078123,
+      "water_level_end_m": 3.052102661132812,
+      "volume_start_m3": 17119,
+      "volume_end_m3": 17937,
       "inflow_m3": 1347.21106,
-      "outflow_m3": 486.50663520812986,
+      "outflow_m3": 510.7908602142334,
       "electricity_price_cents_per_kwh": 2.976,
-      "interval_cost_eur": 1.3906724263000487
+      "interval_cost_eur": 1.4088124497985839
     },
     {
       "interval": 165,
       "date": "2024-11-16T15:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 1.8111236572265623,
-      "water_level_end_m": 1.9186981201171875,
-      "volume_start_m3": 5326,
-      "volume_end_m3": 6118,
+      "water_level_start_m": 3.052102661132812,
+      "water_level_end_m": 3.111483764648437,
+      "volume_start_m3": 17937,
+      "volume_end_m3": 18729,
       "inflow_m3": 1321.033936,
-      "outflow_m3": 488.7727342987061,
+      "outflow_m3": 511.9480171966553,
       "electricity_price_cents_per_kwh": 2.976,
-      "interval_cost_eur": 1.3923651750183104
+      "interval_cost_eur": 1.4096768321228026
     },
     {
       "interval": 166,
@@ -2551,14 +2562,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 1.9186981201171875,
-      "water_level_end_m": 2.016806030273438,
-      "volume_start_m3": 6118,
-      "volume_end_m3": 6886,
+      "water_level_start_m": 3.111483764648437,
+      "water_level_end_m": 3.1674224853515627,
+      "volume_start_m3": 18729,
+      "volume_end_m3": 19497,
       "inflow_m3": 1297.138428,
-      "outflow_m3": 490.7816873931885,
+      "outflow_m3": 513.0569593048095,
       "electricity_price_cents_per_kwh": 2.976,
-      "interval_cost_eur": 1.3938658387756346
+      "interval_cost_eur": 1.4105051985168455
     },
     {
       "interval": 167,
@@ -2566,14 +2577,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.016806030273438,
-      "water_level_end_m": 2.105447387695312,
-      "volume_start_m3": 6886,
-      "volume_end_m3": 7620,
+      "water_level_start_m": 3.1674224853515627,
+      "water_level_end_m": 3.219918823242187,
+      "volume_start_m3": 19497,
+      "volume_end_m3": 20231,
       "inflow_m3": 1263.156982,
-      "outflow_m3": 492.6138526153564,
+      "outflow_m3": 514.1016149139405,
       "electricity_price_cents_per_kwh": 2.976,
-      "interval_cost_eur": 1.3952344441223143
+      "interval_cost_eur": 1.4112855436706542
     },
     {
       "interval": 168,
@@ -2581,14 +2592,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.105447387695312,
-      "water_level_end_m": 2.1897857666015623,
-      "volume_start_m3": 7620,
-      "volume_end_m3": 8358,
+      "water_level_start_m": 3.219918823242187,
+      "water_level_end_m": 3.271554565429687,
+      "volume_start_m3": 20231,
+      "volume_end_m3": 20969,
       "inflow_m3": 1267.915283,
-      "outflow_m3": 494.26922996521,
+      "outflow_m3": 515.0819840240479,
       "electricity_price_cents_per_kwh": 6.621,
-      "interval_cost_eur": 3.1068664085340503
+      "interval_cost_eur": 3.1414550743532184
     },
     {
       "interval": 169,
@@ -2596,14 +2607,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.1897857666015623,
-      "water_level_end_m": 2.268960571289062,
-      "volume_start_m3": 8358,
-      "volume_end_m3": 9082,
+      "water_level_start_m": 3.271554565429687,
+      "water_level_end_m": 3.3214691162109373,
+      "volume_start_m3": 20969,
+      "volume_end_m3": 21693,
       "inflow_m3": 1253.994263,
-      "outflow_m3": 495.84424919128423,
+      "outflow_m3": 516.0462815093995,
       "electricity_price_cents_per_kwh": 6.621,
-      "interval_cost_eur": 3.109483929190636
+      "interval_cost_eur": 3.1430576380205157
     },
     {
       "interval": 170,
@@ -2611,14 +2622,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.268960571289062,
-      "water_level_end_m": 2.3455535888671877,
-      "volume_start_m3": 9082,
-      "volume_end_m3": 9811,
+      "water_level_start_m": 3.3214691162109373,
+      "water_level_end_m": 3.3713836669921875,
+      "volume_start_m3": 21693,
+      "volume_end_m3": 22422,
       "inflow_m3": 1258.416992,
-      "outflow_m3": 497.3228386688233,
+      "outflow_m3": 516.9784357452393,
       "electricity_price_cents_per_kwh": 6.621,
-      "interval_cost_eur": 3.111941193480492
+      "interval_cost_eur": 3.144606782898903
     },
     {
       "interval": 171,
@@ -2626,14 +2637,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.3455535888671877,
-      "water_level_end_m": 2.419564819335937,
-      "volume_start_m3": 9811,
-      "volume_end_m3": 10545,
+      "water_level_start_m": 3.3713836669921875,
+      "water_level_end_m": 3.420437622070313,
+      "volume_start_m3": 22422,
+      "volume_end_m3": 23156,
       "inflow_m3": 1263.650757,
-      "outflow_m3": 498.75321327209474,
+      "outflow_m3": 517.9105899810792,
       "electricity_price_cents_per_kwh": 6.621,
-      "interval_cost_eur": 3.114318329586983
+      "interval_cost_eur": 3.1461559277772904
     },
     {
       "interval": 172,
@@ -2641,14 +2652,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.419564819335937,
-      "water_level_end_m": 2.4909942626953123,
-      "volume_start_m3": 10545,
-      "volume_end_m3": 11280,
+      "water_level_start_m": 3.420437622070313,
+      "water_level_end_m": 3.4686309814453127,
+      "volume_start_m3": 23156,
+      "volume_end_m3": 23891,
       "inflow_m3": 1264.08667,
-      "outflow_m3": 500.1353730010987,
+      "outflow_m3": 518.8266725921632,
       "electricity_price_cents_per_kwh": 5.463,
-      "interval_cost_eur": 2.571525387225151
+      "interval_cost_eur": 2.5971555502939223
     },
     {
       "interval": 173,
@@ -2656,14 +2667,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.4909942626953123,
-      "water_level_end_m": 2.558981323242187,
-      "volume_start_m3": 11280,
-      "volume_end_m3": 12006,
+      "water_level_start_m": 3.4686309814453127,
+      "water_level_end_m": 3.5159637451171877,
+      "volume_start_m3": 23891,
+      "volume_end_m3": 24617,
       "inflow_m3": 1255.27771,
-      "outflow_m3": 501.469317855835,
+      "outflow_m3": 519.7266835784912,
       "electricity_price_cents_per_kwh": 5.463,
-      "interval_cost_eur": 2.5733545390176773
+      "interval_cost_eur": 2.5983896768045422
     },
     {
       "interval": 174,
@@ -2671,14 +2682,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.558981323242187,
-      "water_level_end_m": 2.6252471923828127,
-      "volume_start_m3": 12006,
-      "volume_end_m3": 12731,
+      "water_level_start_m": 3.5159637451171877,
+      "water_level_end_m": 3.561575317382813,
+      "volume_start_m3": 24617,
+      "volume_end_m3": 25342,
       "inflow_m3": 1254.480957,
-      "outflow_m3": 502.7389762115478,
+      "outflow_m3": 520.6106229400634,
       "electricity_price_cents_per_kwh": 5.463,
-      "interval_cost_eur": 2.575095538916588
+      "interval_cost_eur": 2.5996017653417587
     },
     {
       "interval": 175,
@@ -2686,149 +2697,149 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 2.6252471923828127,
-      "water_level_end_m": 2.690652465820313,
-      "volume_start_m3": 12731,
-      "volume_end_m3": 13467,
+      "water_level_start_m": 3.561575317382813,
+      "water_level_end_m": 3.6080474853515625,
+      "volume_start_m3": 25342,
+      "volume_end_m3": 26078,
       "inflow_m3": 1265.599609,
-      "outflow_m3": 503.97649131774904,
+      "outflow_m3": 521.462419052124,
       "electricity_price_cents_per_kwh": 5.463,
-      "interval_cost_eur": 2.5767924628686902
+      "interval_cost_eur": 2.600769777932167
     },
     {
       "interval": 176,
       "date": "2024-11-16T18:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 2.690652465820313,
-      "water_level_end_m": 2.7543365478515627,
-      "volume_start_m3": 13467,
-      "volume_end_m3": 14207,
+      "water_level_start_m": 3.6080474853515625,
+      "water_level_end_m": 3.653659057617187,
+      "volume_start_m3": 26078,
+      "volume_end_m3": 26818,
       "inflow_m3": 1269.931519,
-      "outflow_m3": 505.1979347991944,
+      "outflow_m3": 522.3302867889405,
       "electricity_price_cents_per_kwh": 1.639,
-      "interval_cost_eur": 0.7735874033975602
+      "interval_cost_eur": 0.7806355773210526
     },
     {
       "interval": 177,
       "date": "2024-11-16T18:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 2.7543365478515627,
-      "water_level_end_m": 2.8162994384765625,
-      "volume_start_m3": 14207,
-      "volume_end_m3": 14944,
+      "water_level_start_m": 3.653659057617187,
+      "water_level_end_m": 3.6984100341796866,
+      "volume_start_m3": 26818,
+      "volume_end_m3": 27555,
       "inflow_m3": 1266.353394,
-      "outflow_m3": 506.38723503112794,
+      "outflow_m3": 523.182082901001,
       "electricity_price_cents_per_kwh": 1.639,
-      "interval_cost_eur": 0.7740766762590409
+      "interval_cost_eur": 0.7809860024785996
     },
     {
       "interval": 178,
       "date": "2024-11-16T18:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 2.8162994384765625,
-      "water_level_end_m": 2.874819946289062,
-      "volume_start_m3": 14944,
-      "volume_end_m3": 15665,
+      "water_level_start_m": 3.6984100341796866,
+      "water_level_end_m": 3.742300415039062,
+      "volume_start_m3": 27555,
+      "volume_end_m3": 28276,
       "inflow_m3": 1250.122437,
-      "outflow_m3": 507.54439201354984,
+      "outflow_m3": 524.0178073883056,
       "electricity_price_cents_per_kwh": 1.639,
-      "interval_cost_eur": 0.7745527255296708
+      "interval_cost_eur": 0.7813298158407213
     },
     {
       "interval": 179,
       "date": "2024-11-16T18:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 2.874819946289062,
-      "water_level_end_m": 2.931619262695312,
-      "volume_start_m3": 15665,
-      "volume_end_m3": 16377,
+      "water_level_start_m": 3.742300415039062,
+      "water_level_end_m": 3.7844696044921875,
+      "volume_start_m3": 28276,
+      "volume_end_m3": 28988,
       "inflow_m3": 1241.360718,
-      "outflow_m3": 508.6372624969482,
+      "outflow_m3": 524.8374602508545,
       "electricity_price_cents_per_kwh": 1.639,
-      "interval_cost_eur": 0.775002327618599
+      "interval_cost_eur": 0.7816670174074174
     },
     {
       "interval": 180,
       "date": "2024-11-16T19:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 2.931619262695312,
-      "water_level_end_m": 2.987557983398437,
-      "volume_start_m3": 16377,
-      "volume_end_m3": 17086,
+      "water_level_start_m": 3.7844696044921875,
+      "water_level_end_m": 3.8257781982421877,
+      "volume_start_m3": 28988,
+      "volume_end_m3": 29697,
       "inflow_m3": 1238.379395,
-      "outflow_m3": 509.697989730835,
+      "outflow_m3": 525.6249698638916,
       "electricity_price_cents_per_kwh": 0.532,
-      "interval_cost_eur": 0.25169822553634646
+      "interval_cost_eur": 0.2538250210762024
     },
     {
       "interval": 181,
       "date": "2024-11-16T19:15:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 2.987557983398437,
-      "water_level_end_m": 3.0417755126953123,
-      "volume_start_m3": 17086,
-      "volume_end_m3": 17798,
+      "water_level_start_m": 3.8257781982421877,
+      "water_level_end_m": 3.867086791992187,
+      "volume_start_m3": 29697,
+      "volume_end_m3": 30409,
       "inflow_m3": 1241.777222,
-      "outflow_m3": 510.74264533996586,
+      "outflow_m3": 526.3964078521728,
       "electricity_price_cents_per_kwh": 0.532,
-      "interval_cost_eur": 0.25183772272109983
+      "interval_cost_eur": 0.25392803438186645
     },
     {
       "interval": 182,
       "date": "2024-11-16T19:30:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 3.0417755126953123,
-      "water_level_end_m": 3.095132446289062,
-      "volume_start_m3": 17798,
-      "volume_end_m3": 18514,
+      "water_level_start_m": 3.867086791992187,
+      "water_level_end_m": 3.908395385742187,
+      "volume_start_m3": 30409,
+      "volume_end_m3": 31125,
       "inflow_m3": 1245.656738,
-      "outflow_m3": 511.75515769958497,
+      "outflow_m3": 527.1678458404541,
       "electricity_price_cents_per_kwh": 0.532,
-      "interval_cost_eur": 0.25197292768478396
+      "interval_cost_eur": 0.25403104768753054
     },
     {
       "interval": 183,
       "date": "2024-11-16T19:45:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 3.095132446289062,
-      "water_level_end_m": 3.148489379882812,
-      "volume_start_m3": 18514,
-      "volume_end_m3": 19231,
+      "water_level_start_m": 3.908395385742187,
+      "water_level_end_m": 3.948843383789063,
+      "volume_start_m3": 31125,
+      "volume_end_m3": 31842,
       "inflow_m3": 1246.989258,
-      "outflow_m3": 512.7515984344483,
+      "outflow_m3": 527.9392838287354,
       "electricity_price_cents_per_kwh": 0.532,
-      "interval_cost_eur": 0.25210598653793337
+      "interval_cost_eur": 0.2541340609931946
     },
     {
       "interval": 184,
       "date": "2024-11-16T20:00:00.000Z",
       "active_pumps": [
-        "2.1"
+        "1.1"
       ],
-      "water_level_start_m": 3.148489379882812,
-      "water_level_end_m": 3.2009857177734373,
-      "volume_start_m3": 19231,
-      "volume_end_m3": 19961,
+      "water_level_start_m": 3.948843383789063,
+      "water_level_end_m": 3.990151977539063,
+      "volume_start_m3": 31842,
+      "volume_end_m3": 32572,
       "inflow_m3": 1259.77417,
-      "outflow_m3": 513.7480391693115,
+      "outflow_m3": 528.6946501922607,
       "electricity_price_cents_per_kwh": 0.478,
-      "interval_cost_eur": 0.2266358340167999
+      "interval_cost_eur": 0.22842912720680233
     },
     {
       "interval": 185,
@@ -2836,14 +2847,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.2009857177734373,
-      "water_level_end_m": 3.2552032470703125,
-      "volume_start_m3": 19961,
-      "volume_end_m3": 20735,
+      "water_level_start_m": 3.990151977539063,
+      "water_level_end_m": 4.033181762695314,
+      "volume_start_m3": 32572,
+      "volume_end_m3": 33346,
       "inflow_m3": 1303.472412,
-      "outflow_m3": 514.728408279419,
+      "outflow_m3": 529.4660881805421,
       "electricity_price_cents_per_kwh": 0.478,
-      "interval_cost_eur": 0.22675345862388607
+      "interval_cost_eur": 0.22852168427467343
     },
     {
       "interval": 186,
@@ -2851,14 +2862,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.2552032470703125,
-      "water_level_end_m": 3.310281372070313,
-      "volume_start_m3": 20735,
-      "volume_end_m3": 21529,
+      "water_level_start_m": 4.033181762695314,
+      "water_level_end_m": 4.076211547851563,
+      "volume_start_m3": 33346,
+      "volume_end_m3": 34140,
       "inflow_m3": 1323.395996,
-      "outflow_m3": 515.7409206390381,
+      "outflow_m3": 530.2696694183351,
       "electricity_price_cents_per_kwh": 0.478,
-      "interval_cost_eur": 0.22687493977546688
+      "interval_cost_eur": 0.22861809788703916
     },
     {
       "interval": 187,
@@ -2866,14 +2877,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.310281372070313,
-      "water_level_end_m": 3.3653594970703127,
-      "volume_start_m3": 21529,
-      "volume_end_m3": 22338,
+      "water_level_start_m": 4.076211547851563,
+      "water_level_end_m": 4.120101928710937,
+      "volume_start_m3": 34140,
+      "volume_end_m3": 34949,
       "inflow_m3": 1338.095093,
-      "outflow_m3": 516.7695046234131,
+      "outflow_m3": 531.073250656128,
       "electricity_price_cents_per_kwh": 0.478,
-      "interval_cost_eur": 0.226998349199295
+      "interval_cost_eur": 0.2287145114994049
     },
     {
       "interval": 188,
@@ -2881,14 +2892,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.3653594970703127,
-      "water_level_end_m": 3.4187164306640625,
-      "volume_start_m3": 22338,
-      "volume_end_m3": 23138,
+      "water_level_start_m": 4.120101928710937,
+      "water_level_end_m": 4.1631317138671875,
+      "volume_start_m3": 34949,
+      "volume_end_m3": 35749,
       "inflow_m3": 1329.899658,
-      "outflow_m3": 517.798088607788,
+      "outflow_m3": 531.8929035186768,
       "electricity_price_cents_per_kwh": 0.439,
-      "interval_cost_eur": 0.20859090384006498
+      "interval_cost_eur": 0.21014402225017548
     },
     {
       "interval": 189,
@@ -2896,14 +2907,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.4187164306640625,
-      "water_level_end_m": 3.4703521728515625,
-      "volume_start_m3": 23138,
-      "volume_end_m3": 23921,
+      "water_level_start_m": 4.1631317138671875,
+      "water_level_end_m": 4.204440307617187,
+      "volume_start_m3": 35749,
+      "volume_end_m3": 36532,
       "inflow_m3": 1312.758301,
-      "outflow_m3": 518.7945293426513,
+      "outflow_m3": 532.6964847564698,
       "electricity_price_cents_per_kwh": 0.439,
-      "interval_cost_eur": 0.20870070240497587
+      "interval_cost_eur": 0.21023256947994232
     },
     {
       "interval": 190,
@@ -2911,14 +2922,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.4703521728515625,
-      "water_level_end_m": 3.5202667236328127,
-      "volume_start_m3": 23921,
-      "volume_end_m3": 24693,
+      "water_level_start_m": 4.204440307617187,
+      "water_level_end_m": 4.244888305664062,
+      "volume_start_m3": 36532,
+      "volume_end_m3": 37304,
       "inflow_m3": 1301.989014,
-      "outflow_m3": 519.758826828003,
+      "outflow_m3": 533.4679227447509,
       "electricity_price_cents_per_kwh": 0.439,
-      "interval_cost_eur": 0.2088069590806961
+      "interval_cost_eur": 0.2103175748205185
     },
     {
       "interval": 191,
@@ -2926,14 +2937,14 @@
       "active_pumps": [
         "2.1"
       ],
-      "water_level_start_m": 3.5202667236328127,
-      "water_level_end_m": 3.5675994873046877,
-      "volume_start_m3": 24693,
-      "volume_end_m3": 25434,
+      "water_level_start_m": 4.244888305664062,
+      "water_level_end_m": 4.282754516601563,
+      "volume_start_m3": 37304,
+      "volume_end_m3": 38045,
       "inflow_m3": 1270.725464,
-      "outflow_m3": 520.6909810638427,
+      "outflow_m3": 534.2232891082764,
       "electricity_price_cents_per_kwh": 0.439,
-      "interval_cost_eur": 0.20890967386722564
+      "interval_cost_eur": 0.2104008092164993
     }
   ]
 }

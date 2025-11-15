@@ -308,63 +308,55 @@ class PumpOptimizer:
                 model.Add(sum(low_level_reached) >= 1)
                 print(f"  Added low-level constraint for period {period} (intervals {start_interval}-{end_interval})")
         
-        # Objective: Minimize total electricity cost with water-level-dependent efficiency
-        # Discretize water levels into bins for piecewise cost calculation
-        water_level_bins = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
-        num_bins = len(water_level_bins) - 1
-        
-        # Create indicator variables for water level bins at each time step
-        level_indicators = {}
-        for t in range(self.num_intervals):
-            level_indicators[t] = {}
-            for b in range(num_bins):
-                level_indicators[t][b] = model.NewBoolVar(f'level_bin_{b}_t{t}')
-            
-            # Exactly one bin must be active
-            model.Add(sum(level_indicators[t][b] for b in range(num_bins)) == 1)
-            
-            # Link bin indicators to volume
-            for b in range(num_bins):
-                bin_low = tunnel_volume(water_level_bins[b])
-                bin_high = tunnel_volume(water_level_bins[b + 1])
-                
-                # If this bin is active, volume must be in range
-                model.Add(volume[t] >= int(bin_low)).OnlyEnforceIf(level_indicators[t][b])
-                model.Add(volume[t] <= int(bin_high)).OnlyEnforceIf(level_indicators[t][b])
-        
+        # Objective: Minimize total electricity cost
+        # Use average water level for cost calculation to avoid complexity
+        # The actual cost will be calculated post-hoc with real water levels
         cost_terms = []
         for t in range(self.num_intervals):
             for p in range(self.num_pumps):
                 pump_name = self.pump_names[p]
                 
-                # For each water level bin, calculate adjusted cost based on actual pump performance
-                for b in range(num_bins):
-                    # Use midpoint of bin for cost calculation
-                    bin_mid_level = (water_level_bins[b] + water_level_bins[b + 1]) / 2
-                    
-                    # Get actual pump power at this water level
-                    power_kw, flow_m3h = self.get_pump_specs(pump_name, bin_mid_level)
-                    
-                    # Cost = power (kW) * time (h) * electricity_price (€/kWh)
-                    # Scale by 1000 to keep precision
-                    cost = int(power_kw * self.interval_hours * self.electricity_price[t] * 1000)
-                    
-                    # This cost applies only if pump is on AND we're in this bin
-                    # Create a variable for the conjunction
-                    pump_and_bin = model.NewBoolVar(f'pump_{p}_bin_{b}_t{t}')
-                    model.AddBoolAnd([pump_on[p][t], level_indicators[t][b]]).OnlyEnforceIf(pump_and_bin)
-                    model.AddBoolOr([pump_on[p][t].Not(), level_indicators[t][b].Not()]).OnlyEnforceIf(pump_and_bin.Not())
-                    
-                    cost_terms.append(pump_and_bin * cost)
+                # Use average pump power for optimization
+                # This is a reasonable approximation and vastly simplifies the model
+                power_kw, _ = pump_avg_specs[p]
+                
+                # Cost = power (kW) * time (h) * electricity_price (€/kWh)
+                # Scale by 1000 to keep precision
+                cost = int(power_kw * self.interval_hours * self.electricity_price[t] * 1000)
+                
+                cost_terms.append(pump_on[p][t] * cost)
         
         total_cost = sum(cost_terms)
         model.Minimize(total_cost)
         
+        # Provide a simple heuristic solution hint to speed up solving
+        # Strategy: Run pumps during cheapest hours while respecting constraints
+        print("\nGenerating initial solution hint...")
+        for t in range(self.num_intervals):
+            for p in range(self.num_pumps):
+                # Simple heuristic: maintain initial state for locked pumps,
+                # otherwise prefer at least one pump on
+                pump_name = self.pump_names[p]
+                status = self.pump_initial_status[pump_name]
+                if t < status['locked_intervals']:
+                    hint_value = 1 if status['on'] else 0
+                else:
+                    # Simple heuristic: first pump always on, others based on price
+                    if p == 0:
+                        hint_value = 1
+                    else:
+                        # Turn on more pumps during cheap hours
+                        hint_value = 1 if self.electricity_price[t] < 0.05 else 0
+                model.AddHint(pump_on[p][t], hint_value)
+        
         # Solve
         print("\nSolving...")
         solver = cp_model.CpSolver()
-        solver.parameters.max_time_in_seconds = 300.0  # 5 minutes timeout
+        solver.parameters.max_time_in_seconds = 120.0  # 2 minutes timeout
+        solver.parameters.num_search_workers = 8  # Use multiple threads
         solver.parameters.log_search_progress = True
+        solver.parameters.linearization_level = 2  # More aggressive linearization
+        solver.parameters.cp_model_presolve = True  # Enable presolve
         
         status = solver.Solve(model)
         
