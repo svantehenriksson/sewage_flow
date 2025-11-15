@@ -49,7 +49,10 @@ class PumpOptimizer:
         # Extract first num_intervals of data
         items = data['items'][:self.num_intervals]
         self.water_inflow = [item['waterInflow'] for item in items]
-        self.electricity_price = [item['electricityPrice'] for item in items]
+        # Note: electricityPrice in JSON is in c/kWh (cents per kWh)
+        # Convert to €/kWh for cost calculations
+        self.electricity_price_cents = [item['electricityPrice'] for item in items]
+        self.electricity_price = [price / 100.0 for price in self.electricity_price_cents]
         self.dates = [item['date'] for item in items]
         
         # Load initial pump statuses (convert pump1-1 format to 1.1 format)
@@ -395,7 +398,7 @@ class PumpOptimizer:
                     'volume_end_m3': solver.Value(volume[t + 1]),
                     'inflow_m3': self.water_inflow[t],
                     'outflow_m3': total_flow,
-                    'electricity_price_eur_per_kwh': self.electricity_price[t],
+                    'electricity_price_cents_per_kwh': self.electricity_price_cents[t],
                     'interval_cost_eur': interval_cost
                 }
                 solution['schedule'].append(interval_info)
@@ -408,7 +411,7 @@ class PumpOptimizer:
                       f"Level={water_level:5.2f}m→{next_water_level:5.2f}m | "
                       f"Vol={solver.Value(volume[t]):7.0f}m³ | "
                       f"In={self.water_inflow[t]:6.0f}m³ Out={total_flow:6.0f}m³ | "
-                      f"Price=€{self.electricity_price[t]:.3f}/kWh | "
+                      f"Price={self.electricity_price_cents[t]:.1f}c/kWh | "
                       f"Cost=€{interval_cost:.2f}")
             
             # Save to file

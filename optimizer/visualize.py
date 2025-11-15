@@ -34,7 +34,8 @@ def visualize_results(results):
     
     inflows = [item['inflow_m3'] for item in schedule]
     outflows = [item['outflow_m3'] for item in schedule]
-    prices = [item['electricity_price_eur_per_kwh'] for item in schedule]
+    # Convert cents to euros for display
+    prices = [item['electricity_price_cents_per_kwh'] / 100.0 for item in schedule]
     costs = [item['interval_cost_eur'] for item in schedule]
     
     # Extract pump schedules

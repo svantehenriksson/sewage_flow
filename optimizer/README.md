@@ -31,7 +31,7 @@ From input.json get
 - items (intervals):
   - date: ISO timestamp for the interval
   - waterInflow: how much water flows into the system during that 15min interval (in m³)
-  - electricityPrice: price per kWh during that interval (in €/kWh)
+  - electricityPrice: price per kWh during that interval (in c/kWh)
 
 ## Specs
 
