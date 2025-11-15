@@ -51,27 +51,6 @@
 					class="transition-all duration-500"
 				/>
 			</g>
-
-			<!-- Level markers -->
-			{#each [0, 2, 4, 6, 8] as level}
-				<line
-					x1="15"
-					y1={200 - (level / 8) * 180}
-					x2="30"
-					y2={200 - (level / 8) * 180}
-					stroke="#9ca3af"
-					stroke-width="2"
-				/>
-				<text
-					x="5"
-					y={205 - (level / 8) * 180}
-					font-size="12"
-					fill="#6b7280"
-					text-anchor="end"
-				>
-					{level}m
-				</text>
-			{/each}
 		</svg>
 	</div>
 	<div class="mt-2 text-center">
