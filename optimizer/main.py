@@ -52,6 +52,35 @@ class PumpOptimizer:
         self.electricity_price = [item['electricityPrice'] for item in items]
         self.dates = [item['date'] for item in items]
         
+        # Load initial pump statuses (convert pump1-1 format to 1.1 format)
+        self.pump_initial_status = {}
+        pump_status_mapping = {
+            'pump1-1': '1.1',
+            'pump1-2': '1.2',
+            'pump1-3': '1.3',
+            'pump1-4': '1.4',
+            'pump2-1': '2.1',
+            'pump2-2': '2.2',
+            'pump2-3': '2.3',
+            'pump2-4': '2.4',
+        }
+        
+        for json_key, pump_key in pump_status_mapping.items():
+            if json_key in data:
+                status = data[json_key]
+                locked_minutes = status.get('locked', 0)
+                locked_intervals = int((locked_minutes + 14) // 15)  # Round up to nearest interval
+                self.pump_initial_status[pump_key] = {
+                    'on': status.get('on', False),
+                    'locked_intervals': locked_intervals
+                }
+            else:
+                # Default: pump is off and not locked
+                self.pump_initial_status[pump_key] = {
+                    'on': False,
+                    'locked_intervals': 0
+                }
+        
         # Pump specifications: (flow_m3_per_hour, power_kw)
         self.pumps = {
             '1.1': (1500, 185),
@@ -93,6 +122,15 @@ class PumpOptimizer:
         print(f"Time horizon: {self.num_intervals} intervals ({self.time_horizon_hours} hours)")
         print(f"Initial water level: {self.initial_water_level:.2f} m")
         print(f"Initial volume: {self.initial_volume:.2f} m³")
+        print("\nInitial pump statuses:")
+        for pump_name in self.pump_names:
+            status = self.pump_initial_status[pump_name]
+            state = "ON" if status['on'] else "OFF"
+            locked = status['locked_intervals']
+            if locked > 0:
+                print(f"  Pump {pump_name}: {state}, locked for {locked} intervals ({locked * 15} minutes)")
+            else:
+                print(f"  Pump {pump_name}: {state}, not locked")
         
         # Decision variables: pump_on[p][t] = 1 if pump p is on at time t
         pump_on = {}
@@ -111,6 +149,17 @@ class PumpOptimizer:
         
         # Set initial volume
         model.Add(volume[0] == int(self.initial_volume))
+        
+        # Constraint 0: Enforce initial pump statuses and locked intervals
+        for p in range(self.num_pumps):
+            pump_name = self.pump_names[p]
+            status = self.pump_initial_status[pump_name]
+            initial_state = 1 if status['on'] else 0
+            locked_intervals = status['locked_intervals']
+            
+            # Lock the pump state for the specified number of intervals
+            for t in range(min(locked_intervals, self.num_intervals)):
+                model.Add(pump_on[p][t] == initial_state)
         
         # Constraint 1: At least one pump must always be running
         for t in range(self.num_intervals):
@@ -146,6 +195,10 @@ class PumpOptimizer:
         
         # Constraint 5: Minimum on/off time (2 hours = 8 intervals)
         for p in range(self.num_pumps):
+            pump_name = self.pump_names[p]
+            status = self.pump_initial_status[pump_name]
+            initial_state = 1 if status['on'] else 0
+            
             for t in range(self.num_intervals - 1):
                 # If pump turns on at t, it must stay on for at least 8 intervals
                 if t + self.min_on_off_intervals <= self.num_intervals:
@@ -157,6 +210,10 @@ class PumpOptimizer:
                             # pump_on[p][t] - pump_on[p][t-1] >= 1 implies pump_on[p][t+dt] = 1
                             # Encoded as: pump_on[p][t] + (1 - pump_on[p][t-1]) <= 1 + pump_on[p][t+dt]
                             model.Add(pump_on[p][t] - pump_on[p][t-1] <= pump_on[p][t+dt])
+                        else:
+                            # At t=0, check against initial state
+                            # If initial was off (0) and t=0 is on (1), must stay on
+                            model.Add(pump_on[p][t] - initial_state <= pump_on[p][t+dt])
                 
                 # If pump turns off at t, it must stay off for at least 8 intervals
                 if t + self.min_on_off_intervals <= self.num_intervals:
@@ -165,6 +222,10 @@ class PumpOptimizer:
                             # If it was on and now off, must stay off
                             # pump_on[p][t-1] - pump_on[p][t] >= 1 implies pump_on[p][t+dt] = 0
                             model.Add(pump_on[p][t-1] - pump_on[p][t] + pump_on[p][t+dt] <= 1)
+                        else:
+                            # At t=0, check against initial state
+                            # If initial was on (1) and t=0 is off (0), must stay off
+                            model.Add(initial_state - pump_on[p][t] + pump_on[p][t+dt] <= 1)
         
         # Apply fixed pump schedules if any
         for pump_name, schedule in self.fixed_schedules.items():
@@ -256,7 +317,7 @@ class PumpOptimizer:
         # Solve
         print("\nSolving...")
         solver = cp_model.CpSolver()
-        solver.parameters.max_time_in_seconds = 600.0  # 5 minutes timeout
+        solver.parameters.max_time_in_seconds = 300.0  # 5 minutes timeout
         solver.parameters.log_search_progress = True
         
         status = solver.Solve(model)

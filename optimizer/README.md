@@ -21,13 +21,17 @@ python visualize.py
 
 From input.json get
 
-- initialWaterLevel: the intitial water level
-
-From every item:
-
-- date
-- waterInflow: how much water flows into the system at that 15min
-- electricity price: price per kWh during that interval
+- initialWaterLevel: the initial water level (in meters)
+- pump statuses (pump1-1 through pump1-4, pump2-1 through pump2-4):
+  - on: boolean indicating if the pump is currently running
+  - locked: number of minutes the pump status cannot be changed
+    - If a pump is ON and locked for 90 minutes, it must stay ON for those 90 minutes
+    - If a pump is OFF and locked for 120 minutes, it cannot be turned ON for those 120 minutes
+    - A locked value of 0 means the pump can be controlled immediately
+- items (intervals):
+  - date: ISO timestamp for the interval
+  - waterInflow: how much water flows into the system during that 15min interval (in m³)
+  - electricityPrice: price per kWh during that interval (in €/kWh)
 
 ## Specs
 
@@ -64,5 +68,5 @@ From every item:
 
 ## Future Enhancements
 
-- Take water level into account
 - I wanting to equalize load, can track how much each pump have been used and tweak its multiplier
+- Give a small penalty for switching on/off

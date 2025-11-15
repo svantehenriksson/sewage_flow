@@ -1,5 +1,37 @@
 {
   "initialWaterLevel": 2.371505022,
+  "pump1-1": {
+    "on": true,
+    "locked": 90
+  },
+  "pump1-2": {
+    "on": false,
+    "locked": 0
+  },
+  "pump1-3": {
+    "on": false,
+    "locked": 120
+  },
+  "pump1-4": {
+    "on": true,
+    "locked": 75
+  },
+  "pump2-1": {
+    "on": false,
+    "locked": 0
+  },
+  "pump2-2": {
+    "on": false,
+    "locked": 0
+  },
+  "pump2-3": {
+    "on": false,
+    "locked": 0
+  },
+  "pump2-4": {
+    "on": false,
+    "locked": 0
+  },
   "items": [
     {
       "date": "2024-11-14T22:00:00.000Z",
