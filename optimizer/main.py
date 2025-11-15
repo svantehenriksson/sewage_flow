@@ -50,11 +50,11 @@ class PumpOptimizer:
         self.under_threshold_within_minutes = data.get('underThresholdWithinMinutes', None)
         
         # Extract first num_intervals of data
-        items = data['items'][:self.num_intervals]
+        items = data['items'][960:960+self.num_intervals]
         self.water_inflow = [item['waterInflow'] for item in items]
         # Note: electricityPrice in JSON is in c/kWh (cents per kWh)
         # Convert to €/kWh for cost calculations
-        self.electricity_price_cents = [item['electricityPrice'] for item in items]
+        self.electricity_price_cents = [item['electricityPriceHigh'] for item in items]
         self.electricity_price = [price / 100.0 for price in self.electricity_price_cents]
         self.dates = [item['date'] for item in items]
         
