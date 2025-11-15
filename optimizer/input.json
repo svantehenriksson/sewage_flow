@@ -1,5 +1,6 @@
 {
   "initialWaterLevel": 2.371505022,
+  "underThresholdWithinMinutes": 720,
   "pump1-1": {
     "on": true,
     "locked": 90

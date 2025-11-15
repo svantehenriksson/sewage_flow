@@ -22,6 +22,7 @@ python visualize.py
 From input.json get
 
 - initialWaterLevel: the initial water level (in meters)
+- underThresholdWithinMinutes: within how many minutes from the start the water level needs to go under 0.5m (e.g., 720 means the water level must go below 0.5m within the first 12 hours)
 - pump statuses (pump1-1 through pump1-4, pump2-1 through pump2-4):
   - on: boolean indicating if the pump is currently running
   - locked: number of minutes the pump status cannot be changed

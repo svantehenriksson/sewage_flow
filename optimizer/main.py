@@ -46,6 +46,9 @@ class PumpOptimizer:
         self.initial_water_level = data['initialWaterLevel']
         self.initial_volume = tunnel_volume(self.initial_water_level)
         
+        # Load under threshold constraint
+        self.under_threshold_within_minutes = data.get('underThresholdWithinMinutes', None)
+        
         # Extract first num_intervals of data
         items = data['items'][:self.num_intervals]
         self.water_inflow = [item['waterInflow'] for item in items]
@@ -261,6 +264,26 @@ class PumpOptimizer:
         # Constraint 6: Low water level requirement
         # The tank must reach <= 0.5m at least once every 24h period
         low_level_volume = int(tunnel_volume(self.low_level_threshold))
+        
+        # Constraint 6a: Under threshold within specified minutes (if configured)
+        if self.under_threshold_within_minutes is not None:
+            # Convert minutes to intervals (15-minute intervals)
+            max_intervals = int(self.under_threshold_within_minutes / 15)
+            max_intervals = min(max_intervals, self.num_intervals)
+            
+            print(f"  Adding constraint: water level must go under {self.low_level_threshold}m within {self.under_threshold_within_minutes} minutes ({max_intervals} intervals)")
+            
+            # Must reach low level at least once within the specified time window
+            low_level_reached = []
+            for t in range(max_intervals + 1):
+                is_low = model.NewBoolVar(f'is_low_initial_t{t}')
+                # is_low = 1 if volume[t] <= low_level_volume
+                model.Add(volume[t] <= low_level_volume).OnlyEnforceIf(is_low)
+                model.Add(volume[t] > low_level_volume).OnlyEnforceIf(is_low.Not())
+                low_level_reached.append(is_low)
+            
+            # At least one must be true in this time window
+            model.Add(sum(low_level_reached) >= 1)
         
         # Check each 24-hour period
         num_24h_periods = self.time_horizon_hours // 24
