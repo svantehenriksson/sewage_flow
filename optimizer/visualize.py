@@ -35,8 +35,6 @@ def visualize_results(results):
     inflows = [item['inflow_m3'] for item in schedule]
     outflows = [item['outflow_m3'] for item in schedule]
     prices = [item['electricity_price_eur_per_kwh'] for item in schedule]
-    pumping_scores = [item['pumping_score_eur_per_kwh'] for item in schedule]
-    efficiencies = [item['pump_efficiency_pct'] for item in schedule]
     costs = [item['interval_cost_eur'] for item in schedule]
     
     # Extract pump schedules
@@ -49,8 +47,8 @@ def visualize_results(results):
             pump_schedules[pump].append(1 if pump in active else 0)
     
     # Create figure with subplots
-    fig = plt.figure(figsize=(16, 14))
-    gs = fig.add_gridspec(6, 1, hspace=0.3, height_ratios=[1.2, 1, 1, 0.8, 0.6, 1])
+    fig = plt.figure(figsize=(16, 12))
+    gs = fig.add_gridspec(5, 1, hspace=0.3, height_ratios=[1.2, 1, 1, 0.8, 1])
     
     # Color scheme
     colors = {
@@ -138,65 +136,48 @@ def visualize_results(results):
     ax3.set_xlim(0, len(intervals))
     
     # ============================================================
-    # Subplot 4: Electricity Price vs Pumping Score
+    # Subplot 4: Electricity Price
     # ============================================================
     ax4 = fig.add_subplot(gs[3], sharex=ax1)
     
     ax4.fill_between(intervals, prices, alpha=0.4, color='blue', label='Electricity Price')
     ax4.plot(intervals, prices, 'b-', linewidth=1.5)
-    ax4.fill_between(intervals, pumping_scores, alpha=0.4, color='red', label='Pumping Score (with efficiency)')
-    ax4.plot(intervals, pumping_scores, 'r-', linewidth=1.5)
-    ax4.set_ylabel('Cost (€/kWh)', fontsize=11, fontweight='bold')
-    ax4.set_title('Electricity Price vs Pumping Score', fontsize=12, fontweight='bold')
+    ax4.set_ylabel('Price (€/kWh)', fontsize=11, fontweight='bold')
+    ax4.set_title('Electricity Price', fontsize=12, fontweight='bold')
     ax4.legend(loc='upper left', fontsize=9)
     ax4.grid(True, alpha=0.3)
     ax4.set_xlim(0, len(intervals))
     
     # ============================================================
-    # Subplot 5: Pump Efficiency
+    # Subplot 5: Flow and Cost
     # ============================================================
     ax5 = fig.add_subplot(gs[4], sharex=ax1)
     
-    ax5.fill_between(intervals, efficiencies, alpha=0.6, color='green', label='Pump Efficiency')
-    ax5.plot(intervals, efficiencies, 'g-', linewidth=1.5)
-    ax5.axhline(y=100, color='gray', linestyle='--', linewidth=1, alpha=0.5, label='100% (optimal)')
-    ax5.set_ylabel('Efficiency (%)', fontsize=11, fontweight='bold')
-    ax5.set_title('Pump Efficiency Based on Water Level', fontsize=12, fontweight='bold')
-    ax5.legend(loc='lower left', fontsize=9)
+    x = np.array(intervals)
+    ax5.bar(x - 0.2, inflows, width=0.4, alpha=0.7, color='green', label='Inflow')
+    ax5.bar(x + 0.2, [-o for o in outflows], width=0.4, alpha=0.7, color='red', label='Outflow')
+    ax5.axhline(y=0, color='black', linewidth=0.8)
+    
+    ax5.set_ylabel('Flow (m³/15min)', fontsize=11, fontweight='bold')
+    ax5.set_xlabel('Time Interval (15 minutes each)', fontsize=11, fontweight='bold')
+    ax5.set_title('Water Inflow vs Outflow', fontsize=12, fontweight='bold')
+    ax5.legend(loc='upper left', fontsize=9)
     ax5.grid(True, alpha=0.3)
     ax5.set_xlim(0, len(intervals))
-    ax5.set_ylim(60, 105)
-    
-    # ============================================================
-    # Subplot 6: Flow and Cost
-    # ============================================================
-    ax6 = fig.add_subplot(gs[5], sharex=ax1)
-    
-    x = np.array(intervals)
-    ax6.bar(x - 0.2, inflows, width=0.4, alpha=0.7, color='green', label='Inflow')
-    ax6.bar(x + 0.2, [-o for o in outflows], width=0.4, alpha=0.7, color='red', label='Outflow')
-    ax6.axhline(y=0, color='black', linewidth=0.8)
-    
-    ax6.set_ylabel('Flow (m³/15min)', fontsize=11, fontweight='bold')
-    ax6.set_xlabel('Time Interval (15 minutes each)', fontsize=11, fontweight='bold')
-    ax6.set_title('Water Inflow vs Outflow', fontsize=12, fontweight='bold')
-    ax6.legend(loc='upper left', fontsize=9)
-    ax6.grid(True, alpha=0.3)
-    ax6.set_xlim(0, len(intervals))
     
     # Add cost on secondary y-axis
-    ax6b = ax6.twinx()
-    ax6b.plot(intervals, costs, 'orange', linewidth=2, marker='o', markersize=2, 
+    ax5b = ax5.twinx()
+    ax5b.plot(intervals, costs, 'orange', linewidth=2, marker='o', markersize=2, 
              alpha=0.7, label='Interval Cost')
-    ax6b.set_ylabel('Cost (€/15min)', fontsize=11, fontweight='bold', color='orange')
-    ax6b.tick_params(axis='y', labelcolor='orange')
-    ax6b.legend(loc='upper right', fontsize=9)
+    ax5b.set_ylabel('Cost (€/15min)', fontsize=11, fontweight='bold', color='orange')
+    ax5b.tick_params(axis='y', labelcolor='orange')
+    ax5b.legend(loc='upper right', fontsize=9)
     
     # Format x-axis with time labels (every 12 intervals = 3 hours)
     tick_positions = range(0, len(intervals) + 1, 12)
     tick_labels = [f'{i//4}h' for i in tick_positions]
-    ax6.set_xticks(tick_positions)
-    ax6.set_xticklabels(tick_labels, rotation=45)
+    ax5.set_xticks(tick_positions)
+    ax5.set_xticklabels(tick_labels, rotation=45)
     
     plt.tight_layout()
     

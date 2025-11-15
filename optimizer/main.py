@@ -7,7 +7,6 @@ Minimizes electricity costs while satisfying operational constraints.
 import json
 from ortools.sat.python import cp_model
 from tunnel_volume import tunnel_volume
-from pumping_score import pumping_score
 from pumps import small_pump, big_pump
 import sys
 
@@ -314,18 +313,15 @@ class PumpOptimizer:
                 
                 # For each water level bin, calculate adjusted cost based on actual pump performance
                 for b in range(num_bins):
-                    # Use midpoint of bin for score calculation
+                    # Use midpoint of bin for cost calculation
                     bin_mid_level = (water_level_bins[b] + water_level_bins[b + 1]) / 2
                     
                     # Get actual pump power at this water level
                     power_kw, flow_m3h = self.get_pump_specs(pump_name, bin_mid_level)
                     
-                    # Get pumping score based on electricity price and pump efficiency at this level
-                    pumping_score_value = pumping_score(bin_mid_level, self.electricity_price[t])
-                    
-                    # Cost = power (kW) * time (h) * pumping_score (€/kWh)
+                    # Cost = power (kW) * time (h) * electricity_price (€/kWh)
                     # Scale by 1000 to keep precision
-                    cost = int(power_kw * self.interval_hours * pumping_score_value * 1000)
+                    cost = int(power_kw * self.interval_hours * self.electricity_price[t] * 1000)
                     
                     # This cost applies only if pump is on AND we're in this bin
                     # Create a variable for the conjunction
@@ -379,9 +375,6 @@ class PumpOptimizer:
                 total_flow = 0
                 interval_cost = 0
                 
-                # Calculate pumping score based on water level and electricity price
-                pumping_score_value = pumping_score(water_level, self.electricity_price[t])
-                
                 for p in range(self.num_pumps):
                     if solver.Value(pump_on[p][t]) == 1:
                         pump_name = self.pump_names[p]
@@ -389,8 +382,8 @@ class PumpOptimizer:
                         power_kw, flow_rate = self.get_pump_specs(pump_name, water_level)
                         active_pumps.append(pump_name)
                         total_flow += flow_rate * self.interval_hours
-                        # Use pumping score that accounts for pump efficiency at this water level
-                        interval_cost += power_kw * self.interval_hours * pumping_score_value
+                        # Calculate cost: power * time * electricity price
+                        interval_cost += power_kw * self.interval_hours * self.electricity_price[t]
                 
                 interval_info = {
                     'interval': t,
@@ -403,8 +396,6 @@ class PumpOptimizer:
                     'inflow_m3': self.water_inflow[t],
                     'outflow_m3': total_flow,
                     'electricity_price_eur_per_kwh': self.electricity_price[t],
-                    'pumping_score_eur_per_kwh': pumping_score_value,
-                    'pump_efficiency_pct': (self.electricity_price[t] / pumping_score_value * 100) if pumping_score_value > 0 else 100.0,
                     'interval_cost_eur': interval_cost
                 }
                 solution['schedule'].append(interval_info)
@@ -413,12 +404,11 @@ class PumpOptimizer:
                 if t % 4 == 0:
                     print(f"\n{self.dates[t][:16]} (Hour {t//4})")
                 
-                efficiency = self.electricity_price[t] / pumping_score_value if pumping_score_value > 0 else 1.0
                 print(f"  t={t:3d}: Pumps={','.join(active_pumps):20s} | "
                       f"Level={water_level:5.2f}m→{next_water_level:5.2f}m | "
                       f"Vol={solver.Value(volume[t]):7.0f}m³ | "
                       f"In={self.water_inflow[t]:6.0f}m³ Out={total_flow:6.0f}m³ | "
-                      f"Eff={efficiency*100:5.1f}% | "
+                      f"Price=€{self.electricity_price[t]:.3f}/kWh | "
                       f"Cost=€{interval_cost:.2f}")
             
             # Save to file
