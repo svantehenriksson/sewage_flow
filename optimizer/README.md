@@ -71,3 +71,4 @@ From input.json get
 
 - I wanting to equalize load, can track how much each pump have been used and tweak its multiplier
 - Give a small penalty for switching on/off
+- Optimize beginning with 15min intervals, but 24-48h with 3h intervals

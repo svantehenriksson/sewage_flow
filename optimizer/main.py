@@ -32,8 +32,16 @@ def height_from_volume_approx(volume: float) -> float:
 
 
 class PumpOptimizer:
-    def __init__(self, data_file: str, time_horizon_hours: int = 48):
-        """Initialize the optimizer with data and parameters."""
+    def __init__(self, data_file: str, time_horizon_hours: int = 48, pump_switch_penalty_eur: float = 0.1):
+        """Initialize the optimizer with data and parameters.
+        
+        Args:
+            data_file: Path to input JSON file with water inflow, prices, etc.
+            time_horizon_hours: Optimization horizon in hours (default: 48)
+            pump_switch_penalty_eur: Penalty per pump state change in € (default: 0.1)
+                                     Used for optimization only, NOT included in final cost.
+                                     Set higher to reduce switching, lower for more aggressive optimization.
+        """
         self.time_horizon_hours = time_horizon_hours
         self.intervals_per_hour = 4  # 15-minute intervals
         self.num_intervals = time_horizon_hours * self.intervals_per_hour
@@ -111,6 +119,12 @@ class PumpOptimizer:
         self.max_flow_per_interval = 4000  # m3 per 15min (16000 m3/h)
         self.empty_tank_threshold = 144000  # m3
         
+        # Switching penalty: small cost to discourage unnecessary state changes
+        # This prevents "chattering" and reduces wear on equipment
+        # NOTE: Used for optimization only, NOT included in final reported cost
+        # Typical value: €0.10 per switch
+        self.pump_switch_penalty_eur = pump_switch_penalty_eur
+        
         # Tank volume bounds (for scaling)
         self.min_volume = tunnel_volume(self.min_water_level)
         self.max_volume = tunnel_volume(self.max_water_level)
@@ -153,6 +167,31 @@ class PumpOptimizer:
             pump_on[p] = {}
             for t in range(self.num_intervals):
                 pump_on[p][t] = model.NewBoolVar(f'pump_{self.pump_names[p]}_t{t}')
+        
+        # Switching variables: pump_switch[p][t] = 1 if pump p changes state at time t
+        pump_switch = {}
+        for p in range(self.num_pumps):
+            pump_switch[p] = {}
+            pump_name = self.pump_names[p]
+            initial_state = self.pump_initial_status[pump_name]['on']
+            
+            for t in range(self.num_intervals):
+                pump_switch[p][t] = model.NewBoolVar(f'switch_{self.pump_names[p]}_t{t}')
+                
+                if t == 0:
+                    # At t=0, check if state changed from initial state
+                    # switch = |pump_on[p][0] - initial_state|
+                    if initial_state:
+                        model.Add(pump_switch[p][t] == 1 - pump_on[p][t])
+                    else:
+                        model.Add(pump_switch[p][t] == pump_on[p][t])
+                else:
+                    # For t > 0, switch = |pump_on[p][t] - pump_on[p][t-1]|
+                    # This is true if the pump changed state (on->off or off->on)
+                    # We can model this as: switch >= pump_on[t] - pump_on[t-1]
+                    #                        switch >= pump_on[t-1] - pump_on[t]
+                    model.Add(pump_switch[p][t] >= pump_on[p][t] - pump_on[p][t-1])
+                    model.Add(pump_switch[p][t] >= pump_on[p][t-1] - pump_on[p][t])
         
         # Volume at each time step (scaled to integer)
         volume = {}
@@ -308,7 +347,7 @@ class PumpOptimizer:
                 model.Add(sum(low_level_reached) >= 1)
                 print(f"  Added low-level constraint for period {period} (intervals {start_interval}-{end_interval})")
         
-        # Objective: Minimize total electricity cost
+        # Objective: Minimize total electricity cost + switching penalty
         # Use average water level for cost calculation to avoid complexity
         # The actual cost will be calculated post-hoc with real water levels
         cost_terms = []
@@ -326,8 +365,17 @@ class PumpOptimizer:
                 
                 cost_terms.append(pump_on[p][t] * cost)
         
-        total_cost = sum(cost_terms)
+        # Add switching penalty to discourage unnecessary state changes
+        switching_penalty_terms = []
+        penalty_scaled = int(self.pump_switch_penalty_eur * 1000)  # Scale to match electricity cost
+        for t in range(self.num_intervals):
+            for p in range(self.num_pumps):
+                switching_penalty_terms.append(pump_switch[p][t] * penalty_scaled)
+        
+        total_cost = sum(cost_terms) + sum(switching_penalty_terms)
         model.Minimize(total_cost)
+        
+        print(f"\nSwitching penalty: €{self.pump_switch_penalty_eur:.2f} per pump state change")
         
         # Provide a simple heuristic solution hint to speed up solving
         # Strategy: Run pumps during cheapest hours while respecting constraints
@@ -369,13 +417,25 @@ class PumpOptimizer:
                 print("FEASIBLE SOLUTION FOUND")
             print(f"{'='*60}")
             
-            total_cost_value = solver.ObjectiveValue() / 1000.0
-            print(f"\nTotal Electricity Cost: €{total_cost_value:.2f}")
+            # Calculate actual electricity cost (without switching penalty)
+            # Evaluate the actual electricity cost from the solution
+            actual_electricity_cost = 0.0
+            for t in range(self.num_intervals):
+                for p in range(self.num_pumps):
+                    if solver.Value(pump_on[p][t]) == 1:
+                        power_kw, _ = pump_avg_specs[p]
+                        cost = power_kw * self.interval_hours * self.electricity_price[t]
+                        actual_electricity_cost += cost
+            
+            objective_value = solver.ObjectiveValue() / 1000.0
+            
+            print(f"\nTotal Electricity Cost: €{actual_electricity_cost:.2f}")
+            print(f"(Objective value with penalty: €{objective_value:.2f})")
             
             # Extract solution
             solution = {
                 'status': 'optimal' if status == cp_model.OPTIMAL else 'feasible',
-                'total_cost_eur': total_cost_value,
+                'total_cost_eur': actual_electricity_cost,  # Only electricity, not penalty
                 'initial_water_level_m': self.initial_water_level,
                 'initial_volume_m3': self.initial_volume,
                 'schedule': []
@@ -455,6 +515,20 @@ class PumpOptimizer:
                 pct = (hours_on / self.time_horizon_hours) * 100
                 print(f"Pump {self.pump_names[p]}: {hours_on:6.2f} hours ({pct:5.1f}%)")
             
+            # Switching statistics
+            print(f"\n{'='*60}")
+            print("SWITCHING STATISTICS")
+            print(f"{'='*60}")
+            total_switches = 0
+            for p in range(self.num_pumps):
+                num_switches = sum(solver.Value(pump_switch[p][t]) for t in range(self.num_intervals))
+                total_switches += num_switches
+                print(f"Pump {self.pump_names[p]}: {num_switches} state changes")
+            
+            print(f"\nTotal state changes: {total_switches}")
+            print(f"Switching penalty (optimization only): €{self.pump_switch_penalty_eur}/switch")
+            print(f"Note: Penalty used for optimization but NOT included in final cost")
+            
             return solution
             
         else:
@@ -464,7 +538,13 @@ class PumpOptimizer:
 
 def main():
     """Main entry point."""
-    optimizer = PumpOptimizer('input.json', time_horizon_hours=48)
+    # Initialize optimizer with custom parameters
+    # Adjust pump_switch_penalty_eur to control switching behavior:
+    #   - Higher (e.g., 1.0-2.0): Fewer switches, smoother operation
+    #   - Lower (e.g., 0.1-0.3): More aggressive cost optimization
+    #   - Zero (0.0): No penalty, maximum cost optimization (may cause frequent switching)
+    # Note: Penalty is used for optimization only, NOT included in final reported cost
+    optimizer = PumpOptimizer('input.json', time_horizon_hours=48, pump_switch_penalty_eur=0.1)
     
     # Optional: Add fixed pump schedules
     # Example: Force pump 1.1 to run for first 3 intervals (45 minutes)
