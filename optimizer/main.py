@@ -5,6 +5,7 @@ Minimizes electricity costs while satisfying operational constraints.
 """
 
 import json
+import time
 from ortools.sat.python import cp_model
 from tunnel_volume import tunnel_volume
 from pumps import small_pump, big_pump
@@ -29,6 +30,98 @@ def height_from_volume_approx(volume: float) -> float:
         else:
             high = mid
     return (low + high) / 2
+
+
+class IntermediateSolutionPrinter(cp_model.CpSolverSolutionCallback):
+    """Callback to save intermediate solutions every ~5 seconds."""
+    
+    def __init__(self, optimizer, pump_on, volume, pump_switch, pump_avg_specs, interval_seconds=5):
+        cp_model.CpSolverSolutionCallback.__init__(self)
+        self.optimizer = optimizer
+        self.pump_on = pump_on
+        self.volume = volume
+        self.pump_switch = pump_switch
+        self.pump_avg_specs = pump_avg_specs
+        self.interval_seconds = interval_seconds
+        self.last_save_time = time.time()
+        self.solution_count = 0
+        
+    def on_solution_callback(self):
+        """Called by the solver when a new solution is found."""
+        self.solution_count += 1
+        current_time = time.time()
+        
+        # Save every interval_seconds
+        if current_time - self.last_save_time >= self.interval_seconds:
+            print(f"\n[Progress] Found solution #{self.solution_count}, saving intermediate result...")
+            self._save_current_solution()
+            self.last_save_time = current_time
+    
+    def _save_current_solution(self):
+        """Save the current solution to optimization_result.json."""
+        # Calculate actual electricity cost
+        actual_electricity_cost = 0.0
+        for t in range(self.optimizer.num_intervals):
+            for p in range(self.optimizer.num_pumps):
+                if self.Value(self.pump_on[p][t]) == 1:
+                    power_kw, _ = self.pump_avg_specs[p]
+                    cost = power_kw * self.optimizer.interval_hours * self.optimizer.electricity_price[t]
+                    actual_electricity_cost += cost
+        
+        # Calculate updated total minutes for each pump
+        pump_updated_minutes = {}
+        for p in range(self.optimizer.num_pumps):
+            pump_name = self.optimizer.pump_names[p]
+            hours_on = sum(self.Value(self.pump_on[p][t]) for t in range(self.optimizer.num_intervals)) * self.optimizer.interval_hours
+            initial_minutes = self.optimizer.pump_initial_status[pump_name]['totalMinutes']
+            pump_updated_minutes[pump_name] = initial_minutes + (hours_on * 60)
+        
+        # Build schedule
+        schedule = []
+        for t in range(self.optimizer.num_intervals):
+            water_level = height_from_volume_approx(self.Value(self.volume[t]))
+            next_water_level = height_from_volume_approx(self.Value(self.volume[t + 1]))
+            
+            active_pumps = []
+            total_flow = 0
+            interval_cost = 0
+            
+            for p in range(self.optimizer.num_pumps):
+                if self.Value(self.pump_on[p][t]) == 1:
+                    pump_name = self.optimizer.pump_names[p]
+                    power_kw, flow_rate = self.optimizer.get_pump_specs(pump_name, water_level)
+                    active_pumps.append(pump_name)
+                    total_flow += flow_rate * self.optimizer.interval_hours
+                    interval_cost += power_kw * self.optimizer.interval_hours * self.optimizer.electricity_price[t]
+            
+            interval_info = {
+                'interval': t,
+                'date': self.optimizer.dates[t],
+                'active_pumps': active_pumps,
+                'water_level_start_m': water_level,
+                'water_level_end_m': next_water_level,
+                'volume_start_m3': self.Value(self.volume[t]),
+                'volume_end_m3': self.Value(self.volume[t + 1]),
+                'inflow_m3': self.optimizer.water_inflow[t],
+                'outflow_m3': total_flow,
+                'electricity_price_cents_per_kwh': self.optimizer.electricity_price_cents[t],
+                'interval_cost_eur': interval_cost
+            }
+            schedule.append(interval_info)
+        
+        # Create solution object
+        solution = {
+            'status': 'intermediate',
+            'total_cost_eur': actual_electricity_cost,
+            'initial_water_level_m': self.optimizer.initial_water_level,
+            'initial_volume_m3': self.optimizer.initial_volume,
+            'pump_total_minutes': pump_updated_minutes,
+            'schedule': schedule
+        }
+        
+        # Save to file
+        with open('optimization_result.json', 'w') as f:
+            json.dump(solution, f, indent=2)
 
 
 class PumpOptimizer:
@@ -480,13 +573,26 @@ class PumpOptimizer:
         # Solve
         print("\nSolving...")
         solver = cp_model.CpSolver()
-        solver.parameters.max_time_in_seconds = 120.0  # 2 minutes timeout
+        solver.parameters.max_time_in_seconds = 300.0  # 2 minutes timeout
         solver.parameters.num_search_workers = 8  # Use multiple threads
         solver.parameters.log_search_progress = True
         solver.parameters.linearization_level = 2  # More aggressive linearization
         solver.parameters.cp_model_presolve = True  # Enable presolve
         
-        status = solver.Solve(model)
+        # Create callback to save intermediate solutions every 5 seconds
+        solution_callback = IntermediateSolutionPrinter(
+            optimizer=self,
+            pump_on=pump_on,
+            volume=volume,
+            pump_switch=pump_switch,
+            pump_avg_specs=pump_avg_specs,
+            interval_seconds=5
+        )
+        
+        status = solver.SolveWithSolutionCallback(model, solution_callback)
+        
+        if solution_callback.solution_count > 0:
+            print(f"\n[Info] Total intermediate solutions found: {solution_callback.solution_count}")
         
         # Process results
         if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
