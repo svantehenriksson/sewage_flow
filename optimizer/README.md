@@ -12,13 +12,13 @@ python main.py
 - This by optimizing when my water pumps should be running.
 - I want to calculate when my pumps should be running the coming 48h in 15 min intervals.
 - The tank has a cylindrical form. The formula for height to volume is defined in `tunnel_volume.py`
-- Example data can be found in results.json. Use the inflow rates from there and starting water level and electricity price
+- Example data can be found in input.json. Use the inflow rates from there and starting water level and electricity price
 - Use or-tools and the existing virtual environment
 - The pumps are more effective when the water level is high so use `pumping_score.py` to get a score based on electricy price and water level.
 
 ## Test data
 
-From result.json get
+From input.json get
 
 - initialWaterLevel: the intitial water level
 

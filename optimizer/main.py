@@ -370,7 +370,7 @@ class PumpOptimizer:
 
 def main():
     """Main entry point."""
-    optimizer = PumpOptimizer('result.json', time_horizon_hours=48)
+    optimizer = PumpOptimizer('input.json', time_horizon_hours=48)
     
     # Optional: Add fixed pump schedules
     # Example: Force pump 1.1 to run for first 3 intervals (45 minutes)
